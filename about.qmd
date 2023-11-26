@@ -1,9 +1,41 @@
 ---
-title: "About"
+pagetitle: "Jacci Ziebert | About"
+title: "Jacci Ziebert"
+subtitle: "Data Analyst | R Programmer"
+#image: assets/img/plane_small.jpg
+
+about:
+  id: hero-heading
+  template: trestles
+  image: assets/img/kitchen.jpg
+  image-width: 10em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/jacciz
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/jacci-ziebert/
+toc: false
+anchor-sections: false
+execute:
+  echo: false
+  
 ---
 
-About this site
+## Greetings!
 
-```{r}
-1 + 1
-```
+I am a data analyst and R programmer. I've built an R package to improve work flow, developed Shiny web apps, and automated long reports. I like to look for ways to automate manual tasks and to translate data into a concise and meaningful visual for a general audience in either a dashboard or report format. While I'm typically the sole R programmer, I write projects for longevity - having documentation and a reproducible environment are crucial elements if we
+
+My passion for R sparked when I felt frustrated of the mundane workflow at my previous job from SAS/Excel and knew there had to be a better way. I took an online programming class and immediately applied what I learned to my job. 
+
+When I'm not coding, I enjoy graphing my coffee roasts, playing strategy board games, and gravel cycling.
+
+writing code within weeks.
+
+
+
+
+
+
+

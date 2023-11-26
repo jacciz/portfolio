@@ -1,0 +1,29 @@
+---
+title: "Working with API and JSON format"
+description: "The task was to find the average sentence length of OWI (operating while intoxicated) offenders on their 3rd or more OWI citation."
+author: 
+  - name: Jacci Ziebert
+    affiliation: WisDOT
+date: "2022-10-04"
+#image: /assets/img/png/crash_dashboard.png
+#image-alt: "Screenshot of WisDOT Crash Dashboard."
+categories:
+  - API
+  - Data analysis
+execute: 
+  freeze: true
+  echo: false
+---
+
+```{r}
+# ![](/assets/img/png/crash_dashboard.png){.img-center fig-alt="Screenshot of WisDOT Crash Dashboard."}
+ # [Community Maps](https://transportal.cee.wisc.edu/partners/community-maps/crash/)
+# [ <a href="https://experience.arcgis.com/experience/505ae4db89ca43f1b943325e6a76e99c" class="btn" role="button">{{< fa laptop >}} App</a> <a href="https://github.com/WA-Department-of-Agriculture/washi_roadmap" class="btn" role="button">{{< fa brands github >}} Code</a> ]{.listing-btn-group}
+```
+
+### What I learned
+
+This was done it two parts 1) Writing functions that pulls data from our court case API into a JSON format over a certain time period and for certain citations. This data was flattened and compiled into a single dataframe and exported. And 2) Finding the sentence length for a certain citation for each case. This was tricky as one case may have multiple citations while sentence lengths can be found in multiple branches of the flattened JSON. I solved this issue by finding which branch a certain location was found and replaced part of the branch name with where the sentence length location. I was able to extract the sentence length with this 'renaming.' to calculate the average sentence length.
+
+### Highlighted packages
+`jsonlite, httr`

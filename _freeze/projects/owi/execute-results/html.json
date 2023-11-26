@@ -1,0 +1,15 @@
+{
+  "hash": "5b1b48a5d7d94ce9a59ebc4e8871fe24",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Analysis of OWI ratios\"\ndescription: \"Find risk ratios of OWI (operating while intoxicated) offenders from across multiple datasets.\"\nauthor: \n  - name: Jacci Ziebert\n    affiliation: WisDOT\ndate: \"2021-11-01\"\n#image: /assets/img/png/crash_dashboard.png\n#image-alt: \"Screenshot of WisDOT Crash Dashboard.\"\ncategories:\n  - Data analysis\nexecute: \n  freeze: true\n  echo: false\n---\n\n\n![](/assets/img/png/nhts_by_age.png){.img-center fig-alt=\"Tables of OWI ratios.\"}\n\n\n::: {.cell}\n\n:::\n\n\n### What I learned\n\nThis project involved the compilation of 5 data sets to calculate OWI (operating while intoxicated) ratios broken down by age group, race and sex. In order to combine these datasets, I had to rename columns and recode variables so datasets can be joined. The entire analysis I wrote functions to allow for any combo of age, sex, and race (the variables the study involved).\n\n### Highlighted packages\n\n`data.table, dplyr`\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

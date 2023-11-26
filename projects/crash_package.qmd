@@ -1,0 +1,30 @@
+---
+title: "R Package: wisdotcrashdatabase"
+description: "I developed this package to make data import and data analysis much easier inside an R environment."
+author: 
+  - name: Jacci Ziebert
+    affiliation: WisDOT
+date: "2020-8-20"
+#image: /assets/img/png/crash_dashboard.png
+#image-alt: "Screenshot of WisDOT Crash Dashboard."
+categories:
+  - Package development
+execute: 
+  freeze: true
+  echo: false
+---
+
+![](/assets/img/png/package_functions.png){.img-center fig-alt="Screenshot of package readme."}
+
+```{r}
+ # [Community Maps](https://transportal.cee.wisc.edu/partners/community-maps/crash/)
+# [ <a href="https://experience.arcgis.com/experience/505ae4db89ca43f1b943325e6a76e99c" class="btn" role="button">{{< fa laptop >}} App</a> <a href="https://github.com/WA-Department-of-Agriculture/washi_roadmap" class="btn" role="button">{{< fa brands github >}} Code</a> ]{.listing-btn-group}
+```
+
+### What I learned
+
+The typical work flow was using SAS to get the data and then doing the analysis in Excel. Doing everything in R would be more efficient. It came to a point where I was constantly sourcing the same scripts so it was logical to turn these scripts into an R package. The package has functions that query certain crash flags so I don't have to look up the actual query. On the backend, data is stored in a SQL database, one that I created and updates automatically on a weekly basis. Importing data multiple times a day and unable to store tihs data in the cloud, I found duckdb to be the fastest solution (as compared to csv, SQLite, and fst).
+
+### Highlighted packages
+
+The dashboard uses `data.table, duckdb, fst`, and `purrr`.

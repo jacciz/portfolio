@@ -1,0 +1,15 @@
+{
+  "hash": "cd1d7192009b44368e23a25f0b24e774",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"R Package: wisdotcrashdatabase\"\ndescription: \"I developed this package to make data import and data analysis much easier inside an R environment.\"\nauthor: \n  - name: Jacci Ziebert\n    affiliation: WisDOT\ndate: \"2020-8-20\"\n#image: /assets/img/png/crash_dashboard.png\n#image-alt: \"Screenshot of WisDOT Crash Dashboard.\"\ncategories:\n  - Package development\nexecute: \n  freeze: true\n  echo: false\n---\n\n\n![](/assets/img/png/package_functions.png){.img-center fig-alt=\"Screenshot of package readme.\"}\n\n\n::: {.cell}\n\n:::\n\n\n### What I learned\n\nThe typical work flow was using SAS to get the data and then doing the analysis in Excel. Doing everything in R would be more efficient. It came to a point where I was constantly sourcing the same scripts so it was logical to turn these scripts into an R package. The package has functions that query certain crash flags so I don't have to look up the actual query. On the backend, data is stored in a SQL database, one that I created and updates automatically on a weekly basis. Importing data multiple times a day and unable to store tihs data in the cloud, I found duckdb to be the fastest solution (as compared to csv, SQLite, and fst).\n\n### Highlighted packages\n\nThe dashboard uses `data.table, duckdb, fst`, and `purrr`.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

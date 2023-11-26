@@ -1,0 +1,15 @@
+{
+  "hash": "68500d0a0b1e467328106d0e216d75de",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"WisDOT Crash Statistics Dashboard\"\ndescription: \"WisDOT uses [Community Maps](https://transportal.cee.wisc.edu/partners/community-maps/crash/), a website that displays a map of crashes in near real-time. I wanted the user to have a visual of the data but with the same features and filters.\"\nauthor: \n  - name: Jacci Ziebert\n    affiliation: WisDOT\ndate: \"2021-01-04\"\n#image: /assets/img/png/crash_dashboard.png\n#image-alt: \"Screenshot of WisDOT Crash Dashboard.\"\ncategories:\n  - Shiny\n  - Golem\nexecute: \n  freeze: true\n  echo: false\n---\n\n\n![](/assets/img/png/crash_dashboard.png){.img-center fig-alt=\"Screenshot of WisDOT Crash Dashboard.\"}\n\n\n::: {.cell}\n\n:::\n\n\n### What I learned\n\nThrough performance testing via `shinyloadtest`, I found an enormous bottleneck through simply loading the data. As a solution, I created a SQLite database as the database is saved locally inside the package. While this dramitically improved performance, data was still being mapped on-the-fly. Ideally the data should be stored in a spatial database. This app also uses modules so server and ui are much cleaner while the code is easier to debug.\n\n### Highlighted packages\n\n`plotly, leaflet, leaflet.extras2` and `leafgl` under a `golem` framework.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

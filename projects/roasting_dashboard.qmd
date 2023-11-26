@@ -1,0 +1,29 @@
+---
+title: "Coffee Roasting Profiler"
+description: "An ameateur coffee roaster, I made this dashboard to visualize my roast profiles."
+author: 
+  - name: Jacci Ziebert
+    affiliation: None
+date: "2021-8-04"
+#image: /assets/img/png/crash_dashboard.png
+#image-alt: "Screenshot of WisDOT Crash Dashboard."
+categories:
+  - Shiny
+  - Data Viz
+execute: 
+  freeze: true
+  echo: false
+---
+
+![](/assets/img/png/coffee_roasting.png){.img-center fig-alt="Screenshot of Coffee Roasting Dashboard."}
+
+[ <a href="https://jacciz.shinyapps.io/coffee_roasting/" class="btn" role="button">{{< fa laptop >}} Dashboard</a> <a href="https://github.com/jacciz/coffee_roasting_profiles" class="btn" role="button">{{< fa brands github >}} Code</a> ]{.listing-btn-group}
+
+
+### What I learned
+
+The tricky part was adding the RoR (rate of return) curves (the blue and purple) onto the graph as this is calculated via an algorithm written in Python inside Artisan software. I found this piece of code and rewrote part of it so it would work for my app. Next I used the `reticulate` package so the app can read Python code.
+
+### Highlighted packages
+
+The dashboard uses `reticulate, formattable`, and `DT` under a `golem` framework.

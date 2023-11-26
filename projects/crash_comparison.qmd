@@ -1,0 +1,28 @@
+---
+title: "WisDOT Crash Comparison Dashboard"
+description: "I was asked to create a visual that compares crashes by quarter. This was previously done manually in Excel, needing to find the number of crashes for each crash flag/type for each quarter. This dashboard displays a series of bar charts and the ability to download this data."
+author: 
+  - name: Jacci Ziebert
+    affiliation: WisDOT
+date: "2022-10-04"
+#image: /assets/img/png/crash_dashboard.png
+#image-alt: "Screenshot of WisDOT Crash Dashboard."
+categories:
+  - Shiny
+  - Data Viz
+execute: 
+  freeze: true
+  echo: false
+---
+
+![](/assets/img/png/compare.png){.img-center fig-alt="Screenshot of WisDOT Crash Comparison Dashboard."}
+
+[<a href="https://transportal.cee.wisc.edu/partners/community-maps/crash/public/Dashboard/" class="btn" role="button">{{< fa laptop >}} View the Dashboard</a>]{.listing-btn-group}
+
+### What I learned
+
+Knowing this dashboard would be viewed on a variety of screen sizes, I used dynamic font sizes (i.e. 1.2em) as opposed to static font sizes (i.e. 12pt). I also wrote CSS as to make printing of the entire dashboard possible on two pages.
+
+### Highlighted packages
+
+The dashboard uses `dashboardthemes, ggplot2 and ggtext` using the `golem` framework.

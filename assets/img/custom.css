@@ -1,0 +1,35 @@
+.left_side_text{float:left; width:40%; max-width: 40%; height: auto;}
+.right_side_image{float:right; width:58%; max-width: 60%; height: auto;}
+
+.timeline>li>.timeline-item>.timeline-header {background:#2373B0; color:#ffffff; font-weight:600}
+.timeline>li>.timeline-item>.timeline-body {font-weight:600; padding:5px}
+.timeline>li>.timeline-item>.time {font-weight:600; color:#ffffff;}
+.timeline-inverse>li>.timeline-item {background:#f7f7f7; padding:5px}
+.timeline-inverse>li>.timeline-footer { padding:5px}
+.timeline>li>.timeline-item>.timeline-body, .timeline>li>.timeline-item>.timeline-footer {padding:5px}
+.label-warning, .modal-warning .modal-body {background-color:#FF9800;}
+.bg-yellow {background-color:#FF9800;}
+.bg-orange {background-color:#FF9800;}
+
+/* shinydashboardPlus - radius is missing from icon - I'll just do them myself!*/
+.bg-light-blue {background-color:#2373B0 !important;padding:6px; border-radius: 25px;}
+
+
+.h1, .h2, .box .box-header .box-title{font-size:1.4em;
+  font-weight:600;}
+  
+.h3, .h4, h3{font-size:1.3em;
+  font-weight:600;}
+.h5, .h6{font-size:1.2em;
+  font-weight:600;}
+.p, .li{font-size:1.1em}
+
+.box .box-header{background-color:#2373B0; color:#ffffff; padding-top:10px; padding-bottom:2px;}
+.box-header.with-border{border-bottom:0px}
+.navbar-nav a{color:#ffffff!important}
+.navbar-nav>.user-menu>.dropdown-menu>.user-body a{color:#ffffff!important}
+
+
+
+/*.alert-warning, .bg-yellow, .callout.callout-warning, .label-warning, .modal-warning .modal-body {background-color:#FF9800!important;}
+/* 3d3d3d dark grey3  c8dbc light-blue   #ffffff font/icon white*/

@@ -1,0 +1,29 @@
+---
+title: "Traffic Summary of each of WI's 72 County Profiles"
+description: "Crash data summaries for 72 counties. This has dynamic maps showing crashes and hotspots."
+author: 
+  - name: Jacci Ziebert
+    affiliation: WisDOT
+date: "2023-5-04"
+#image: /assets/img/png/crash_dashboard.png
+#image-alt: "Screenshot of WisDOT Crash Dashboard."
+categories:
+  - Shiny
+  - Data Viz
+execute: 
+  freeze: true
+  echo: false
+---
+
+![](/assets/img/png/county_profile.png){.img-center fig-alt="Screenshot of a County Profile."}
+
+[<a href="https://tiny.cc/46unuz" class="btn" role="button">{{< fa laptop >}} Dane County's Traffic Safety Summary</a>]{.listing-btn-group}
+
+
+### What I learned
+
+I learned to create a parameterized R Markdown. The maps use our crash API.
+
+### Highlighted packages
+
+`plotly, googleway`, and `kableExtra`

@@ -1,0 +1,31 @@
+---
+title: "WisDOT Crash Statistics Dashboard"
+description: "WisDOT uses [Community Maps](https://transportal.cee.wisc.edu/partners/community-maps/crash/), a website that displays a map of crashes in near real-time. I wanted the user to have a visual of the data but with the same features and filters."
+author: 
+  - name: Jacci Ziebert
+    affiliation: WisDOT
+date: "2021-01-04"
+#image: /assets/img/png/crash_dashboard.png
+#image-alt: "Screenshot of WisDOT Crash Dashboard."
+categories:
+  - Shiny
+  - Data Viz
+execute: 
+  freeze: true
+  echo: false
+---
+
+![](/assets/img/png/crash_dashboard.png){.img-center fig-alt="Screenshot of WisDOT Crash Dashboard."}
+
+```{r}
+ # [Community Maps](https://transportal.cee.wisc.edu/partners/community-maps/crash/)
+# [ <a href="https://experience.arcgis.com/experience/505ae4db89ca43f1b943325e6a76e99c" class="btn" role="button">{{< fa laptop >}} App</a> <a href="https://github.com/WA-Department-of-Agriculture/washi_roadmap" class="btn" role="button">{{< fa brands github >}} Code</a> ]{.listing-btn-group}
+```
+
+### What I learned
+
+Through performance testing via `shinyloadtest`, I found an enormous bottleneck through simply loading the data. As a solution, I created a SQLite database as the database is saved locally inside the package. While this dramitically improved performance, data was still being mapped on-the-fly. Ideally the data should be stored in a spatial database. This app also uses modules so server and ui are much cleaner while the code is easier to debug.
+
+### Highlighted packages
+
+The dashboard uses `plotly, leaflet, leaflet.extras2` and `leafgl` under a `golem` framework.

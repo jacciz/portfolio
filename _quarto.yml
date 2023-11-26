@@ -3,18 +3,31 @@ project:
   output-dir: docs
 
 website:
-  title: "portfolio"
+  title: "Jacci Ziebert"
+  favicon: assets/img/favicon.png
+  repo-url: https://github.com/jacciz/portfolio
   navbar:
+    pinned: true
+    background: '#ff9800'
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
+   #   - href: index.qmd
+    #    text: Home
+        # icon: person-circle
+        # https://icons.getbootstrap.com/
+      - href: about.qmd
+        text: About
+        icon: person-circle
+        aria-label: GitHub
+      - href: projects.qmd
+        text: Projects
+        icon: tools
+        aria-label: Projects
+      - href: cv.qmd
+        text: CV
+        icon: tools
+        aria-label: CV
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-
-
-

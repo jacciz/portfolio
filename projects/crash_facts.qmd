@@ -1,0 +1,26 @@
+---
+title: "Wisconsin Traffic Crash Facts"
+description: "This is a crash facts book done in a web format. I was excited to use the newly released Quarto by Posit. The book provides many tables and charts of crash data. Past versions were done in Excel/Publisher exported to a 100+ page PDF; <a href = 'https://wisconsindot.gov/Documents/safety/education/crash-data/2013/wtcf.pdf'>see here</a>. This is now fully automated and a book can be created in a matter of minutes as opposed to weeks."
+author: 
+  - name: Jacci Ziebert
+    affiliation: WisDOT
+date: "2022-8-1"
+#image: /assets/img/png/crash_dashboard.png
+#image-alt: "Screenshot of WisDOT Crash Dashboard."
+categories:
+  - Quarto
+execute: 
+  freeze: true
+  echo: false
+---
+
+![](/assets/img/png/crashfacts.png){.img-center fig-alt="Screenshot of WisDOT Crash Facts."}
+# [ <a href="https://www.content.dot.wi.gov/content/crashfacts/2021/" class="btn" role="button">{{< fa laptop >}} 2021 Wisconsin Crash Facts</a> ]{.listing-btn-group}
+
+### What I learned
+
+I learned YAML and Quarto! I spent the most time writing functions to standardize the table format, render charts, and to more easily aggregate the data.
+
+### Highlighted packages
+
+`gt, gtExtras, quarto`

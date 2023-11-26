@@ -1,1 +1,19 @@
 /* css styles */
+p {
+  text-align: left;
+}
+
+.cv-date {
+  float: right;
+  color: grey80;
+}
+
+.h3 {
+  color: #2373b0;
+}
+
+.lc_img {
+  display: block;
+  margin: auto;
+  width: 400px;
+}

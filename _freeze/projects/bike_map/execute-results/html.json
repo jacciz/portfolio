@@ -1,0 +1,15 @@
+{
+  "hash": "e7b45d4e6f54c01eda8ccea309b72cb1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Subway-Style Bike Path Map of Madison, WI\"\ndescription: \"\"\nauthor: \n  - name: Jacci Ziebert\n    affiliation: None\ndate: \"2018-11-18\"\nimage: /assets/img/png/bikemap_zoom.png\nimage-alt: \"Zoomed in of Bike Path Map\"\ncategories:\n  - QGIS\n  - Illustrator\nexecute: \n  freeze: true\n  echo: false\n---\n\n\n![](/assets/img/png/BikeMap_V4_1_11x14-01.png){.img-center fig-alt=\"Subway style bike path map of madison, WI.\"}\n\n\n::: {.cell}\n\n:::\n\n\n### What I learned\n\nI wanted to learn Adobe Illustrator, so I made a bike map path of Madison, WI. I started off with using QGIS to get the streets. Then in Illustrator, I kind of traced over these roads. As I wanted to maintain the subway style, the rule was that polygons had to use 45 degree angles.",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

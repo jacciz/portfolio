@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacci Ziebert">
-<meta name="dcterms.date" content="2023-05-04">
-<meta name="description" content="Crash data summaries for 72 counties. This has dynamic maps showing crashes and hotspots.">
+<meta name="dcterms.date" content="2023-05-01">
+<meta name="description" content="Crash data summaries for each of the 72 counties. The reports include dynamic maps showing crash locations and hotspots.">
 
 <title>Jacci Ziebert - Traffic Summary of each of WI’s 72 County Profiles</title>
 <style>
@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../assets/img/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -92,12 +93,24 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../about.html"> <i class="bi bi-person-circle" role="img" aria-label="About">
+</i> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../projects.html"> 
-<span class="menu-text">Projects</span></a>
+    <a class="nav-link" href="../cv.html"> <i class="bi bi-briefcase" role="img" aria-label="CV">
+</i> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../projects.html"> <i class="bi bi-puzzle" role="img" aria-label="Projects">
+</i> 
+<span class="menu-text">Coding Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../noncode_projects.html"> <i class="bi bi-tools" role="img" aria-label="Non-Coding Projects">
+</i> 
+<span class="menu-text">Non-Coding Projects</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -127,14 +140,14 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Traffic Summary of each of WI’s 72 County Profiles</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Shiny</div>
+    <div class="quarto-category">Markdown</div>
     <div class="quarto-category">Data Viz</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Crash data summaries for 72 counties. This has dynamic maps showing crashes and hotspots.
+    Crash data summaries for each of the 72 counties. The reports include dynamic maps showing crash locations and hotspots.
   </div>
 </div>
 
@@ -158,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 4, 2023</p>
+      <p class="date">May 1, 2023</p>
     </div>
   </div>
   
@@ -171,10 +184,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><img src="..\assets/img/png/county_profile.png" class="img-center img-fluid" alt="Screenshot of a County Profile."></p>
-<p><span class="listing-btn-group"><a href="https://tiny.cc/46unuz" class="btn" role="button"><i class="fa-solid fa-laptop" aria-label="laptop"></i> Dane County’s Traffic Safety Summary</a></span></p>
+<p><span class="listing-btn-group"><a href="https://transportal.cee.wisc.edu/partners/community-maps/tsc_resources/CM%20profile%20files/2022/Dane_2022.html" class="btn" role="button"><i class="fa-solid fa-laptop" aria-label="laptop"></i> Dane County’s Traffic Safety Summary</a></span></p>
 <section id="what-i-learned" class="level3">
 <h3 class="anchored" data-anchor-id="what-i-learned">What I learned</h3>
-<p>I learned to create a parameterized R Markdown. The maps use our crash API.</p>
+<p>I learned to create a parameterized R Markdown report. I used our crash data API for the maps using the <code>googleway</code> package. This project was previously done using Excel and Publisher and took many months. This project fully automated the report by using “County” as the parameter.</p>
 </section>
 <section id="highlighted-packages" class="level3">
 <h3 class="anchored" data-anchor-id="highlighted-packages">Highlighted packages</h3>

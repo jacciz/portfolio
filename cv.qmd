@@ -18,8 +18,6 @@ Wisconsin Department of Health Services
 
 [IS Business Automation Specialist]{.h5} [June 2023 - Present]{.cv-date}
 
--   Bullet 1
-
 ::: {.d-inline-flex style="align-items:baseline"}
 ::: cv_img
 ![](/assets/img/dot.png){fig-alt="Wisconsin Department of Transportation logo"}
@@ -34,9 +32,7 @@ Wisconsin Department of Transportation
 
 -   Developed an R package that makes data pulls and data analysis much easier inside an R environment, slashing time spent fulfilling data requests into a manner of minutes
 
--   Learned Shiny to develop a Crash Dashboard with multi-selection capabilities, interactive charts, and a dynamic map
-
--   Wrote a parameterized R Markdown to fully automate the creation of 72 [crash data county profiles](tinyurl.com/yckw8v6s)
+-   Wrote a parameterized R Markdown to fully automate the creation of 72 [crash data county profiles](https://transportal.cee.wisc.edu/partners/community-maps/tsc_resources/CM%20profile%20files/2022/Dane_2022.html)
 
 -   Used an API to collect court case data then flattening JSON file, cleaning data, and running analysis
 
@@ -92,13 +88,13 @@ Wisconsin Department of Transportation
 ## {{< fa award >}} Awards
 
 -   **2022 Data Science Olympian:** Collaborated with a team to compete in a **Kaggle Challenge** with Women in Big Data (WiBD)
--   **WisDOT Crash Dashboard** won runner-up under **Interactive Map category:** 2021 Wisconsin Land Information Association map contest
+-   **WisDOT Crash Dashboard** won runner-up under **Interactive Map category:** 2021 Wisconsin Land Information Association map contest. View the [project](/projects/crash_dashboard.html).
 
 ## {{< fa graduation-cap >}} Education
 
 ::: {.d-inline-flex style="align-items:baseline"}
 ::: cv_img
-![](/assets/img/dot.png){fig-alt="Wisconsin Department of Transportation logo"}
+![](/assets/img/uw.png){fig-alt="University of Wisconsin - Madison logo"}
 :::
 
 ::: h3
@@ -113,7 +109,7 @@ University of Wisconsin - Madison
 
 ::: {.d-inline-flex style="align-items:baseline"}
 ::: cv_img
-![](/assets/img/dot.png){fig-alt="Wisconsin Department of Transportation logo"}
+![](/assets/img/uwo.png){fig-alt="University of Wisconsin - Oshkosh logo"}
 :::
 
 ::: h3

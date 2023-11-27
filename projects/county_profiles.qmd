@@ -1,14 +1,14 @@
 ---
 title: "Traffic Summary of each of WI's 72 County Profiles"
-description: "Crash data summaries for 72 counties. This has dynamic maps showing crashes and hotspots."
+description: "Crash data summaries for each of the 72 counties. The reports include dynamic maps showing crash locations and hotspots."
 author: 
   - name: Jacci Ziebert
     affiliation: WisDOT
-date: "2023-5-04"
+date: "2023-5-01"
 #image: /assets/img/png/crash_dashboard.png
 #image-alt: "Screenshot of WisDOT Crash Dashboard."
 categories:
-  - Shiny
+  - Markdown
   - Data Viz
 execute: 
   freeze: true
@@ -17,12 +17,11 @@ execute:
 
 ![](/assets/img/png/county_profile.png){.img-center fig-alt="Screenshot of a County Profile."}
 
-[<a href="https://tiny.cc/46unuz" class="btn" role="button">{{< fa laptop >}} Dane County's Traffic Safety Summary</a>]{.listing-btn-group}
-
+[<a href="https://transportal.cee.wisc.edu/partners/community-maps/tsc_resources/CM%20profile%20files/2022/Dane_2022.html" class="btn" role="button">{{< fa laptop >}} Dane County's Traffic Safety Summary</a>]{.listing-btn-group}
 
 ### What I learned
 
-I learned to create a parameterized R Markdown. The maps use our crash API.
+I learned to create a parameterized R Markdown report. I used our crash data API for the maps using the `googleway` package. This project was previously done using Excel and Publisher and took many months. This project fully automated the report by using "County" as the parameter.
 
 ### Highlighted packages
 

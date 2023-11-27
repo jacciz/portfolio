@@ -17,15 +17,19 @@ website:
       - href: about.qmd
         text: About
         icon: person-circle
-        aria-label: GitHub
-      - href: projects.qmd
-        text: Projects
-        icon: tools
-        aria-label: Projects
+        aria-label: About
       - href: cv.qmd
         text: CV
         icon: briefcase
         aria-label: CV
+      - href: projects.qmd
+        text: Coding Projects
+        icon: puzzle
+        aria-label: Projects
+      - href: noncode_projects.qmd
+        text: Non-Coding Projects
+        icon: tools
+        aria-label: Non-Coding Projects
 format:
   html:
     theme: cosmo

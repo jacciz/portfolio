@@ -25,14 +25,13 @@ execute:
 
 ## Greetings!
 
-I am a data analyst and R programmer. I've built an R package to improve work flow, developed Shiny web apps, and automated long reports. I like to look for ways to automate manual tasks and to translate data into a concise and meaningful visual for a general audience in either a dashboard or report format. While I'm typically the sole R programmer, I write projects for longevity - having documentation and a reproducible environment are crucial elements if we
+I am a data analyst and R programmer. My passion for R sparked when I felt frustrated of the mundane workflow at my previous job from SAS/Excel and knew there had to be a better way. I took an online programming class and immediately applied what I learned to my job.
 
-My passion for R sparked when I felt frustrated of the mundane workflow at my previous job from SAS/Excel and knew there had to be a better way. I took an online programming class and immediately applied what I learned to my job. 
+Since then, I've built an R package to improve work flow, developed Shiny web apps, and automated long reports. I enjoy translating data into a concise and meaningful visual for a general audience in either a dashboard or a report.
 
-When I'm not coding, I enjoy graphing my coffee roasts, playing strategy board games, and gravel cycling.
+When I'm not coding, I enjoy graphing my coffee roasts, playing strategy board games, and cycling.
 
-writing code within weeks.
-
+![Getting ready for a morning gravel ride](/assets/img/bike.jpg){width=400px}
 
 
 

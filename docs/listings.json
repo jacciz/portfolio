@@ -2,11 +2,9 @@
   {
     "listing": "/projects.html",
     "items": [
-      "/projects/cv.html",
       "/projects/county_profiles.html",
-      "/projects/crash_comparison.html",
       "/projects/json_api.html",
-      "/projects/template.html",
+      "/projects/crash_comparison.html",
       "/projects/crash_facts.html",
       "/projects/owi.html",
       "/projects/roasting_dashboard.html",
@@ -14,6 +12,13 @@
       "/projects/crash_package.html",
       "/projects/bike_map.html",
       "/projects/lost_city.html"
+    ]
+  },
+  {
+    "listing": "/noncode_projects.html",
+    "items": [
+      "/noncode_projects/bike_map.html",
+      "/noncode_projects/lost_city.html"
     ]
   }
 ]

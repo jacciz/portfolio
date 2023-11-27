@@ -1,0 +1,17 @@
+---
+pagetitle: "Jacci Ziebert | Non-Coding Projects"
+title: "Non-Coding Projects"
+#image: ""
+#image-alt: "."
+listing:
+  contents: noncode_projects
+  type: grid
+  fields: 
+    - title
+    - description
+    - date
+    - image
+    - categories
+  categories: true
+  sort: "date desc"
+---

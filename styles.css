@@ -3,6 +3,11 @@
 body {
   font-family: Arial;
 }
+
+figcaption{
+  font-style: italic;
+}
+
 p {
   text-align: left;
   margin-bottom: 0.5rem;
@@ -22,6 +27,9 @@ p {
   font-weight: 500;
 }
 
+img{
+  border-radius: 5px;
+}
 .cv_img{
   margin-right: 5px;
   width: 60px;

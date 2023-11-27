@@ -1,4 +1,5 @@
 ---
+pagetitle: "Jacci Ziebert | Projects"
 title: "Projects"
 #image: ""
 #image-alt: "."

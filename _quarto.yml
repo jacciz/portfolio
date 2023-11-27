@@ -24,7 +24,7 @@ website:
         aria-label: Projects
       - href: cv.qmd
         text: CV
-        icon: tools
+        icon: briefcase
         aria-label: CV
 format:
   html:

@@ -1,6 +1,11 @@
 /* css styles */
+
+body {
+  font-family: Arial;
+}
 p {
   text-align: left;
+  margin-bottom: 0.5rem;
 }
 
 .cv-date {
@@ -12,6 +17,15 @@ p {
   color: #2373b0;
 }
 
+.h5 {
+  color: #b07112;
+  font-weight: 500;
+}
+
+.cv_img{
+  margin-right: 5px;
+  width: 60px;
+}
 .lc_img {
   display: block;
   margin: auto;

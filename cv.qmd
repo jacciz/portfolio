@@ -1,0 +1,126 @@
+---
+pagetitle: "Jacci Ziebert | CV"
+title: ""
+anchor-sections: false
+---
+
+## {{< fa briefcase >}} Professional Experience
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: cv_img
+![](/assets/img/dhs.png){fig-alt="Wisconsin Department of Health Services logo"}
+:::
+
+::: h3
+Wisconsin Department of Health Services
+:::
+:::
+
+[IS Business Automation Specialist]{.h5} [June 2023 - Present]{.cv-date}
+
+-   Bullet 1
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: cv_img
+![](/assets/img/dot.png){fig-alt="Wisconsin Department of Transportation logo"}
+:::
+
+::: h3
+Wisconsin Department of Transportation
+:::
+:::
+
+[Highway Safety Data Analyst]{.h5} [May 2019 - June 2023]{.cv-date}
+
+-   Developed an R package that makes data pulls and data analysis much easier inside an R environment, slashing time spent fulfilling data requests into a manner of minutes
+
+-   Learned Shiny to develop a Crash Dashboard with multi-selection capabilities, interactive charts, and a dynamic map
+
+-   Wrote a parameterized R Markdown to fully automate the creation of 72 [crash data county profiles](tinyurl.com/yckw8v6s)
+
+-   Used an API to collect court case data then flattening JSON file, cleaning data, and running analysis
+
+-   Developed a Shiny dashboard to compare [quarterly crash trends](communitymaps.wi.gov/crash/public/Dashboard/)
+
+-   Improved relationship between WisDOT and UW by establishing a set of uniform queries used for data pulls and crash analysis
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: cv_img
+![](/assets/img/mandli.png){fig-alt="Mandli Communications logo"}
+:::
+
+::: h3
+Mandli Communications
+:::
+:::
+
+[Data Processor]{.h5} [Dec 2016 - May 2019]{.cv-date}
+
+-   Analyze, classify, and process LiDAR data maintaining above average speed, occasionally perform quality control
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: cv_img
+![](/assets/img/dot.png){fig-alt="Wisconsin Department of Transportation logo"}
+:::
+
+::: h3
+Wisconsin Department of Transportation
+:::
+:::
+
+[Traffic Forecaster (Part-time)]{.h5} [Feb 2014 -- June 2018]{.cv-date}
+
+-   Completed statewide traffic forecast requests using travel demand models and regression analysis of historical counts
+-   Provided expertise on completed forecast requests to MPOs, DOT regions and consultants
+-   Conducted research and learned VBA to develop a macro-enabled Excel worksheet, improving and streamlining the department's method to forecast turning movement counts
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: cv_img
+![](/assets/img/dot.png){fig-alt="Wisconsin Department of Transportation logo"}
+:::
+
+::: h3
+Wisconsin Department of Transportation
+:::
+:::
+
+[Bicycle and Pedestrian Intern (Part-time)]{.h5} [Mar 2015 -- July 2015]{.cv-date}
+
+-   Learned ADA standards in order to digitize and assess statewide curb ramps and sidewalks in ArcMap
+-   Learned about bike/pedestrian safety and design and the benefits of complete streets through five day-long courses
+
+## {{< fa award >}} Awards
+
+-   **2022 Data Science Olympian:** Collaborated with a team to compete in a **Kaggle Challenge** with Women in Big Data (WiBD)
+-   **WisDOT Crash Dashboard** won runner-up under **Interactive Map category:** 2021 Wisconsin Land Information Association map contest
+
+## {{< fa graduation-cap >}} Education
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: cv_img
+![](/assets/img/dot.png){fig-alt="Wisconsin Department of Transportation logo"}
+:::
+
+::: h3
+University of Wisconsin - Madison
+:::
+:::
+
+[Master of Science]{.h5} [2012 - 2014]{.cv-date}
+
+-   Urban and Regional Planning
+-   Certificate in Transportation Management and Policy
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: cv_img
+![](/assets/img/dot.png){fig-alt="Wisconsin Department of Transportation logo"}
+:::
+
+::: h3
+University of Wisconsin - Oshkosh
+:::
+:::
+
+[Bachelor's of Science]{.h5} [2006 - 2010]{.cv-date}
+
+-   Geography (GIS) and Urban Planning

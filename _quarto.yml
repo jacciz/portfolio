@@ -10,11 +10,8 @@ website:
     pinned: true
     background: '#ff9800'
     left:
-   #   - href: index.qmd
-    #    text: Home
-        # icon: person-circle
         # https://icons.getbootstrap.com/
-      - href: about.qmd
+      - href: indext.qmd
         text: About
         icon: person-circle
         aria-label: About

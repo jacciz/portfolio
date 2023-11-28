@@ -46,7 +46,14 @@
     "href": "index.html",
     "title": "Jacci Ziebert",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I am a data analyst and R programmer. My passion for R sparked when I felt frustrated of the mundane workflow at my previous job from SAS/Excel and knew there had to be a better way. I took an online programming class and immediately applied what I learned to my job.\nSince then, I’ve built an R package to improve work flow, developed Shiny web apps, and automated long reports. I enjoy translating data into a concise and meaningful visual for a general audience in either a dashboard or a report.\nWhen I’m not coding, I enjoy graphing my coffee roasts, playing strategy board games, and cycling.\n\n\n\nGetting ready for a morning gravel ride"
+  },
+  {
+    "objectID": "index.html#greetings",
+    "href": "index.html#greetings",
+    "title": "Jacci Ziebert",
+    "section": "",
+    "text": "I am a data analyst and R programmer. My passion for R sparked when I felt frustrated of the mundane workflow at my previous job from SAS/Excel and knew there had to be a better way. I took an online programming class and immediately applied what I learned to my job.\nSince then, I’ve built an R package to improve work flow, developed Shiny web apps, and automated long reports. I enjoy translating data into a concise and meaningful visual for a general audience in either a dashboard or a report.\nWhen I’m not coding, I enjoy graphing my coffee roasts, playing strategy board games, and cycling.\n\n\n\nGetting ready for a morning gravel ride"
   },
   {
     "objectID": "about.html",

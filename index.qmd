@@ -1,11 +1,34 @@
 ---
+pagetitle: "Jacci Ziebert | About"
 title: "Jacci Ziebert"
+subtitle: "Data Analyst | R Programmer"
+#image: assets/img/plane_small.jpg
+
+about:
+  id: hero-heading
+  template: trestles
+  image: assets/img/kitchen.jpg
+  image-width: 10em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/jacciz
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/jacci-ziebert/
+toc: false
+anchor-sections: false
+execute:
+  echo: false
+  
 ---
 
-This is a Quarto website.
+## Greetings!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+I am a data analyst and R programmer. My passion for R sparked when I felt frustrated of the mundane workflow at my previous job from SAS/Excel and knew there had to be a better way. I took an online programming class and immediately applied what I learned to my job.
 
-```{r}
-1 + 1
-```
+Since then, I've built an R package to improve work flow, developed Shiny web apps, and automated long reports. I enjoy translating data into a concise and meaningful visual for a general audience in either a dashboard or a report.
+
+When I'm not coding, I enjoy graphing my coffee roasts, playing strategy board games, and cycling.
+
+![Getting ready for a morning gravel ride](/assets/img/bike.jpg){width=400px}

@@ -11,7 +11,7 @@ website:
     background: '#ff9800'
     left:
         # https://icons.getbootstrap.com/
-      - href: indext.qmd
+      - href: index.qmd
         text: About
         icon: person-circle
         aria-label: About

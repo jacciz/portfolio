@@ -9,19 +9,13 @@ image: /assets/img/png/bikemap_zoom.png
 image-alt: "Zoomed in of Bike Path Map"
 categories:
   - QGIS
-  - Illustrator
+  - Adobe Illustrator
 execute: 
   freeze: true
   echo: false
 ---
 
 ![](/assets/img/png/BikeMap_V4_1_11x14-01.png){.img-center fig-alt="Subway style bike path map of madison, WI."}
-
-```{r}
- # [Community Maps](https://transportal.cee.wisc.edu/partners/community-maps/crash/)
-# [ <a href="https://experience.arcgis.com/experience/505ae4db89ca43f1b943325e6a76e99c" class="btn" role="button">{{< fa laptop >}} App</a> <a href="https://github.com/WA-Department-of-Agriculture/washi_roadmap" class="btn" role="button">{{< fa brands github >}} Code</a> ]{.listing-btn-group}
-```
-
 ### What I learned
 
-I wanted to learn Adobe Illustrator, so I made a bike map path of Madison, WI. I started off with using QGIS to get the streets. Then in Illustrator, I kind of traced over these roads. As I wanted to maintain the subway style, the rule was that all lines and polygons had to use 45 degree angles.
+I wanted to combine my interests of biking and maps, so I made this map of my hometown of Madison, WI. I started off with using QGIS to get the streets via a TIGER shapefile. Then in Illustrator, I traced over these roads. As I wanted to maintain the subway style, the rule was that all lines and polygons had to use 45 degree angles.

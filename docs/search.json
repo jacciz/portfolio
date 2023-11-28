@@ -72,28 +72,28 @@
   {
     "objectID": "cv.html",
     "href": "cv.html",
-    "title": "Jacci Ziebert",
+    "title": "Curriculum Vitae",
     "section": "",
     "text": "Wisconsin Department of Health Services\n\n\nIS Business Automation Specialist June 2023 - Present\n\n\n\n\n\nWisconsin Department of Transportation\n\n\nHighway Safety Data Analyst May 2019 - June 2023\n\nDeveloped an R package that makes data pulls and data analysis much easier inside an R environment, slashing time spent fulfilling data requests into a manner of minutes\nWrote a parameterized R Markdown to fully automate the creation of 72 crash data county profiles\nUsed an API to collect court case data then flattening JSON file, cleaning data, and running analysis\nDeveloped a Shiny dashboard to compare quarterly crash trends\nImproved relationship between WisDOT and UW by establishing a set of uniform queries used for data pulls and crash analysis\n\n\n\n\n\n\nMandli Communications\n\n\nData Processor Dec 2016 - May 2019\n\nAnalyze, classify, and process LiDAR data maintaining above average speed, occasionally perform quality control\n\n\n\n\n\n\nWisconsin Department of Transportation\n\n\nTraffic Forecaster (Part-time) Feb 2014 – June 2018\n\nCompleted statewide traffic forecast requests using travel demand models and regression analysis of historical counts\nProvided expertise on completed forecast requests to MPOs, DOT regions and consultants\nConducted research and learned VBA to develop a macro-enabled Excel worksheet, improving and streamlining the department’s method to forecast turning movement counts\n\n\n\n\n\n\nWisconsin Department of Transportation\n\n\nBicycle and Pedestrian Intern (Part-time) Mar 2015 – July 2015\n\nLearned ADA standards in order to digitize and assess statewide curb ramps and sidewalks in ArcMap\nLearned about bike/pedestrian safety and design and the benefits of complete streets through five day-long courses"
   },
   {
     "objectID": "cv.html#professional-experience",
     "href": "cv.html#professional-experience",
-    "title": "Jacci Ziebert",
+    "title": "Curriculum Vitae",
     "section": "",
     "text": "Wisconsin Department of Health Services\n\n\nIS Business Automation Specialist June 2023 - Present\n\n\n\n\n\nWisconsin Department of Transportation\n\n\nHighway Safety Data Analyst May 2019 - June 2023\n\nDeveloped an R package that makes data pulls and data analysis much easier inside an R environment, slashing time spent fulfilling data requests into a manner of minutes\nWrote a parameterized R Markdown to fully automate the creation of 72 crash data county profiles\nUsed an API to collect court case data then flattening JSON file, cleaning data, and running analysis\nDeveloped a Shiny dashboard to compare quarterly crash trends\nImproved relationship between WisDOT and UW by establishing a set of uniform queries used for data pulls and crash analysis\n\n\n\n\n\n\nMandli Communications\n\n\nData Processor Dec 2016 - May 2019\n\nAnalyze, classify, and process LiDAR data maintaining above average speed, occasionally perform quality control\n\n\n\n\n\n\nWisconsin Department of Transportation\n\n\nTraffic Forecaster (Part-time) Feb 2014 – June 2018\n\nCompleted statewide traffic forecast requests using travel demand models and regression analysis of historical counts\nProvided expertise on completed forecast requests to MPOs, DOT regions and consultants\nConducted research and learned VBA to develop a macro-enabled Excel worksheet, improving and streamlining the department’s method to forecast turning movement counts\n\n\n\n\n\n\nWisconsin Department of Transportation\n\n\nBicycle and Pedestrian Intern (Part-time) Mar 2015 – July 2015\n\nLearned ADA standards in order to digitize and assess statewide curb ramps and sidewalks in ArcMap\nLearned about bike/pedestrian safety and design and the benefits of complete streets through five day-long courses"
   },
   {
     "objectID": "cv.html#awards",
     "href": "cv.html#awards",
-    "title": "Jacci Ziebert",
+    "title": "Curriculum Vitae",
     "section": " Awards",
     "text": "Awards\n\n2022 Data Science Olympian: Collaborated with a team to compete in a Kaggle Challenge with Women in Big Data (WiBD)\nWisDOT Crash Dashboard won runner-up under Interactive Map category: 2021 Wisconsin Land Information Association map contest. View the project."
   },
   {
     "objectID": "cv.html#education",
     "href": "cv.html#education",
-    "title": "Jacci Ziebert",
+    "title": "Curriculum Vitae",
     "section": " Education",
     "text": "Education\n\n\n\n\n\nUniversity of Wisconsin - Madison\n\n\nMaster of Science 2012 - 2014\n\nUrban and Regional Planning\nCertificate in Transportation Management and Policy\n\n\n\n\n\n\nUniversity of Wisconsin - Oshkosh\n\n\nBachelors of Science 2006 - 2010\n\nGeography (GIS) and Urban Planning"
   },
@@ -102,14 +102,14 @@
     "href": "noncode_projects/bike_map.html",
     "title": "Subway-Style Bike Path Map of Madison, WI",
     "section": "",
-    "text": "What I learned\nI wanted to learn Adobe Illustrator, so I made a bike map path of Madison, WI. I started off with using QGIS to get the streets. Then in Illustrator, I kind of traced over these roads. As I wanted to maintain the subway style, the rule was that all lines and polygons had to use 45 degree angles."
+    "text": "### What I learned\nI wanted to combine my interests of biking and maps, so I made this map of my hometown of Madison, WI. I started off with using QGIS to get the streets via a TIGER shapefile. Then in Illustrator, I traced over these roads. As I wanted to maintain the subway style, the rule was that all lines and polygons had to use 45 degree angles."
   },
   {
     "objectID": "noncode_projects.html",
     "href": "noncode_projects.html",
     "title": "Non-Coding Projects",
     "section": "",
-    "text": "Subway-Style Bike Path Map of Madison, WI\n\n\n\nQGIS\n\n\nIllustrator\n\n\n\n\n\n\n\nNov 18, 2018\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMadison’s ‘Lost City’ - A Look Into the Failed 1920’s Lake Forest Development\n\n\n\nWriter\n\n\n\n\n\n\n\nJul 24, 2016\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Subway-Style Bike Path Map of Madison, WI\n\n\n\nQGIS\n\n\nAdobe Illustrator\n\n\n\n\n\n\n\nNov 18, 2018\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMadison’s ‘Lost City’ - A Look Into the Failed 1920’s Lake Forest Development\n\n\n\nWriter\n\n\n\n\n\n\n\nJul 24, 2016\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/crash_comparison.html",

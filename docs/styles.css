@@ -8,22 +8,27 @@ figcaption{
   font-style: italic;
 }
 
-p {
+p, .p {
   text-align: left;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .cv-date {
   float: right;
 }
 
-.h3 {
+h2, .h2{
+  font-size: calc(1.1rem + 0.48vw);
+}
+h3, .h3 {
   color: #2373b0;
+  font-size: calc(1.1rem + 0.24vw);
 }
 
-.h5 {
+h5, .h5 {
   color: #b07112;
   font-weight: 500;
+  font-size: 1.0rem;
 }
 
 img{

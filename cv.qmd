@@ -1,6 +1,6 @@
 ---
 pagetitle: "Jacci Ziebert | CV"
-title: ""
+title: "Curriculum Vitae"
 anchor-sections: false
 ---
 

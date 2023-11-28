@@ -16,6 +16,7 @@ execute:
 ---
 
 ![](/assets/img/png/BikeMap_V4_1_11x14-01.png){.img-center fig-alt="Subway style bike path map of madison, WI."}
+
 ### What I learned
 
 I wanted to combine my interests of biking and maps, so I made this map of my hometown of Madison, WI. I started off with using QGIS to get the streets via a TIGER shapefile. Then in Illustrator, I traced over these roads. As I wanted to maintain the subway style, the rule was that all lines and polygons had to use 45 degree angles.

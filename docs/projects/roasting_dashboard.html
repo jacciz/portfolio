@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jacci Ziebert">
 <meta name="dcterms.date" content="2021-08-04">
-<meta name="description" content="An ameateur coffee roaster, I made this dashboard to visualize my roast profiles.">
+<meta name="description" content="An ameateur coffee roaster, I made this dashboard to visualize my coffee roasts.">
 
 <title>Jacci Ziebert - Coffee Roasting Profiler</title>
 <style>
@@ -93,19 +93,24 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> <i class="bi bi-person-circle" role="img" aria-label="GitHub">
+    <a class="nav-link" href="../about.html"> <i class="bi bi-person-circle" role="img" aria-label="About">
 </i> 
 <span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../projects.html"> <i class="bi bi-tools" role="img" aria-label="Projects">
-</i> 
-<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../cv.html"> <i class="bi bi-briefcase" role="img" aria-label="CV">
 </i> 
 <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../projects.html"> <i class="bi bi-puzzle" role="img" aria-label="Projects">
+</i> 
+<span class="menu-text">Coding Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../noncode_projects.html"> <i class="bi bi-tools" role="img" aria-label="Non-Coding Projects">
+</i> 
+<span class="menu-text">Non-Coding Projects</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -142,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    An ameateur coffee roaster, I made this dashboard to visualize my roast profiles.
+    An ameateur coffee roaster, I made this dashboard to visualize my coffee roasts.
   </div>
 </div>
 
@@ -182,11 +187,12 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="listing-btn-group"><a href="https://jacciz.shinyapps.io/coffee_roasting/" class="btn" role="button"><i class="fa-solid fa-laptop" aria-label="laptop"></i> Dashboard</a> <a href="https://github.com/jacciz/coffee_roasting_profiles" class="btn" role="button"><i class="fa-brands fa-github" aria-label="github"></i> Code</a></span></p>
 <section id="what-i-learned" class="level3">
 <h3 class="anchored" data-anchor-id="what-i-learned">What I learned</h3>
-<p>The tricky part was adding the RoR (rate of return) curves (the blue and purple) onto the graph as this is calculated via an algorithm written in Python inside Artisan software. I found this piece of code and rewrote part of it so it would work for my app. Next I used the <code>reticulate</code> package so the app can read Python code.</p>
+<p>While I use Artisan, an open-source software used to record coffee roasts, I wanted an interactive chart to explore my roasts.</p>
+<p>The tricky part was adding the RoR (rate of return) curves (the blue and purple ines) onto the graph as this is calculated via an algorithm written in Python inside Artisan. I found this piece of code and rewrote part of it so it would work for my app. I used the <code>reticulate</code> package so the app can read Python code.</p>
 </section>
 <section id="highlighted-packages" class="level3">
 <h3 class="anchored" data-anchor-id="highlighted-packages">Highlighted packages</h3>
-<p>The dashboard uses <code>reticulate, formattable</code>, and <code>DT</code> under a <code>golem</code> framework.</p>
+<p>The dashboard uses <code>reticulate, formattable, plotly</code>, and <code>DT</code> under a <code>golem</code> framework.</p>
 
 
 </section>

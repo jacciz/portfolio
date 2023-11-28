@@ -7,10 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacci Ziebert">
-<meta name="dcterms.date" content="2021-01-04">
-<meta name="description" content="WisDOT uses Community Maps, a website that displays a map of crashes in near real-time. I wanted the user to have a visual of the data but with the same features and filters.">
+<meta name="dcterms.date" content="2016-07-24">
 
-<title>Jacci Ziebert - WisDOT Crash Comparison Dashboard</title>
+<title>Jacci Ziebert - Madison’s ‘Lost City’ - A Look Into the Failed 1920’s Lake Forest Development</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -91,19 +90,24 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> <i class="bi bi-person-circle" role="img" aria-label="GitHub">
+    <a class="nav-link" href="../about.html"> <i class="bi bi-person-circle" role="img" aria-label="About">
 </i> 
 <span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../projects.html"> <i class="bi bi-tools" role="img" aria-label="Projects">
-</i> 
-<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../cv.html"> <i class="bi bi-briefcase" role="img" aria-label="CV">
 </i> 
 <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../projects.html"> <i class="bi bi-puzzle" role="img" aria-label="Projects">
+</i> 
+<span class="menu-text">Coding Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../noncode_projects.html"> <i class="bi bi-tools" role="img" aria-label="Non-Coding Projects">
+</i> 
+<span class="menu-text">Non-Coding Projects</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -117,32 +121,19 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#what-i-learned" id="toc-what-i-learned" class="nav-link active" data-scroll-target="#what-i-learned">What I learned</a></li>
-  <li><a href="#highlighted-packages" id="toc-highlighted-packages" class="nav-link" data-scroll-target="#highlighted-packages">Highlighted packages</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">WisDOT Crash Statistics Dashboard</h1>
+<h1 class="title">Madison’s ‘Lost City’ - A Look Into the Failed 1920’s Lake Forest Development</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Shiny</div>
-    <div class="quarto-category">Golem</div>
+    <div class="quarto-category">Writer</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    WisDOT uses <a href="https://transportal.cee.wisc.edu/partners/community-maps/crash/">Community Maps</a>, a website that displays a map of crashes in near real-time. I wanted the user to have a visual of the data but with the same features and filters.
-  </div>
-</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Author</div>
@@ -153,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
     <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            WisDOT
+            None
           </p>
       </div>
     </div>
@@ -164,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 4, 2021</p>
+      <p class="date">July 24, 2016</p>
     </div>
   </div>
   
@@ -176,17 +167,57 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="..\assets/img/png/crash_dashboard.png" class="img-center img-fluid" alt="Screenshot of WisDOT Crash Dashboard."></p>
-<section id="what-i-learned" class="level3">
-<h3 class="anchored" data-anchor-id="what-i-learned">What I learned</h3>
-<p>Through performance testing via <code>shinyloadtest</code>, I found an enormous bottleneck through simply loading the data. As a solution, I created a SQLite database as the database is saved locally inside the package. While this dramitically improved performance, data was still being mapped on-the-fly. Ideally the data should be stored in a spatial database. This app also uses modules so server and ui are much cleaner while the code is easier to debug.</p>
-</section>
-<section id="highlighted-packages" class="level3">
-<h3 class="anchored" data-anchor-id="highlighted-packages">Highlighted packages</h3>
-<p><code>plotly, leaflet, leaflet.extras2</code> and <code>leafgl</code> under a <code>golem</code> framework.</p>
+<p>This article was originally published on <a href="https://imgur.com/gallery/8Ja2n">Reddit</a> in 2016 and was even featured in <a href="https://captimes.com/news/local/digging-up-evidence-of-madisons-lost-city-in-the-arboretum/article_c50aad1f-68e2-572f-832c-04a3cf057714.html">The Capital Times</a>.</p>
+<p><img src="..\assets/lostcity/Madison_1917.png" class="lc_img img-fluid"></p>
+<p>A map geek, a planning enthusiast and a sucker for the unknown, I decided to delve a little deeper into one of Madison’s greatest mysteries, the “Lost City.” You may be thinking, “Is it even real?” or “Why the heck are there paved paths in the Arboretum?” After scoping out online resources, a visit to the Wisconsin Historical Society, and an in-situ visit to the area, I want to share what I found.</p>
+<p>Let’s start with some context of planning. The industrial revolution brought an influx of people to flock to urban areas. By the late 1910s, it was the first time in human history that the country’s urban population outnumbered the rural population. This brought on the perception that cities were rifled with poor sanitation, terrible pollution, and overcrowding. Areas that were once used as public space or parks were now houses, businesses, and industries. People wanted to escape dirty, crowded cities, but did not want to live in farm country.</p>
+<p><img src="..\assets/lostcity/WashingtonDC_NationalMall.jpg" class="lc_img img-fluid"></p>
+<p>Starting in the 1890s and lasting til the 1920s, a new wave of planning cities emerged deemed the City Beautiful Movement. Led by developers, planners, and architects, the idea was that classic beauty and monumental grandeur of the city would inspire feelings of civic loyalty and moral rectitude. By incorporating civic centers, parks, and grand boulevards, city beautification would reduce crime, reduce density, and increase green space. While Madison was already established as being a pristine place to live, there were worries with what the city’s predicted continued growth will lead.</p>
+<p><img src="..\assets/lostcity/LakeForest_1920.png" class="lc_img img-fluid"></p>
+<p>Developer and president of the Lake Forest Company, Chandler B. Chapman attempted to hop on the bandwagon in taking one step further in beautifying Madison by building a residential paradise called Lake Forest. An 800-acre epic development with over 1,000 lots, Lake Forest would be an escape from city life with numerous parks, its own public transit, and a city center. The company promoted Lake Forest by calling it “by far the best planned city residential section in Wisconsin” and “the most beautiful, modern, healthful, and desirable dwelling spot in the Northeast.”</p>
+<p><img src="..\assets/lostcity/d.jpeg" class="lc_img img-fluid"></p>
+<p>This southeastern section of the development was started with many of the roads built along with a few houses.</p>
+<p><img src="..\assets/lostcity/e.jpeg" class="lc_img img-fluid"> Note: Block A is the Civic Center and Block B is St.&nbsp;Cyr Circle while Capitol Avenue intersects these two circles. <img src="..\assets/lostcity/f.jpeg" class="lc_img img-fluid"> <img src="..\assets/lostcity/g.png" class="lc_img img-fluid"></p>
+<p>The center of life for Lake Forest residents, the Civic Center was planned to have small shops and businesses lined around the circle. Separating land uses, such as commercial, industrial, and residential, was a new phenomenon in planning. The only building still standing today is the pumping station which, I believe, is still in use.</p>
+<p><img src="..\assets/lostcity/h.jpeg" class="lc_img img-fluid"></p>
+<p>A network of lagoons were proposed for two prominent reasons: to provide waterfront access to residents and to stabilize the marshy grounds.</p>
+<p><img src="..\assets/lostcity/i.jpeg" class="lc_img img-fluid"></p>
+<p>This was one grandeur development! To entice people in purchasing property, the company heavily advertised. Above is a 1920 advertisement placed in the Wisconsin State Journal. Additionally, a bimonthly newsletter called the “Lake Forester” that ran for 1.5 years from 1921-1922 was written to chronicle the progress of the development.</p>
+<p><img src="..\assets/lostcity/CapitalAve.png" class="lc_img img-fluid"></p>
+<p>In 1921, the Lake Forest Company broke grounds: roads were pored with concrete, dredging was being done and housing foundations were laid. This is Capital Avenue under construction. Planned to be 120 feet wide with sidewalks on each side with an unforgettable view of the Capital Building, the size would have been comparable to Washington Avenue today. Street cars were planned to run in the center, providing transportation to the downtown. You can see St.&nbsp;Mary’s Hospital to the slight left.</p>
+<p><img src="..\assets/lostcity/LakeForestHouse_1921.png" class="lc_img img-fluid"></p>
+<p>While at least five houses (some sources say 7 houses) were completed, none of them were ever occupied. EDIT: 10/8/2016 An Arboretum researcher says some of the houses are actually still standing and occupied.</p>
+<p><img src="..\assets/lostcity/Houses_1921.png" class="lc_img img-fluid"></p>
+<p>What happened next, nobody foresaw. A combination of problems led to the collapse and eventual decay of the development. Dredging proved insufficient: roads and foundations were sinking due to marshy soils. In 1920, only 61 lots were sold while the company’s financial planner went bankrupt. The Great Depression and World War II didn’t help either. Strapped for cash, the Lake Forest Company sold some of the land to the University of Wisconsin for arboretum purposes in the 1930s. Ultimately the development failed. This area today is the Lost City Forest in the Arboretum, perhaps a different kind of paradise.</p>
+<p><img src="..\assets/lostcity/IndianEffigies.png" class="lc_img img-fluid"></p>
+<p>Yup, there’s actually Indian effigy mounds here! <img src="..\assets/lostcity/o.jpeg" class="lc_img img-fluid"> This 1941 plat map shows two effigy mounds located north of Lake Forest. Furthermore, a hand-drawn 1915 map of effigy mounds I found on Arboretum’s online map shows a group of four mounds here, one looking like a panther. Today this is now a residential area around Marshall Parkway. It’s private property and I wonder if the mounds still exist,</p>
+<p>The mound site at St.&nbsp;Cyr Circle the article mentions, I found no records of a panther mound here. The 1915 map shows two long narrow mounds at this location while another map indicates that no mounds exist. However, there is a large group of at least 8 mounds located inside Wingra Woods, just west of Lake Forest.</p>
+<p><img src="..\assets/lostcity/Dane761937.png" class="lc_img img-fluid"></p>
+<p>A 1937 aerial photo of the area shows the remains of this epic development. As you can seen, only some of the roads were completed. Today the roads east of the former Civic Center is completely developed with houses and apartments, while the other roads remain crumbling into history.</p>
+<p><img src="..\assets/lostcity/AerialPhoto.png" class="lc_img img-fluid"></p>
+<p>Today, not much remains. A walk into Lost City Forest you find mysteriously paved paths nearly a century old. If you look at the Imagery basemap at ArcGIS.com you could actually see outlines of these roads.</p>
+<p><img src="..\assets/lostcity/IMG_20160724_135221.jpg" class="lc_img img-fluid"> My findings cannot be complete without a stroll through the woods!</p>
+<p><img src="..\assets/lostcity/OldCapitolAve.jpg" class="lc_img img-fluid"></p>
+<p><img src="..\assets/lostcity/OldCan.jpg" class="lc_img img-fluid"></p>
+<p>I bet some of you are tempted to look for the remains. The Arboretum hosts a once-a-year Lost City tour, typically at the end of October. I went to the presentation and I highly recommend it.</p>
+<p>The Arboretum advises hikers to not wonder off the trails as to protect the environment. I don’t want to encourage nor discourage people from doing so, just wanted to share a piece of this fascinating mystery.</p>
+<p>If you’re curious, a few adventurers sought to find the Lost City. Check ’em out here:</p>
+<ul>
+<li>https://badgerherald.com/artsetc/2015/09/14/madisons-lost-city-inside-the-forgotten-remains-of-lake-forest/</li>
+<li>http://never365.blogspot.com/2013/11/day-177-finding-lost-city.html</li>
+<li>https://www.youtube.com/watch?v=GpYXDLR4_f0&amp;feature=youtu.be</li>
+</ul>
+<p>Hope you enjoyed this!</p>
+<p>Sources:</p>
+<ul>
+<li>ArcGIS Online</li>
+<li>Lake Forester, 1920 - 1921 found at University of Wisconsin Collection</li>
+<li>Madison:the illustrated sesquicentennial history Vol. 1 1856 - 1931</li>
+<li>Wisconsin Historical Aerial Image Finder</li>
+<li>Wisconsin Historical Society</li>
+</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

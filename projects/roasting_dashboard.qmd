@@ -1,6 +1,6 @@
 ---
 title: "Coffee Roasting Profiler"
-description: "An ameateur coffee roaster, I made this dashboard to visualize my roast profiles."
+description: "An ameateur coffee roaster, I made this dashboard to visualize my coffee roasts."
 author: 
   - name: Jacci Ziebert
     affiliation: None
@@ -22,8 +22,10 @@ execute:
 
 ### What I learned
 
-The tricky part was adding the RoR (rate of return) curves (the blue and purple) onto the graph as this is calculated via an algorithm written in Python inside Artisan software. I found this piece of code and rewrote part of it so it would work for my app. Next I used the `reticulate` package so the app can read Python code.
+While I use Artisan, an open-source software used to record coffee roasts, I wanted an interactive chart to explore my roasts.
+
+The tricky part was adding the RoR (rate of return) curves (the blue and purple ines) onto the graph as this is calculated via an algorithm written in Python inside Artisan. I found this piece of code and rewrote part of it so it would work for my app. I used the `reticulate` package so the app can read Python code.
 
 ### Highlighted packages
 
-The dashboard uses `reticulate, formattable`, and `DT` under a `golem` framework.
+The dashboard uses `reticulate, formattable, plotly`, and `DT` under a `golem` framework.

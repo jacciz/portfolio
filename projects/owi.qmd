@@ -1,6 +1,6 @@
 ---
 title: "Analysis of OWI ratios"
-description: "Find risk ratios of OWI (operating while intoxicated) offenders from across multiple datasets."
+description: "This research project involved calculating risk ratios of OWI (operating while intoxicated) offenders from across multiple datasets."
 author: 
   - name: Jacci Ziebert
     affiliation: WisDOT
@@ -23,7 +23,7 @@ execute:
 
 ### What I learned
 
-This project involved the compilation of 5 data sets to calculate OWI (operating while intoxicated) ratios broken down by age group, race and sex. In order to combine these datasets, I had to rename columns and recode variables so datasets can be joined. The entire analysis I wrote functions to allow for any combo of age, sex, and race (the variables the study involved).
+Working with two researchers from the University of Wisconsin, this project involved the compilation of 5 data sets to calculate OWI (operating while intoxicated) ratios broken down by age group, race and sex. In order to combine these datasets, I had to rename columns and recode variables so datasets can be joined. The entire analysis I wrote functions to allow for any combo of age, sex, and race (the variables the study involved).
 
 ### Highlighted packages
 

@@ -117,6 +117,6 @@ University of Wisconsin - Oshkosh
 :::
 :::
 
-[Bachelor's of Science]{.h5} [2006 - 2010]{.cv-date}
+[Bachelors of Science]{.h5} [2006 - 2010]{.cv-date}
 
 -   Geography (GIS) and Urban Planning

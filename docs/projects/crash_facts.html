@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jacci Ziebert">
 <meta name="dcterms.date" content="2022-08-01">
-<meta name="description" content="This is a crash facts book done in a web format. I was excited to use the newly released Quarto by Posit. The book provides many tables and charts of crash data. Past versions were done in Excel/Publisher exported to a 100+ page PDF; see here. This is now fully automated and a book can be created in a matter of minutes as opposed to weeks.">
+<meta name="description" content="Originally a 100+ page PDF book, I made it into an online crash facts book using Quarto. The book provides tables and charts of aggregated crash data. Past versions were done in Excel/Publishere. This project now automates the creation of this book. A new book can be created within a day as opposed to many weeks.">
 
 <title>Jacci Ziebert - Wisconsin Traffic Crash Facts</title>
 <style>
@@ -93,19 +93,24 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> <i class="bi bi-person-circle" role="img" aria-label="GitHub">
+    <a class="nav-link" href="../about.html"> <i class="bi bi-person-circle" role="img" aria-label="About">
 </i> 
 <span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../projects.html"> <i class="bi bi-tools" role="img" aria-label="Projects">
-</i> 
-<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../cv.html"> <i class="bi bi-briefcase" role="img" aria-label="CV">
 </i> 
 <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../projects.html"> <i class="bi bi-puzzle" role="img" aria-label="Projects">
+</i> 
+<span class="menu-text">Coding Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../noncode_projects.html"> <i class="bi bi-tools" role="img" aria-label="Non-Coding Projects">
+</i> 
+<span class="menu-text">Non-Coding Projects</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -141,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    This is a crash facts book done in a web format. I was excited to use the newly released Quarto by Posit. The book provides many tables and charts of crash data. Past versions were done in Excel/Publisher exported to a 100+ page PDF; <a href="https://wisconsindot.gov/Documents/safety/education/crash-data/2013/wtcf.pdf">see here</a>. This is now fully automated and a book can be created in a matter of minutes as opposed to weeks.
+    Originally a 100+ page PDF book, I made it into an online crash facts book using Quarto. The book provides tables and charts of aggregated crash data. Past versions were done in <a href="https://wisconsindot.gov/Documents/safety/education/crash-data/2013/wtcf.pdf">Excel/Publishere</a>. This project now automates the creation of this book. A new book can be created within a day as opposed to many weeks.
   </div>
 </div>
 
@@ -177,10 +182,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="..\assets/img/png/crashfacts.png" class="img-center img-fluid" alt="Screenshot of WisDOT Crash Facts."> # <span class="listing-btn-group"><a href="https://www.content.dot.wi.gov/content/crashfacts/2021/" class="btn" role="button"><i class="fa-solid fa-laptop" aria-label="laptop"></i> 2021 Wisconsin Crash Facts</a></span></p>
+<p><img src="..\assets/img/png/crashfacts.png" class="img-center img-fluid" alt="Screenshot of WisDOT Crash Facts."> <span class="listing-btn-group"><a href="https://www.content.dot.wi.gov/content/crashfacts/2021/" class="btn" role="button"><i class="fa-solid fa-laptop" aria-label="laptop"></i> 2021 Wisconsin Crash Facts</a></span></p>
 <section id="what-i-learned" class="level3">
 <h3 class="anchored" data-anchor-id="what-i-learned">What I learned</h3>
-<p>I learned YAML and Quarto! I spent the most time writing functions to standardize the table format, render charts, and to more easily aggregate the data.</p>
+<p>This project gave me an excuse to learn Quarto! I spent most time writing functions to standardize the table format, to render ggplot charts, and to aggregate the data. Then it was just a matter of creating each chapter using these functions.</p>
 </section>
 <section id="highlighted-packages" class="level3">
 <h3 class="anchored" data-anchor-id="highlighted-packages">Highlighted packages</h3>

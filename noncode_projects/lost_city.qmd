@@ -15,7 +15,7 @@ execute:
   echo: false
 ---
 
-I wrote this article in 2016 and it was originally published on [Imgur](https://imgur.com/gallery/8Ja2n).
+This article was originally published on [Reddit](https://imgur.com/gallery/8Ja2n) in 2016 and was even featured in [The Capital Times](https://captimes.com/news/local/digging-up-evidence-of-madisons-lost-city-in-the-arboretum/article_c50aad1f-68e2-572f-832c-04a3cf057714.html).
 
 ![](/assets/lostcity/Madison_1917.png){.lc_img}
 

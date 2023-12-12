@@ -2,12 +2,13 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/coffee.html",
       "/projects/county_profiles.html",
-      "/projects/json_api.html",
       "/projects/crash_comparison.html",
       "/projects/crash_facts.html",
       "/projects/owi.html",
       "/projects/roasting_dashboard.html",
+      "/projects/json_api.html",
       "/projects/crash_dashboard.html",
       "/projects/crash_package.html"
     ]

@@ -8,7 +8,7 @@ date: "2016-7-24"
 image: /assets/lostcity/Dane761937.png
 image-alt: "Aerial photo of the lost city from 1937"
 categories:
-  - Writer
+  - Author
 fig-align: center
 execute: 
   freeze: true
@@ -21,7 +21,7 @@ This article was originally published on [Reddit](https://imgur.com/gallery/8Ja2
 
 
 A map geek, a planning enthusiast and a sucker for the unknown, I decided to delve a little deeper into one of Madison's greatest mysteries, the "Lost City." You may be thinking, "Is it even real?" or "Why the heck are there paved paths in the Arboretum?" After scoping out online resources, a visit to the Wisconsin Historical Society, and an in-situ visit to the area, I want to share what I found.
-
+<br><br>
 Let's start with some context of planning. The industrial revolution brought an influx of people to flock to urban areas. By the late 1910s, it was the first time in human history that the country's urban population outnumbered the rural population. This brought on the perception that cities were rifled with poor sanitation, terrible pollution, and overcrowding. Areas that were once used as public space or parks were now houses, businesses, and industries. People wanted to escape dirty, crowded cities, but did not want to live in farm country.
 
 ![](/assets/lostcity/WashingtonDC_NationalMall.jpg){.lc_img}
@@ -38,8 +38,18 @@ This southeastern section of the development was started with many of the roads 
 
 ![](/assets/lostcity/e.jpeg){.lc_img}
 Note: Block A is the Civic Center and Block B is St. Cyr Circle while Capitol Avenue intersects these two circles.
+
+:::: {.columns}
+::: {.column width="48%"}
 ![](/assets/lostcity/f.jpeg){.lc_img}
+:::
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
 ![](/assets/lostcity/g.png){.lc_img}
+:::
+::::
 
 The center of life for Lake Forest residents, the Civic Center was planned to have small shops and businesses lined around the circle. Separating land uses, such as commercial, industrial, and residential, was a new phenomenon in planning. The only building still standing today is the pumping station which, I believe, is still in use.
 
@@ -67,8 +77,8 @@ What happened next, nobody foresaw. A combination of problems led to the collaps
 
 Yup, there's actually Indian effigy mounds here!
 ![](/assets/lostcity/o.jpeg){.lc_img}
-This 1941 plat map shows two effigy mounds located north of Lake Forest. Furthermore, a hand-drawn 1915 map of effigy mounds I found on Arboretum's online map shows a group of four mounds here, one looking like a panther. Today this is now a residential area around Marshall Parkway. It's private property and I wonder if the mounds still exist,
-
+This 1941 plat map shows two effigy mounds located north of Lake Forest. Furthermore, a hand-drawn 1915 map of effigy mounds I found on Arboretum's online map shows a group of four mounds here, one looking like a panther. Today this is now a residential area around Marshall Parkway. It's private property and I wonder if the mounds still exist.
+<br><br>
 The mound site at St. Cyr Circle the article mentions, I found no records of a panther mound here. The 1915 map shows two long narrow mounds at this location while another map indicates that no mounds exist. However, there is a large group of at least 8 mounds located inside Wingra Woods, just west of Lake Forest.
 
 ![](/assets/lostcity/Dane761937.png){.lc_img}
@@ -79,15 +89,27 @@ A 1937 aerial photo of the area shows the remains of this epic development. As y
 
 Today, not much remains. A walk into Lost City Forest you find mysteriously paved paths nearly a century old. If you look at the Imagery basemap at ArcGIS.com you could actually see outlines of these roads.
 
-![](/assets/lostcity/IMG_20160724_135221.jpg){.lc_img}
+![](/assets/lostcity/OldCapitolAve.jpg){.lc_img}
 My findings cannot be complete without a stroll through the woods!
 
-![](/assets/lostcity/OldCapitolAve.jpg){.lc_img}
+:::: {.columns}
+::: {.column width="48%"}
 
-![](/assets/lostcity/OldCan.jpg){.lc_img}
+![](/assets/lostcity/p.jpeg){.lc_img width="100%"}
+
+:::
+::: {.column width="3%"}
+
+:::
+::: {.column width="48%"}
+
+![](/assets/lostcity/OldCan.jpg){.lc_img width="100%"}
+:::
+::::
+
 
 I bet some of you are tempted to look for the remains. The Arboretum hosts a once-a-year Lost City tour, typically at the end of October. I went to the presentation and I highly recommend it.
-
+<br><br>
 The Arboretum advises hikers to not wonder off the trails as to protect the environment. I don't want to encourage nor discourage people from doing so, just wanted to share a piece of this fascinating mystery.
 
 If you're curious, a few adventurers sought to find the Lost City. Check 'em out here:

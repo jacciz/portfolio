@@ -10,7 +10,7 @@ figcaption{
 
 p, .p {
   text-align: left;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.8rem;
 }
 
 .cv-date {
@@ -19,6 +19,7 @@ p, .p {
 
 h2, .h2{
   font-size: calc(1.1rem + 0.48vw);
+  color: #b07112;
 }
 h3, .h3 {
   color: #2373b0;
@@ -42,4 +43,60 @@ img{
   display: block;
   margin: auto;
   width: 400px;
+}
+
+#parent{
+    padding: 0;
+}
+#child-left{
+    float: left;
+    width: 50%;
+}
+#child-right{
+    float: right;
+    width: 50%;
+}
+
+figcaption, .panel-caption, .figure-caption, .subfigure-caption, .table-caption, figcaption.quarto-float-caption, caption{
+  color:#2373b0 ;
+  font-size: .9rem;
+  text-align: left;
+  font-style: italic;
+}
+
+.wc_cap{
+  font-style: italic;
+  color:#2373b0 ;
+  font-size: .9rem;
+  text-align: left;
+}
+
+.coffeea{
+  color: #E41A1C;
+  font-weight: 600;
+}
+.coffeeb{
+  color: #377EB8;
+  font-weight: 600;
+}
+
+.coffeec{
+  color: #4DAF4A;
+  font-weight: 600;
+}
+
+.coffeed{
+  color: #984EA3;
+  font-weight: 600;
+}
+.coffeeother{
+  color: #808080;
+  font-weight: 600;
+}
+
+.centerimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

@@ -396,7 +396,6 @@ bc_acid_test = t.test(df[, coffee_c_acidity], df[, coffee_b_acidity], "greater")
 ```
 
 ```{r}
-#| label: tbl-ttest
 #| eval: false
 data.frame(
   "H0" = c("Coffee A", "Coffee C"),

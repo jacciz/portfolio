@@ -6,6 +6,21 @@ anchor-sections: false
 
 ## {{< fa briefcase >}} Professional Experience
 
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: cv_img
+![](/assets/img/GRC_logo_horiz_2024.png){fig-alt="Government Resource Center logo"}
+:::
+
+::: h3
+Government Resource Center at The Ohio State University
+:::
+:::
+
+[Shiny Web App Developer]{.h5} [August 2024-Present]{.cv-date}
+
+-   Develop Shiny web apps
+
 ::: {.d-inline-flex style="align-items:baseline"}
 ::: cv_img
 ![](/assets/img/dhs.png){fig-alt="Wisconsin Department of Health Services logo"}
@@ -16,7 +31,7 @@ Wisconsin Department of Health Services
 :::
 :::
 
-[IS Business Automation Specialist]{.h5} [June 2023 - Present]{.cv-date}
+[IS Business Automation Specialist]{.h5} [June 2023 - August 2024]{.cv-date}
 
 -   Automated DHS’s org charts for 7,000+ employees, saving 60 hours annually
 -   Serve as liaison for remote work policy by determining which employees meet criteria for remote work through combining

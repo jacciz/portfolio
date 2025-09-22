@@ -2,6 +2,7 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/clean_code.html",
       "/projects/coffee.html",
       "/projects/county_profiles.html",
       "/projects/crash_comparison.html",

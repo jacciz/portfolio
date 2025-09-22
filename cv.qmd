@@ -19,7 +19,8 @@ Government Resource Center at The Ohio State University
 
 [Shiny Web App Developer]{.h5} [August 2024-Present]{.cv-date}
 
--   Develop Shiny web apps
+-   Develop Shiny web apps using {golem} framework
+-   Develop R packages by refactoring and documenting existing code
 
 ::: {.d-inline-flex style="align-items:baseline"}
 ::: cv_img

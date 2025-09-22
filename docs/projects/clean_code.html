@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jacci Ziebert">
+<meta name="dcterms.date" content="2025-09-21">
+<meta name="description" content="A practical guide to writing clean, maintainable R code—focused on clarity, consistency, and simplicity. These principles help teams debug faster, test smarter, and build code that lasts.">
 
-<title>Jacci Ziebert | CV – Jacci Ziebert</title>
+<title>Readable, Reliable, Reusable: A Guide to Clean R Code – Jacci Ziebert</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/img/favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3f6a672b27f8834479c99fadd60a554c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/img/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3f6a672b27f8834479c99fadd60a554c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -80,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Jacci Ziebert</span>
     </a>
   </div>
@@ -91,22 +94,22 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-person-circle" role="img" aria-label="About">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-person-circle" role="img" aria-label="About">
 </i> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> <i class="bi bi-briefcase" role="img" aria-label="CV">
+    <a class="nav-link" href="../cv.html"> <i class="bi bi-briefcase" role="img" aria-label="CV">
 </i> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> <i class="bi bi-puzzle" role="img" aria-label="Projects">
+    <a class="nav-link" href="../projects.html"> <i class="bi bi-puzzle" role="img" aria-label="Projects">
 </i> 
 <span class="menu-text">Coding Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./noncode_projects.html"> <i class="bi bi-tools" role="img" aria-label="Non-Coding Projects">
+    <a class="nav-link" href="../noncode_projects.html"> <i class="bi bi-tools" role="img" aria-label="Non-Coding Projects">
 </i> 
 <span class="menu-text">Non-Coding Projects</span></a>
   </li>  
@@ -121,30 +124,49 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#professional-experience" id="toc-professional-experience" class="nav-link active" data-scroll-target="#professional-experience"><i class="fa-solid fa-briefcase" aria-label="briefcase"></i> Professional Experience</a></li>
-  <li><a href="#awards" id="toc-awards" class="nav-link" data-scroll-target="#awards"><i class="fa-solid fa-award" aria-label="award"></i> Awards</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education"><i class="fa-solid fa-graduation-cap" aria-label="graduation-cap"></i> Education</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Curriculum Vitae</h1>
+<h1 class="title">Readable, Reliable, Reusable: A Guide to Clean R Code</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Author</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    A practical guide to writing clean, maintainable R code—focused on clarity, consistency, and simplicity. These principles help teams debug faster, test smarter, and build code that lasts.
+  </div>
 </div>
 
-
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Jacci Ziebert </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            None
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 21, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -154,132 +176,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="professional-experience" class="level2">
-<h2 data-anchor-id="professional-experience"><i class="fa-solid fa-briefcase" aria-label="briefcase"></i> Professional Experience</h2>
-<div class="d-inline-flex" style="align-items:baseline">
-<div class="cv_img">
-<p><img src=".\assets/img/GRC_logo_horiz_2024.png" class="img-fluid" alt="Government Resource Center logo"></p>
-</div>
-<div class="h3">
-<p>Government Resource Center at The Ohio State University</p>
-</div>
-</div>
-<p><span class="h5">Shiny Web App Developer</span> <span class="cv-date">August 2024-Present</span></p>
-<ul>
-<li>Develop Shiny web apps using {golem} framework</li>
-<li>Develop R packages by refactoring and documenting existing code</li>
-</ul>
-<div class="d-inline-flex" style="align-items:baseline">
-<div class="cv_img">
-<p><img src=".\assets/img/dhs.png" class="img-fluid" alt="Wisconsin Department of Health Services logo"></p>
-</div>
-<div class="h3">
-<p>Wisconsin Department of Health Services</p>
-</div>
-</div>
-<p><span class="h5">IS Business Automation Specialist</span> <span class="cv-date">June 2023 - August 2024</span></p>
-<ul>
-<li>Automated DHS’s org charts for 7,000+ employees, saving 60 hours annually</li>
-<li>Serve as liaison for remote work policy by determining which employees meet criteria for remote work through combining multiple unclean data sources</li>
-</ul>
-<div class="d-inline-flex" style="align-items:baseline">
-<div class="cv_img">
-<p><img src=".\assets/img/dot.png" class="img-fluid" alt="Wisconsin Department of Transportation logo"></p>
-</div>
-<div class="h3">
-<p>Wisconsin Department of Transportation</p>
-</div>
-</div>
-<p><span class="h5">Highway Safety Data Analyst</span> <span class="cv-date">May 2019 - June 2023</span></p>
-<ul>
-<li><p>Developed an R package that makes data pulls and data analysis much easier inside an R environment, slashing time spent fulfilling data requests into a matter of minutes</p></li>
-<li><p>Wrote a parameterized R Markdown to fully automate the creation of 72 <a href="https://transportal.cee.wisc.edu/partners/community-maps/tsc_resources/CM%20profile%20files/2022/Dane_2022.html">crash data county profiles</a></p></li>
-<li><p>Wrote code to call an API to collect extensive court case data then flattening JSON file, cleaning data, and running analysis</p></li>
-<li><p>Learned Shiny to develop a Crash Dashboard with multi-selection capabilities, interactive charts, and a dynamic map</p></li>
-<li><p>Developed a Shiny dashboard to compare <a href="communitymaps.wi.gov/crash/public/Dashboard/">quarterly crash trends</a></p></li>
-<li><p>Improved relationship between WisDOT and UW by establishing a set of uniform queries used for data pulls and crash analysis</p></li>
-</ul>
-<div class="d-inline-flex" style="align-items:baseline">
-<div class="cv_img">
-<p><img src=".\assets/img/mandli.png" class="img-fluid" alt="Mandli Communications logo"></p>
-</div>
-<div class="h3">
-<p>Mandli Communications</p>
-</div>
-</div>
-<p><span class="h5">Data Processor</span> <span class="cv-date">Dec 2016 - May 2019</span></p>
-<ul>
-<li>Analyze, classify, and process LiDAR data maintaining above average speed, occasionally perform quality control</li>
-</ul>
-<div class="d-inline-flex" style="align-items:baseline">
-<div class="cv_img">
-<p><img src=".\assets/img/dot.png" class="img-fluid" alt="Wisconsin Department of Transportation logo"></p>
-</div>
-<div class="h3">
-<p>Wisconsin Department of Transportation</p>
-</div>
-</div>
-<p><span class="h5">Traffic Forecaster (Part-time)</span> <span class="cv-date">Feb 2014 – June 2018</span></p>
-<ul>
-<li>Completed statewide traffic forecast requests using travel demand models and regression analysis of historical counts</li>
-<li>Provided expertise on completed forecast requests to MPOs, DOT regions and consultants</li>
-<li>Conducted research and learned VBA to develop a macro-enabled Excel worksheet, improving and streamlining the department’s method to forecast turning movement counts</li>
-</ul>
-<div class="d-inline-flex" style="align-items:baseline">
-<div class="cv_img">
-<p><img src=".\assets/img/dot.png" class="img-fluid" alt="Wisconsin Department of Transportation logo"></p>
-</div>
-<div class="h3">
-<p>Wisconsin Department of Transportation</p>
-</div>
-</div>
-<p><span class="h5">Bicycle and Pedestrian Intern (Part-time)</span> <span class="cv-date">Mar 2015 – July 2015</span></p>
-<ul>
-<li>Learned ADA standards in order to digitize and assess statewide curb ramps and sidewalks in ArcMap</li>
-<li>Learned about bike/pedestrian safety and design and the benefits of complete streets through five day-long courses</li>
-</ul>
-</section>
-<section id="awards" class="level2">
-<h2 data-anchor-id="awards"><i class="fa-solid fa-award" aria-label="award"></i> Awards</h2>
-<ul>
-<li><strong>2022 Data Science Olympian:</strong> Collaborated with a team to compete in a <strong>Kaggle Challenge</strong> with Women in Big Data (WiBD)</li>
-<li><strong>WisDOT Crash Dashboard</strong> won runner-up under <strong>Interactive Map category:</strong> 2021 Wisconsin Land Information Association map contest. View the <a href=".\projects/crash_dashboard.html">project</a>.</li>
-</ul>
-</section>
-<section id="education" class="level2">
-<h2 data-anchor-id="education"><i class="fa-solid fa-graduation-cap" aria-label="graduation-cap"></i> Education</h2>
-<div class="d-inline-flex" style="align-items:baseline">
-<div class="cv_img">
-<p><img src=".\assets/img/uw.png" class="img-fluid" alt="University of Wisconsin - Madison logo"></p>
-</div>
-<div class="h3">
-<p>University of Wisconsin - Madison</p>
-</div>
-</div>
-<p><span class="h5">Master of Science</span> <span class="cv-date">2012 - 2014</span></p>
-<ul>
-<li>Urban and Regional Planning</li>
-<li>Certificate in Transportation Management and Policy</li>
-</ul>
-<div class="d-inline-flex" style="align-items:baseline">
-<div class="cv_img">
-<p><img src=".\assets/img/uwo.png" class="img-fluid" alt="University of Wisconsin - Oshkosh logo"></p>
-</div>
-<div class="h3">
-<p>University of Wisconsin - Oshkosh</p>
-</div>
-</div>
-<p><span class="h5">Bachelors of Science</span> <span class="cv-date">2006 - 2010</span></p>
-<ul>
-<li>Geography (GIS) and Urban Planning</li>
-</ul>
+<p>In Process!</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

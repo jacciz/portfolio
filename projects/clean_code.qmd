@@ -1,0 +1,24 @@
+---
+title: "Readable, Reliable, Reusable: A Guide to Clean R Code"
+description: "A practical guide to writing clean, maintainable R code—focused on clarity, consistency, and simplicity. These principles help teams debug faster, test smarter, and build code that lasts."
+author: 
+  - name: Jacci Ziebert
+    affiliation: None
+date: "2025-09-21"
+image: /assets/img/png/r_with_mop.png
+#image-alt: "Screenshot of WisDOT Crash Dashboard."
+fig-cap-location: bottom
+tbl-cap-location: top
+categories:
+  - Author
+execute: 
+  freeze: true
+  echo: false
+  warning: false
+format:
+  html:
+    toc: true
+    css: styles.css
+---
+
+In Process!

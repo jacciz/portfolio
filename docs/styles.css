@@ -26,10 +26,16 @@ h3, .h3 {
   font-size: calc(1.1rem + 0.24vw);
 }
 
-h5, .h5 {
+h4, .h4 {
   color: #b07112;
   font-weight: 500;
   font-size: 1.0rem;
+}
+
+h5, .h5 {
+  color: #b07112;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 img{

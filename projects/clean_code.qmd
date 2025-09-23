@@ -29,11 +29,11 @@ source(here::here("R", "box_helpers.R"))
 
 Clean code is code that can be easily understood—by everyone on the team, and by *future you*. It’s readable, maintainable, easier to debug, and scalable. But writing clean code isn’t automatic—it’s a skill that improves with practice, reflection, and shared standards.
 
-I’ll share practical tips and examples for writing clean R code. Many of these ideas are inspired by Robert C. Martin—aka “Uncle Bob” in his book *Clean Code* and adapted to fit the patterns and challenges of R programming. I’ll focus on three key areas: naming rules, function rules, and commenting practices. These aren’t just stylistic preferences—they’re tools for building code that lasts.
+I’ll share practical tips and examples for writing clean R code. Many of these ideas are inspired by Robert C. Martin—aka “Uncle Bob” in his book *Clean Code* and adapted to fit the patterns and challenges of R programming. I’ll focus on three key areas: naming practices, function practices, and commenting practices. These aren’t just stylistic preferences—they’re tools for building code that lasts.
 
 ------------------------------------------------------------------------
 
-## Naming Rules
+## Naming Practices
 
 ### Use Meaningful Names
 
@@ -128,7 +128,7 @@ MainStAnnualCount = 12081500
 MainStAADT = MainStAnnualCount / daysPerYear')
 ```
 
-## Function Rules
+## Function Practices
 
 ### Do One Thing
 

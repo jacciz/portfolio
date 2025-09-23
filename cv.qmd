@@ -17,7 +17,7 @@ Government Resource Center at The Ohio State University
 :::
 :::
 
-[Shiny Web App Developer]{.h5} [August 2024-Present]{.cv-date}
+[R/Shiny Developer]{.h4} [August 2024 - Present]{.cv-date}
 
 -   Develop Shiny web apps using {golem} framework
 -   Develop R packages by refactoring and documenting existing code
@@ -32,7 +32,7 @@ Wisconsin Department of Health Services
 :::
 :::
 
-[IS Business Automation Specialist]{.h5} [June 2023 - August 2024]{.cv-date}
+[IS Business Automation Specialist]{.h4} [June 2023 - August 2024]{.cv-date}
 
 -   Automated DHS’s org charts for 7,000+ employees, saving 60 hours annually
 -   Serve as liaison for remote work policy by determining which employees meet criteria for remote work through combining
@@ -48,7 +48,7 @@ Wisconsin Department of Transportation
 :::
 :::
 
-[Highway Safety Data Analyst]{.h5} [May 2019 - June 2023]{.cv-date}
+[Highway Safety Data Analyst]{.h4} [May 2019 - June 2023]{.cv-date}
 
 -   Developed an R package that makes data pulls and data analysis much easier inside an R environment, slashing time spent fulfilling data requests into a matter of minutes
 
@@ -72,7 +72,7 @@ Mandli Communications
 :::
 :::
 
-[Data Processor]{.h5} [Dec 2016 - May 2019]{.cv-date}
+[Data Processor]{.h4} [Dec 2016 - May 2019]{.cv-date}
 
 -   Analyze, classify, and process LiDAR data maintaining above average speed, occasionally perform quality control
 
@@ -86,7 +86,7 @@ Wisconsin Department of Transportation
 :::
 :::
 
-[Traffic Forecaster (Part-time)]{.h5} [Feb 2014 -- June 2018]{.cv-date}
+[Traffic Forecaster (Part-time)]{.h4} [Feb 2014 -- June 2018]{.cv-date}
 
 -   Completed statewide traffic forecast requests using travel demand models and regression analysis of historical counts
 -   Provided expertise on completed forecast requests to MPOs, DOT regions and consultants
@@ -102,7 +102,7 @@ Wisconsin Department of Transportation
 :::
 :::
 
-[Bicycle and Pedestrian Intern (Part-time)]{.h5} [Mar 2015 -- July 2015]{.cv-date}
+[Bicycle and Pedestrian Intern (Part-time)]{.h4} [Mar 2015 -- July 2015]{.cv-date}
 
 -   Learned ADA standards in order to digitize and assess statewide curb ramps and sidewalks in ArcMap
 -   Learned about bike/pedestrian safety and design and the benefits of complete streets through five day-long courses
@@ -124,7 +124,7 @@ University of Wisconsin - Madison
 :::
 :::
 
-[Master of Science]{.h5} [2012 - 2014]{.cv-date}
+[Master of Science]{.h4} [2012 - 2014]{.cv-date}
 
 -   Urban and Regional Planning
 -   Certificate in Transportation Management and Policy
@@ -139,6 +139,6 @@ University of Wisconsin - Oshkosh
 :::
 :::
 
-[Bachelors of Science]{.h5} [2006 - 2010]{.cv-date}
+[Bachelors of Science]{.h4} [2006 - 2010]{.cv-date}
 
 -   Geography (GIS) and Urban Planning

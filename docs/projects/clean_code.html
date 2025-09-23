@@ -165,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
-  <li><a href="#naming-rules" id="toc-naming-rules" class="nav-link" data-scroll-target="#naming-rules">Naming Rules</a>
+  <li><a href="#naming-practices" id="toc-naming-practices" class="nav-link" data-scroll-target="#naming-practices">Naming Practices</a>
   <ul class="collapse">
   <li><a href="#use-meaningful-names" id="toc-use-meaningful-names" class="nav-link" data-scroll-target="#use-meaningful-names">Use Meaningful Names</a></li>
   <li><a href="#naming-conventions" id="toc-naming-conventions" class="nav-link" data-scroll-target="#naming-conventions">Naming Conventions</a></li>
@@ -175,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#use-searchable-names" id="toc-use-searchable-names" class="nav-link" data-scroll-target="#use-searchable-names">Use Searchable Names</a></li>
   <li><a href="#replace-magic-numbers-with-named-constants" id="toc-replace-magic-numbers-with-named-constants" class="nav-link" data-scroll-target="#replace-magic-numbers-with-named-constants">Replace Magic Numbers With Named Constants</a></li>
   </ul></li>
-  <li><a href="#function-rules" id="toc-function-rules" class="nav-link" data-scroll-target="#function-rules">Function Rules</a>
+  <li><a href="#function-practices" id="toc-function-practices" class="nav-link" data-scroll-target="#function-practices">Function Practices</a>
   <ul class="collapse">
   <li><a href="#do-one-thing" id="toc-do-one-thing" class="nav-link" data-scroll-target="#do-one-thing">Do One Thing</a></li>
   <li><a href="#single-level-of-abstraction" id="toc-single-level-of-abstraction" class="nav-link" data-scroll-target="#single-level-of-abstraction">Single Level of Abstraction</a></li>
@@ -242,11 +242,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="intro" class="level2">
 <h2 class="anchored" data-anchor-id="intro">Intro</h2>
 <p>Clean code is code that can be easily understood—by everyone on the team, and by <em>future you</em>. It’s readable, maintainable, easier to debug, and scalable. But writing clean code isn’t automatic—it’s a skill that improves with practice, reflection, and shared standards.</p>
-<p>I’ll share practical tips and examples for writing clean R code. Many of these ideas are inspired by Robert C. Martin—aka “Uncle Bob” in his book <em>Clean Code</em> and adapted to fit the patterns and challenges of R programming. I’ll focus on three key areas: naming rules, function rules, and commenting practices. These aren’t just stylistic preferences—they’re tools for building code that lasts.</p>
+<p>I’ll share practical tips and examples for writing clean R code. Many of these ideas are inspired by Robert C. Martin—aka “Uncle Bob” in his book <em>Clean Code</em> and adapted to fit the patterns and challenges of R programming. I’ll focus on three key areas: naming practices, function practices, and commenting practices. These aren’t just stylistic preferences—they’re tools for building code that lasts.</p>
 <hr>
 </section>
-<section id="naming-rules" class="level2">
-<h2 class="anchored" data-anchor-id="naming-rules">Naming Rules</h2>
+<section id="naming-practices" class="level2">
+<h2 class="anchored" data-anchor-id="naming-practices">Naming Practices</h2>
 <section id="use-meaningful-names" class="level3">
 <h3 class="anchored" data-anchor-id="use-meaningful-names">Use Meaningful Names</h3>
 <p>Names should reveal the intent of the object. It should tell you why it exists, what it does, and how it is used. If a name requires a comment as to what the code does, then the name does not reveal its intent. Let’s say we use <code>date</code> - but what date? It could be today’s date or date of someone’s birthday? Be specific. In this example, <code>projectStartDate</code> is clearer than just <code>date</code>.</p>
@@ -356,8 +356,8 @@ MainStAADT = MainStAnnualCount / daysPerYear</code></pre>
 </div>
 </section>
 </section>
-<section id="function-rules" class="level2">
-<h2 class="anchored" data-anchor-id="function-rules">Function Rules</h2>
+<section id="function-practices" class="level2">
+<h2 class="anchored" data-anchor-id="function-practices">Function Practices</h2>
 <section id="do-one-thing" class="level3">
 <h3 class="anchored" data-anchor-id="do-one-thing">Do One Thing</h3>
 <p>Functions should do one thing, and do it well. When a function tries to handle multiple tasks—like reading a file, cleaning data, and recoding values—it becomes harder to understand, test, and reuse. Even if each step is short, in real-world applications, these tasks often expand into multiple lines of logic. That’s why it’s important to break them down into smaller, focused functions.</p>

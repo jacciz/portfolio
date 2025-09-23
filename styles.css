@@ -100,3 +100,34 @@ figcaption, .panel-caption, .figure-caption, .subfigure-caption, .table-caption,
   margin-right: auto;
   width: 50%;
 }
+
+.example-box {
+    border-left: 6px solid;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Bad {
+    background-color: #ffdddd;
+    border-color: red;
+}
+
+.Good {
+    background-color: #fff3cd;
+    border-color: orange;
+}
+
+.Better {
+    background-color: #d4edda;
+    border-color: green;
+}
+
+.example-box pre {
+    background-color: #f8f9fa;
+    padding: 8px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: "Courier New", monospace;
+}

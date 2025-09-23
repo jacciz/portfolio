@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -39,10 +74,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3f6a672b27f8834479c99fadd60a554c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6ddc8ef97b09fa8f29e81dafee00cb7d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,8 +159,36 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#naming-rules" id="toc-naming-rules" class="nav-link" data-scroll-target="#naming-rules">Naming Rules</a>
+  <ul class="collapse">
+  <li><a href="#use-meaningful-names" id="toc-use-meaningful-names" class="nav-link" data-scroll-target="#use-meaningful-names">Use Meaningful Names</a></li>
+  <li><a href="#naming-conventions" id="toc-naming-conventions" class="nav-link" data-scroll-target="#naming-conventions">Naming Conventions</a></li>
+  <li><a href="#choose-descriptive-and-unambiguous-names" id="toc-choose-descriptive-and-unambiguous-names" class="nav-link" data-scroll-target="#choose-descriptive-and-unambiguous-names">Choose descriptive and unambiguous names</a></li>
+  <li><a href="#make-meaningful-distinction" id="toc-make-meaningful-distinction" class="nav-link" data-scroll-target="#make-meaningful-distinction">Make meaningful distinction</a></li>
+  <li><a href="#use-pronounceable-names" id="toc-use-pronounceable-names" class="nav-link" data-scroll-target="#use-pronounceable-names">Use pronounceable names</a></li>
+  <li><a href="#use-searchable-names" id="toc-use-searchable-names" class="nav-link" data-scroll-target="#use-searchable-names">Use searchable names</a></li>
+  <li><a href="#replace-magic-numbers-with-named-constants" id="toc-replace-magic-numbers-with-named-constants" class="nav-link" data-scroll-target="#replace-magic-numbers-with-named-constants">Replace magic numbers with named constants</a></li>
+  </ul></li>
+  <li><a href="#function-rules" id="toc-function-rules" class="nav-link" data-scroll-target="#function-rules">Function Rules</a>
+  <ul class="collapse">
+  <li><a href="#do-one-thing" id="toc-do-one-thing" class="nav-link" data-scroll-target="#do-one-thing">Do one thing</a></li>
+  <li><a href="#single-level-of-abstraction" id="toc-single-level-of-abstraction" class="nav-link" data-scroll-target="#single-level-of-abstraction">Single Level of Abstraction</a></li>
+  <li><a href="#use-descriptive-names" id="toc-use-descriptive-names" class="nav-link" data-scroll-target="#use-descriptive-names">Use descriptive names</a></li>
+  <li><a href="#have-no-side-effects" id="toc-have-no-side-effects" class="nav-link" data-scroll-target="#have-no-side-effects">Have no side effects</a></li>
+  <li><a href="#write-vectorized-code" id="toc-write-vectorized-code" class="nav-link" data-scroll-target="#write-vectorized-code">Write vectorized code</a></li>
+  <li><a href="#output-is-consistent" id="toc-output-is-consistent" class="nav-link" data-scroll-target="#output-is-consistent">Output is Consistent</a></li>
+  <li><a href="#flexible-functions" id="toc-flexible-functions" class="nav-link" data-scroll-target="#flexible-functions">Flexible functions</a></li>
+  </ul></li>
+  <li><a href="#commenting-practices" id="toc-commenting-practices" class="nav-link" data-scroll-target="#commenting-practices">Commenting Practices</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -176,9 +239,280 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In Process!</p>
+<section id="intro" class="level2">
+<h2 class="anchored" data-anchor-id="intro">Intro</h2>
+<p>Clean code is code that can be easily understood—by everyone on the team, and by <em>future you</em>. It’s readable, maintainable, easier to debug, and scalable. But writing clean code isn’t automatic—it’s a skill that improves with practice, reflection, and shared standards.</p>
+<p>I’ll share practical tips and examples for writing clean R code. Many of these ideas are inspired by Robert C. Martin—aka “Uncle Bob” in his book <em>Clean Code</em> and adapted to fit the patterns and challenges of R programming. I’ll focus on three key areas: naming rules, function rules, and commenting practices. These aren’t just stylistic preferences—they’re tools for building code that lasts.</p>
+<hr>
+</section>
+<section id="naming-rules" class="level2">
+<h2 class="anchored" data-anchor-id="naming-rules">Naming Rules</h2>
+<section id="use-meaningful-names" class="level3">
+<h3 class="anchored" data-anchor-id="use-meaningful-names">Use Meaningful Names</h3>
+<p>Names should reveal the intent of the object. It should tell you why it exists, what it does, and how it is used. If a name requires a comment as to what the code does, then the name does not reveal its intent. Let’s say we use <code>date</code> - but what date? It could be today’s date or date of someone’s birthday? Be specific. In this example, <code>projectStartDate</code> is clearer than just <code>date</code>.</p>
+<div class="example-box Bad">
+<b>❌ Bad:</b>
+<pre><code>date &lt;- "2024-01-01" # date project started</code></pre>
+</div>
+<div class="example-box Better">
+<b>✅ Better:</b>
+<pre><code>projectStartDate &lt;- "2024-01-01"</code></pre>
+</div>
+</section>
+<section id="naming-conventions" class="level3">
+<h3 class="anchored" data-anchor-id="naming-conventions">Naming Conventions</h3>
+<p>Choose a naming convention for objects and functions. This can be camelCase or snake_case, or something else. The key is to be consistent. <code>{tidyverse}</code> mainly uses snake_case while <code>{shiny}</code> uses camelCase.</p>
+</section>
+<section id="choose-descriptive-and-unambiguous-names" class="level3">
+<h3 class="anchored" data-anchor-id="choose-descriptive-and-unambiguous-names">Choose descriptive and unambiguous names</h3>
+<p>Be sure names actually represent what the object does. <code>patientList</code> should really be a list, because list means something specific to programmers. Data frames and values should have a noun or noun phrase like <code>totalOhioPopulation</code> or <code>currentShiftList</code>. Functions should have a verb or a verb phrase and be descriptive. Avoid general verbs. Here’s suggestions of alternative verbs to use:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Word</th>
+<th>Alternatives</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>send</td>
+<td>deliver, dispatch, announce, distribute, route</td>
+</tr>
+<tr class="even">
+<td>find</td>
+<td>search, extract, locate, recover</td>
+</tr>
+<tr class="odd">
+<td>start</td>
+<td>launch, create, begin, open</td>
+</tr>
+<tr class="even">
+<td>make</td>
+<td>create, set up, build, generate, compose, add new</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="make-meaningful-distinction" class="level3">
+<h3 class="anchored" data-anchor-id="make-meaningful-distinction">Make meaningful distinction</h3>
+<p>Names should be used appropriately and consistently. For example, using <code>patients</code> and <code>person</code> interchangeably is inconsistent and confusing. Also be as descriptive as possible. Don’t use <code>patientsA</code> <code>patientsB</code> rather describe the differences between the two such as <code>patientsWithDiabetes</code> and <code>patientsWithHypertension</code>. But don’t have <code>A1CPatients</code> since it follows a different naming standard as it doesn’t start with <em>patients</em>.</p>
+<p>Variable should communicate what they represent and how they relate to the broader logic. Let’s look at variables <code>firstName</code>, <code>lastName</code>, <code>street</code>, <code>houseNumber</code>, <code>city</code>, <code>state</code>, and <code>zipcode.</code> Taken together it’s pretty clear that they form an address, but seeing <code>state</code> alone would leave the reader guessing. Pefixing with <em>addr</em>, like <code>addrFirstName</code>, <code>addrLastName</code>, <code>addrState</code>, and so on, the reader will understand that these variables are part of a larger structure.</p>
+</section>
+<section id="use-pronounceable-names" class="level3">
+<h3 class="anchored" data-anchor-id="use-pronounceable-names">Use pronounceable names</h3>
+<p>Use words, like actual words. If I see <code>flwRate</code> I’ll say flow rate in my head, but this really means follow-up rate. This hinders flow of reading the code as I’m thinking about translating this word rather than skimming my code. A better name would be <code>followup_rate.</code></p>
+</section>
+<section id="use-searchable-names" class="level3">
+<h3 class="anchored" data-anchor-id="use-searchable-names">Use searchable names</h3>
+<p>Clean code favors clarity over brevity. Single-letter variables and hard-coded numeric constants may save keystrokes, but they cost time when debugging or refactoring. If a variable like <code>s</code> or <code>d</code> appears across multiple lines, it becomes difficult to trace its meaning or locate it reliably in a large codebase.</p>
+<p>This code works, but it’s opaque. What does <code>s</code> represent? What does <code>5</code> mean? Without context, it’s hard to tell.</p>
+<div class="example-box Bad">
+<b>❌ Bad:</b>
+<pre><code>s = 0
+for (i in 1:5) {
+  d = i * 4
+  e = d / 5
+  s = s + e
+}</code></pre>
+</div>
+<p>Here, every variable name communicates intent. Even though <code>sum</code> isn’t perfect, it’s at least searchable. More importantly, <code>workDaysPerWeek</code> is far easier to locate and understand than the raw constant <code>5</code>.</p>
+<div class="example-box Better">
+<b>✅ Better:</b>
+<pre><code>realDaysPerIdealDay = 4
+  workDaysPerWeek = 5
+  sum = 0
+  
+  for (i in 1:workDaysPerWeek) {
+  realTaskDays = i * realDaysPerIdealDay
+  realTaskWeeks = realTaskDays / workDaysPerWeek
+  sum = realTaskWeeks + sum
+}</code></pre>
+</div>
+<p>Even better, instead of generic counters like <code>i</code>, use descriptive names that reflect what the loop is iterating over. In the example, <code>workDay</code> makes the loop’s purpose immediately clear.</p>
+<div class="example-box Better">
+<b>✅ Better:</b>
+<pre><code>for (workDay in 1:workDaysPerWeek) {
+  realTaskDays = workDay * realDaysPerIdealDay
+  realTaskWeeks = realTaskDays / workDaysPerWeek
+  sum = realTaskWeeks + sum
+</code></pre>
+</div>
+</section>
+<section id="replace-magic-numbers-with-named-constants" class="level3">
+<h3 class="anchored" data-anchor-id="replace-magic-numbers-with-named-constants">Replace magic numbers with named constants</h3>
+<p>Avoid hard-coded numbers that lack context. These so-called <em>magic numbers</em> make equations harder to interpret and maintain. Instead, use named constants that describe what the number represents.</p>
+<p>In the example below, <code>AADT</code> (Annual Average Daily Traffic) is a well-known acronym in transportation analytics. While abbreviations are generally discouraged, domain-specific terms like <code>AADT</code> are acceptable when they’re widely recognized by your audience.</p>
+<p>This example hides meaning behind raw numbers. What is <code>12081500</code>? Why divide by <code>365</code>?</p>
+<div class="example-box Bad">
+<b>❌ Bad:</b>
+<pre><code>MainStAADT = 12081500 / 365</code></pre>
+</div>
+<p>Now the equation reads like a sentence. Each variable name adds context, and <code>daysPerYear</code> is searchable—far easier to locate than every instance of <code>365</code>.</p>
+<div class="example-box Better">
+<b>✅ Better:</b>
+<pre><code>daysPerYear = 365
+MainStAnnualCount = 12081500
+MainStAADT = MainStAnnualCount / daysPerYear</code></pre>
+</div>
+</section>
+</section>
+<section id="function-rules" class="level2">
+<h2 class="anchored" data-anchor-id="function-rules">Function Rules</h2>
+<section id="do-one-thing" class="level3">
+<h3 class="anchored" data-anchor-id="do-one-thing">Do one thing</h3>
+<p>Functions should do one thing, and do it well. When a function tries to handle multiple tasks—like reading a file, cleaning data, and recoding values—it becomes harder to understand, test, and reuse. Even if each step is short, in real-world applications, these tasks often expand into multiple lines of logic. That’s why it’s important to break them down into smaller, focused functions.</p>
+<p>Take the example below. The original <code>prepData()</code> function reads a CSV, cleans column names, and recodes a migration column—all in one place. While it works, it mixes three distinct responsibilities, making the function harder to maintain, test, and harder to read.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>prepData <span class="ot">&lt;-</span> <span class="cf">function</span>(csvName, migCol){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">paste0</span>(csvName,<span class="st">".csv"</span>)) <span class="sc">|&gt;</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  csv <span class="ot">&lt;-</span> csv <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">NewMig =</span> <span class="fu">case_when</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    migCol <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Yes"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    migCol <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"NO"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(csv)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A cleaner approach is to separate each task into its own function. This way, the top-level function reads like a summary of the process, and each child function handles a single responsibility.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>prepData <span class="ot">&lt;-</span> <span class="cf">function</span>(csvName, migCol){</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  csv <span class="ot">&lt;-</span> <span class="fu">readCSV</span>(csvName) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cleanDataCols</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">recodeData</span>(migCol)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>readCSV <span class="ot">&lt;-</span> <span class="cf">function</span>(csvName){</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.csv</span>(<span class="fu">paste0</span>(csvName,<span class="st">".csv"</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>cleanDataCols <span class="ot">&lt;-</span> <span class="cf">function</span>(df){</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>recodeData <span class="ot">&lt;-</span> <span class="cf">function</span>(df){</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  df <span class="sc">|&gt;</span> <span class="fu">mutate</span>(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">NewMig =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    migCol <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Yes"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    migCol <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"NO"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a> ) )</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This structure makes the code easier to follow from top to bottom. The parent function operates at a higher level of abstraction, while the child functions handle the details. It also makes each piece easier to test and reuse in other contexts. Clean code isn’t just about making things shorter—it’s about making your intent unmistakably clear.</p>
+</section>
+<section id="single-level-of-abstraction" class="level3">
+<h3 class="anchored" data-anchor-id="single-level-of-abstraction">Single Level of Abstraction</h3>
+<p>Single Level of Abstraction (SLA) is a principle that helps keep functions readable and focused. Within any given function, all lines of code should operate at the same conceptual level. When high-level logic—such as business rules—is mixed with low-level implementation details like iteration or data parsing, it creates cognitive friction. This makes the function harder to read, harder to test, and more difficult to maintain over time.</p>
+<p>In the previous example, the <code>prepData()</code> function is composed of three distinct steps: reading a CSV file, cleaning column names, and recoding a migration column. Each of these steps is handled by its own helper function—<code>readCSV()</code>, <code>cleanDataCols()</code>, and <code>recodeData()</code>—which all operate at the same level of abstraction. Together, they form a clear and cohesive sequence that supports the higher-level goal of preparing the data. This structure allows the parent function to read like a summary, while the child functions handle the details, keeping each layer of logic clean and consistent.</p>
+<p>Nested loops and nested if-else statements often violate SLA because they introduce multiple layers of logic within a single function. This layering makes it difficult to follow the function’s intent, especially when conditions are deeply nested or intertwined. In practice, this can obscure the purpose of the code and increase the cognitive load for anyone trying to read or maintain it.</p>
+<p>Consider the following example. The first version uses nested if-else blocks to determine whether a user should be granted access. While technically correct, the logic is buried under multiple layers of conditions, making it harder to trace the decision path.</p>
+<div class="example-box Bad">
+<b>❌ Bad:</b>
+<pre><code>if (user$isActive) {
+  if (user$role == "admin") {
+    if (!is.null(user$permissions)) {
+      grantAccess(user)
+    } else {
+      denyAccess("Missing permissions")
+    }
+  } else {
+    denyAccess("Not an admin")
+  }
+} else {
+  denyAccess("Inactive user")
+}</code></pre>
+</div>
+<p>This version reads like a checklist, clearly stating the conditions under which access should be denied, and allowing the main action—grantAccess(user)—to stand out.</p>
+<div class="example-box Better">
+<b>✅ Better:</b>
+<pre><code>
+if (!user$isActive) return denyAccess("Inactive user")
+if (user$role != "admin") return denyAccess("Not an admin")
+if (is.null(user$permissions)) return denyAccess("Missing permissions")
+
+grantAccess(user)
+</code></pre>
+</div>
+<p>Sometimes it’s easier to write clean logic by thinking in reverse. Instead of asking <em>when should we grant access?</em> ask <em>when should we deny it?</em> This shift in perspective often leads to simpler, flatter code that respects abstraction levels and improves readability.</p>
+</section>
+<section id="use-descriptive-names" class="level3">
+<h3 class="anchored" data-anchor-id="use-descriptive-names">Use descriptive names</h3>
+<p>Use descriptive names that clearly communicate what a function or variable is meant to do. Ambiguous or overly terse names may save a few keystrokes, but they cost clarity. A long, descriptive name is almost always better than a short, enigmatic one—especially when revisiting code months later or sharing it with teammates.</p>
+<p>If a function calculates the average number of tasks completed per week, naming it <code>calcAvgTasksPerWeek()</code> is far more helpful than simply calling it <code>avg()</code> or <code>doCalc()</code>. Descriptive names reduce the need for comments, making your logic flow more easily. Don’t be afraid of length if it adds meaning—clarity is always worth the extra characters.</p>
+</section>
+<section id="have-no-side-effects" class="level3">
+<h3 class="anchored" data-anchor-id="have-no-side-effects">Have no side effects</h3>
+<p>A clean function should do exactly what it claims to do. When a function has side effects, such as modifying global variables, altering external states, or changing data outside its scope, it becomes unpredictable and harder to test. If the function’s intent is clear and it uses only its inputs to produce its output, then it has no side effects. This makes the function safer to reuse and easier to reason about.</p>
+<p>Functions should never rely on or alter global state. Instead, they should accept all necessary inputs explicitly and return outputs without leaving behind hidden changes. This discipline ensures that the function behaves consistently, regardless of where or how it’s called.</p>
+</section>
+<section id="write-vectorized-code" class="level3">
+<h3 class="anchored" data-anchor-id="write-vectorized-code">Write vectorized code</h3>
+<p>Vectorized code operates on entire vectors, matrices, or arrays in a single operation, rather than processing elements one by one through explicit loops. This approach is significantly faster and more efficient, especially when working with large data sets.</p>
+<p>Built-in functions like <code>sum()</code>, <code>mean()</code>, and operators such as <code>*</code> are inherently vectorized in R. They reduce code complexity, improve readability, and align with R’s design philosophy of concise, expressive syntax. Vectorized code is also easier to maintain and less prone to errors, since it avoids manual iteration and conditional logic scattered across multiple lines.</p>
+<p>Beyond performance, vectorization supports the creation of pure functions—functions that rely only on their inputs and produce predictable outputs. This makes code more reusable and testable, and integrates well with R’s functional programming tools and packages like <code>{dplyr}</code>, <code>{purrr}</code> and <code>{data.table}</code>.</p>
+<p>Here’s a simple example that compares a non-vectorized loop to a vectorized alternative:</p>
+<div class="example-box Bad">
+<b>❌ Bad:</b>
+<pre><code>countOfCups=c(1:5)
+# Non-vectorized
+cupsOverThree &lt;- numeric(0)
+for (i in 1:length(countOfCups)) {
+  if (countOfCups[i] &gt; 3) {
+    cupsOverThree &lt;- c(cupsOverThree, countOfCups[i])
+  }
+}</code></pre>
+</div>
+<div class="example-box Better">
+<b>✅ Better:</b>
+<pre><code># Vectorized
+cupsOverThree &lt;- countOfCups[countOfCups &gt; 3]</code></pre>
+</div>
+</section>
+<section id="output-is-consistent" class="level3">
+<h3 class="anchored" data-anchor-id="output-is-consistent">Output is Consistent</h3>
+<p>A clean function should always return an output in a consistent format, regardless of the inputs. Whether it’s a specific class, structure, or set of column names in a dataframe, consistency ensures that downstream code can rely on predictable behavior. If a function sometimes returns an integer and other times a string, it forces the developer to write additional logic just to handle the variability. This adds unnecessary complexity and increases the risk of bugs.</p>
+<p>By keeping outputs consistent, we make our functions easier to test, easier to integrate, and easier to reuse. It also allows other developers—or future you—to use the function without needing to inspect its internals or guess what kind of result it might produce. In data workflows, this is especially important when working with pipelines or chaining operations, where each step depends on the structure of the previous one.</p>
+</section>
+<section id="flexible-functions" class="level3">
+<h3 class="anchored" data-anchor-id="flexible-functions">Flexible functions</h3>
+<p>Function design should support reuse across different contexts. Consider the two examples below. Is one better than the other?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>multiplyTwoValues <span class="ot">&lt;-</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>              <span class="cf">function</span>(df, newColName, one_value, second_value){</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                df <span class="sc">|&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                dplyr<span class="sc">::</span><span class="fu">mutate</span>({{newColName}} <span class="sc">:</span><span class="er">=</span> {{one_value}} <span class="sc">*</span> {{second_value}})</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              } </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>multiplyTwoValues <span class="ot">&lt;-</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>              <span class="cf">function</span>(one_value, second_value){</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>              one_value <span class="sc">*</span> second_value</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>              }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The first version assumes the input will always be a dataframe and relies on <code>{dplyr}</code> for its operation. While this may be appropriate in a pipeline-heavy workflow, it limits the function’s flexibility. It can’t be easily reused in loops, <code>{purrr}</code> mappings, or inside <code>{ggplot2}</code> calculations without additional scaffolding.</p>
+<p>The second version is simpler and more versatile. It works with any vectorized inputs and doesn’t depend on a specific data structure or package. This makes it easier to reuse across different parts of a project, regardless of whether you’re working inside a tidyverse pipeline or writing base R logic.</p>
+<p>This isn’t to say one approach is always better than the other. Instead, it’s a reminder to consider the trade-offs. A flexible function can reduce coupling, improve testability, and support a wider range of use cases. When designing functions, think about how and where they’ll be used—and whether their structure invites reuse or restricts it.</p>
+</section>
+</section>
+<section id="commenting-practices" class="level2">
+<h2 class="anchored" data-anchor-id="commenting-practices">Commenting Practices</h2>
+<p>I’ll just go through these rules briefly.</p>
+<ul>
+<li><p>Focus on the intent of the comment rather than describing the mechanic on what the code does. Like why did you decide to use this function over another? What was your thinking process when writing the steps?</p></li>
+<li><p>Avoid redundant comments that restate what the code already makes clear.</p></li>
+<li><p>Don’t leave unused code hanging around. We use git as a reason if one ever needs old code. Remove this clutter.</p></li>
+<li><p>For functions, use comments or <code>{roxygen2}</code> to describe parameters, return values, and purpose. If you decide to turn your functions into a package, you’re already ahead of the game.</p></li>
+<li><p>Use <code># TODO</code> comments when works still needs to be done, but only use them sparingly.</p></li>
+<li><p>Use comments to add a section. In RStudio you can add a section by using ctrl-shift-r.</p></li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Clean code isn’t just about elegance—it’s about resilience. The true value of maintainable code is that when bugs happen (and they will), you can find them, fix them, and write tests to prevent them from happening again. Simplicity is your ally in this process. Breaking up functions into smaller, focused pieces doesn’t just abstract complexity—it makes your logic easier to trace, easier to test, and easier to trust.</p>
+<p>Perhaps you work with production code someone else wrote. Taken from Robert Martin, follow the Boy Scout rule: leave the campground cleaner than you found it. Rename one unclear variable. Split one over-sized function. Remove one bit of duplication. These small improvements compound over time, and more importantly, they build the habit of writing code that’s not just functional—but thoughtful.</p>
+<p>Clean code is a mindset. It’s how we make our work easier to maintain, easier to share, and easier to build on. And it’s how we turn good code into great systems.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

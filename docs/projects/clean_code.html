@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacci Ziebert">
-<meta name="dcterms.date" content="2025-09-21">
+<meta name="dcterms.date" content="2025-09-23">
 <meta name="description" content="A practical guide to writing clean, maintainable R code—focused on clarity, consistency, and simplicity. These principles help teams debug faster, test smarter, and build code that lasts.">
 
 <title>Readable, Reliable, Reusable: A Guide to Clean R Code – Jacci Ziebert</title>
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 21, 2025</p>
+      <p class="date">September 23, 2025</p>
     </div>
   </div>
   
@@ -296,11 +296,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="make-meaningful-distinction" class="level3">
 <h3 class="anchored" data-anchor-id="make-meaningful-distinction">Make meaningful distinction</h3>
 <p>Names should be used appropriately and consistently. For example, using <code>patients</code> and <code>person</code> interchangeably is inconsistent and confusing. Also be as descriptive as possible. Don’t use <code>patientsA</code> <code>patientsB</code> rather describe the differences between the two such as <code>patientsWithDiabetes</code> and <code>patientsWithHypertension</code>. But don’t have <code>A1CPatients</code> since it follows a different naming standard as it doesn’t start with <em>patients</em>.</p>
-<p>Variable should communicate what they represent and how they relate to the broader logic. Let’s look at variables <code>firstName</code>, <code>lastName</code>, <code>street</code>, <code>houseNumber</code>, <code>city</code>, <code>state</code>, and <code>zipcode.</code> Taken together it’s pretty clear that they form an address, but seeing <code>state</code> alone would leave the reader guessing. Pefixing with <em>addr</em>, like <code>addrFirstName</code>, <code>addrLastName</code>, <code>addrState</code>, and so on, the reader will understand that these variables are part of a larger structure.</p>
+<p>Variables should communicate what they represent and how they relate to the broader logic. Let’s look at variables <code>firstName</code>, <code>lastName</code>, <code>street</code>, <code>houseNumber</code>, <code>city</code>, <code>state</code>, and <code>zipcode.</code> Taken together it’s pretty clear that they form an address, but seeing <code>state</code> alone would leave the reader guessing. Pefixing with <em>addr</em>, like <code>addrFirstName</code>, <code>addrLastName</code>, <code>addrState</code>, and so on, the reader will understand that these variables are part of a larger structure. In added benefit - in RStudio - these will be listed together under the Environment pane.</p>
 </section>
 <section id="use-pronounceable-names" class="level3">
 <h3 class="anchored" data-anchor-id="use-pronounceable-names">Use pronounceable names</h3>
-<p>Use words, like actual words. If I see <code>flwRate</code> I’ll say flow rate in my head, but this really means follow-up rate. This hinders flow of reading the code as I’m thinking about translating this word rather than skimming my code. A better name would be <code>followup_rate.</code></p>
+<p>Use words, like actual words. If I see <code>flwRate</code> I’ll say flow rate in my head, but this really means follow-up rate. This hinders flow of reading the code as I’m thinking about translating this word rather than skimming my code. A better name would be <code>followup_rate.</code> Now that we have code auto completion and aren’t limited by character lengths (i.e.&nbsp;8 characters), it’s now easier to be more descriptive. Clarity is more important than brevity!</p>
 </section>
 <section id="use-searchable-names" class="level3">
 <h3 class="anchored" data-anchor-id="use-searchable-names">Use searchable names</h3>
@@ -444,6 +444,7 @@ grantAccess(user)
 <h3 class="anchored" data-anchor-id="have-no-side-effects">Have no side effects</h3>
 <p>A clean function should do exactly what it claims to do. When a function has side effects, such as modifying global variables, altering external states, or changing data outside its scope, it becomes unpredictable and harder to test. If the function’s intent is clear and it uses only its inputs to produce its output, then it has no side effects. This makes the function safer to reuse and easier to reason about.</p>
 <p>Functions should never rely on or alter global state. Instead, they should accept all necessary inputs explicitly and return outputs without leaving behind hidden changes. This discipline ensures that the function behaves consistently, regardless of where or how it’s called.</p>
+<p>There are exceptions where the global state is changed. Writing files (i.e.&nbsp;<code>write.csv()</code>) and showing warning messages. These are intentional, transparent and explicit.</p>
 </section>
 <section id="write-vectorized-code" class="level3">
 <h3 class="anchored" data-anchor-id="write-vectorized-code">Write vectorized code</h3>

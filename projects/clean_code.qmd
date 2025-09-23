@@ -4,7 +4,7 @@ description: "A practical guide to writing clean, maintainable R code—focused 
 author: 
   - name: Jacci Ziebert
     affiliation: None
-date: "2025-09-21"
+date: "2025-09-23"
 image: /assets/img/png/r_with_mop.png
 fig-cap-location: bottom
 tbl-cap-location: top
@@ -63,11 +63,11 @@ Be sure names actually represent what the object does. `patientList` should real
 
 Names should be used appropriately and consistently. For example, using `patients` and `person` interchangeably is inconsistent and confusing. Also be as descriptive as possible. Don't use `patientsA` `patientsB` rather describe the differences between the two such as `patientsWithDiabetes` and `patientsWithHypertension`. But don't have `A1CPatients` since it follows a different naming standard as it doesn't start with *patients*.
 
-Variable should communicate what they represent and how they relate to the broader logic. Let's look at variables `firstName`, `lastName`, `street`, `houseNumber`, `city`, `state`, and `zipcode.` Taken together it’s pretty clear that they form an address, but seeing `state` alone would leave the reader guessing. Pefixing with *addr*, like `addrFirstName`, `addrLastName`, `addrState`, and so on, the reader will understand that these variables are part of a larger structure.
+Variables should communicate what they represent and how they relate to the broader logic. Let's look at variables `firstName`, `lastName`, `street`, `houseNumber`, `city`, `state`, and `zipcode.` Taken together it’s pretty clear that they form an address, but seeing `state` alone would leave the reader guessing. Pefixing with *addr*, like `addrFirstName`, `addrLastName`, `addrState`, and so on, the reader will understand that these variables are part of a larger structure. In added benefit - in RStudio - these will be listed together under the Environment pane.
 
 ### Use pronounceable names
 
-Use words, like actual words. If I see `flwRate` I'll say flow rate in my head, but this really means follow-up rate. This hinders flow of reading the code as I'm thinking about translating this word rather than skimming my code. A better name would be `followup_rate.`
+Use words, like actual words. If I see `flwRate` I'll say flow rate in my head, but this really means follow-up rate. This hinders flow of reading the code as I'm thinking about translating this word rather than skimming my code. A better name would be `followup_rate.` Now that we have code auto completion and aren't limited by character lengths (i.e. 8 characters), it's now easier to be more descriptive. Clarity is more important than brevity!
 
 ### Use searchable names
 
@@ -229,6 +229,8 @@ If a function calculates the average number of tasks completed per week, naming 
 A clean function should do exactly what it claims to do. When a function has side effects, such as modifying global variables, altering external states, or changing data outside its scope, it becomes unpredictable and harder to test. If the function’s intent is clear and it uses only its inputs to produce its output, then it has no side effects. This makes the function safer to reuse and easier to reason about.
 
 Functions should never rely on or alter global state. Instead, they should accept all necessary inputs explicitly and return outputs without leaving behind hidden changes. This discipline ensures that the function behaves consistently, regardless of where or how it’s called.
+
+There are exceptions where the global state is changed. Writing files (i.e. `write.csv()`) and showing warning messages. These are intentional, transparent and explicit.
 
 ### Write vectorized code
 

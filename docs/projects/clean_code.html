@@ -169,21 +169,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#use-meaningful-names" id="toc-use-meaningful-names" class="nav-link" data-scroll-target="#use-meaningful-names">Use Meaningful Names</a></li>
   <li><a href="#naming-conventions" id="toc-naming-conventions" class="nav-link" data-scroll-target="#naming-conventions">Naming Conventions</a></li>
-  <li><a href="#choose-descriptive-and-unambiguous-names" id="toc-choose-descriptive-and-unambiguous-names" class="nav-link" data-scroll-target="#choose-descriptive-and-unambiguous-names">Choose descriptive and unambiguous names</a></li>
-  <li><a href="#make-meaningful-distinction" id="toc-make-meaningful-distinction" class="nav-link" data-scroll-target="#make-meaningful-distinction">Make meaningful distinction</a></li>
-  <li><a href="#use-pronounceable-names" id="toc-use-pronounceable-names" class="nav-link" data-scroll-target="#use-pronounceable-names">Use pronounceable names</a></li>
-  <li><a href="#use-searchable-names" id="toc-use-searchable-names" class="nav-link" data-scroll-target="#use-searchable-names">Use searchable names</a></li>
-  <li><a href="#replace-magic-numbers-with-named-constants" id="toc-replace-magic-numbers-with-named-constants" class="nav-link" data-scroll-target="#replace-magic-numbers-with-named-constants">Replace magic numbers with named constants</a></li>
+  <li><a href="#choose-descriptive-and-unambiguous-names" id="toc-choose-descriptive-and-unambiguous-names" class="nav-link" data-scroll-target="#choose-descriptive-and-unambiguous-names">Choose Descriptive and Unambiguous Names</a></li>
+  <li><a href="#make-meaningful-distinction" id="toc-make-meaningful-distinction" class="nav-link" data-scroll-target="#make-meaningful-distinction">Make Meaningful Distinction</a></li>
+  <li><a href="#use-pronounceable-names" id="toc-use-pronounceable-names" class="nav-link" data-scroll-target="#use-pronounceable-names">Use Pronounceable Names</a></li>
+  <li><a href="#use-searchable-names" id="toc-use-searchable-names" class="nav-link" data-scroll-target="#use-searchable-names">Use Searchable Names</a></li>
+  <li><a href="#replace-magic-numbers-with-named-constants" id="toc-replace-magic-numbers-with-named-constants" class="nav-link" data-scroll-target="#replace-magic-numbers-with-named-constants">Replace Magic Numbers With Named Constants</a></li>
   </ul></li>
   <li><a href="#function-rules" id="toc-function-rules" class="nav-link" data-scroll-target="#function-rules">Function Rules</a>
   <ul class="collapse">
-  <li><a href="#do-one-thing" id="toc-do-one-thing" class="nav-link" data-scroll-target="#do-one-thing">Do one thing</a></li>
+  <li><a href="#do-one-thing" id="toc-do-one-thing" class="nav-link" data-scroll-target="#do-one-thing">Do One Thing</a></li>
   <li><a href="#single-level-of-abstraction" id="toc-single-level-of-abstraction" class="nav-link" data-scroll-target="#single-level-of-abstraction">Single Level of Abstraction</a></li>
-  <li><a href="#use-descriptive-names" id="toc-use-descriptive-names" class="nav-link" data-scroll-target="#use-descriptive-names">Use descriptive names</a></li>
-  <li><a href="#have-no-side-effects" id="toc-have-no-side-effects" class="nav-link" data-scroll-target="#have-no-side-effects">Have no side effects</a></li>
-  <li><a href="#write-vectorized-code" id="toc-write-vectorized-code" class="nav-link" data-scroll-target="#write-vectorized-code">Write vectorized code</a></li>
+  <li><a href="#use-descriptive-names" id="toc-use-descriptive-names" class="nav-link" data-scroll-target="#use-descriptive-names">Use Descriptive Names</a></li>
+  <li><a href="#have-no-side-effects" id="toc-have-no-side-effects" class="nav-link" data-scroll-target="#have-no-side-effects">Have No Side Effects</a></li>
+  <li><a href="#write-vectorized-code" id="toc-write-vectorized-code" class="nav-link" data-scroll-target="#write-vectorized-code">Write Vectorized Code</a></li>
   <li><a href="#output-is-consistent" id="toc-output-is-consistent" class="nav-link" data-scroll-target="#output-is-consistent">Output is Consistent</a></li>
-  <li><a href="#flexible-functions" id="toc-flexible-functions" class="nav-link" data-scroll-target="#flexible-functions">Flexible functions</a></li>
+  <li><a href="#flexible-functions" id="toc-flexible-functions" class="nav-link" data-scroll-target="#flexible-functions">Flexible Functions</a></li>
   </ul></li>
   <li><a href="#commenting-practices" id="toc-commenting-practices" class="nav-link" data-scroll-target="#commenting-practices">Commenting Practices</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
@@ -264,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Choose a naming convention for objects and functions. This can be camelCase or snake_case, or something else. The key is to be consistent. <code>{tidyverse}</code> mainly uses snake_case while <code>{shiny}</code> uses camelCase.</p>
 </section>
 <section id="choose-descriptive-and-unambiguous-names" class="level3">
-<h3 class="anchored" data-anchor-id="choose-descriptive-and-unambiguous-names">Choose descriptive and unambiguous names</h3>
+<h3 class="anchored" data-anchor-id="choose-descriptive-and-unambiguous-names">Choose Descriptive and Unambiguous Names</h3>
 <p>Be sure names actually represent what the object does. <code>patientList</code> should really be a list, because list means something specific to programmers. Data frames and values should have a noun or noun phrase like <code>totalOhioPopulation</code> or <code>currentShiftList</code>. Functions should have a verb or a verb phrase and be descriptive. Avoid general verbs. Here’s suggestions of alternative verbs to use:</p>
 <table class="caption-top table">
 <thead>
@@ -294,16 +294,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </section>
 <section id="make-meaningful-distinction" class="level3">
-<h3 class="anchored" data-anchor-id="make-meaningful-distinction">Make meaningful distinction</h3>
+<h3 class="anchored" data-anchor-id="make-meaningful-distinction">Make Meaningful Distinction</h3>
 <p>Names should be used appropriately and consistently. For example, using <code>patients</code> and <code>person</code> interchangeably is inconsistent and confusing. Also be as descriptive as possible. Don’t use <code>patientsA</code> <code>patientsB</code> rather describe the differences between the two such as <code>patientsWithDiabetes</code> and <code>patientsWithHypertension</code>. But don’t have <code>A1CPatients</code> since it follows a different naming standard as it doesn’t start with <em>patients</em>.</p>
 <p>Variables should communicate what they represent and how they relate to the broader logic. Let’s look at variables <code>firstName</code>, <code>lastName</code>, <code>street</code>, <code>houseNumber</code>, <code>city</code>, <code>state</code>, and <code>zipcode.</code> Taken together it’s pretty clear that they form an address, but seeing <code>state</code> alone would leave the reader guessing. Pefixing with <em>addr</em>, like <code>addrFirstName</code>, <code>addrLastName</code>, <code>addrState</code>, and so on, the reader will understand that these variables are part of a larger structure. In added benefit - in RStudio - these will be listed together under the Environment pane.</p>
 </section>
 <section id="use-pronounceable-names" class="level3">
-<h3 class="anchored" data-anchor-id="use-pronounceable-names">Use pronounceable names</h3>
+<h3 class="anchored" data-anchor-id="use-pronounceable-names">Use Pronounceable Names</h3>
 <p>Use words, like actual words. If I see <code>flwRate</code> I’ll say flow rate in my head, but this really means follow-up rate. This hinders flow of reading the code as I’m thinking about translating this word rather than skimming my code. A better name would be <code>followup_rate.</code> Now that we have code auto completion and aren’t limited by character lengths (i.e.&nbsp;8 characters), it’s now easier to be more descriptive. Clarity is more important than brevity!</p>
 </section>
 <section id="use-searchable-names" class="level3">
-<h3 class="anchored" data-anchor-id="use-searchable-names">Use searchable names</h3>
+<h3 class="anchored" data-anchor-id="use-searchable-names">Use Searchable Names</h3>
 <p>Clean code favors clarity over brevity. Single-letter variables and hard-coded numeric constants may save keystrokes, but they cost time when debugging or refactoring. If a variable like <code>s</code> or <code>d</code> appears across multiple lines, it becomes difficult to trace its meaning or locate it reliably in a large codebase.</p>
 <p>This code works, but it’s opaque. What does <code>s</code> represent? What does <code>5</code> mean? Without context, it’s hard to tell.</p>
 <div class="example-box Bad">
@@ -339,7 +339,7 @@ for (i in 1:5) {
 </div>
 </section>
 <section id="replace-magic-numbers-with-named-constants" class="level3">
-<h3 class="anchored" data-anchor-id="replace-magic-numbers-with-named-constants">Replace magic numbers with named constants</h3>
+<h3 class="anchored" data-anchor-id="replace-magic-numbers-with-named-constants">Replace Magic Numbers With Named Constants</h3>
 <p>Avoid hard-coded numbers that lack context. These so-called <em>magic numbers</em> make equations harder to interpret and maintain. Instead, use named constants that describe what the number represents.</p>
 <p>In the example below, <code>AADT</code> (Annual Average Daily Traffic) is a well-known acronym in transportation analytics. While abbreviations are generally discouraged, domain-specific terms like <code>AADT</code> are acceptable when they’re widely recognized by your audience.</p>
 <p>This example hides meaning behind raw numbers. What is <code>12081500</code>? Why divide by <code>365</code>?</p>
@@ -359,7 +359,7 @@ MainStAADT = MainStAnnualCount / daysPerYear</code></pre>
 <section id="function-rules" class="level2">
 <h2 class="anchored" data-anchor-id="function-rules">Function Rules</h2>
 <section id="do-one-thing" class="level3">
-<h3 class="anchored" data-anchor-id="do-one-thing">Do one thing</h3>
+<h3 class="anchored" data-anchor-id="do-one-thing">Do One Thing</h3>
 <p>Functions should do one thing, and do it well. When a function tries to handle multiple tasks—like reading a file, cleaning data, and recoding values—it becomes harder to understand, test, and reuse. Even if each step is short, in real-world applications, these tasks often expand into multiple lines of logic. That’s why it’s important to break them down into smaller, focused functions.</p>
 <p>Take the example below. The original <code>prepData()</code> function reads a CSV, cleans column names, and recodes a migration column—all in one place. While it works, it mixes three distinct responsibilities, making the function harder to maintain, test, and harder to read.</p>
 <div class="cell">
@@ -436,18 +436,18 @@ grantAccess(user)
 <p>Sometimes it’s easier to write clean logic by thinking in reverse. Instead of asking <em>when should we grant access?</em> ask <em>when should we deny it?</em> This shift in perspective often leads to simpler, flatter code that respects abstraction levels and improves readability.</p>
 </section>
 <section id="use-descriptive-names" class="level3">
-<h3 class="anchored" data-anchor-id="use-descriptive-names">Use descriptive names</h3>
+<h3 class="anchored" data-anchor-id="use-descriptive-names">Use Descriptive Names</h3>
 <p>Use descriptive names that clearly communicate what a function or variable is meant to do. Ambiguous or overly terse names may save a few keystrokes, but they cost clarity. A long, descriptive name is almost always better than a short, enigmatic one—especially when revisiting code months later or sharing it with teammates.</p>
 <p>If a function calculates the average number of tasks completed per week, naming it <code>calcAvgTasksPerWeek()</code> is far more helpful than simply calling it <code>avg()</code> or <code>doCalc()</code>. Descriptive names reduce the need for comments, making your logic flow more easily. Don’t be afraid of length if it adds meaning—clarity is always worth the extra characters.</p>
 </section>
 <section id="have-no-side-effects" class="level3">
-<h3 class="anchored" data-anchor-id="have-no-side-effects">Have no side effects</h3>
+<h3 class="anchored" data-anchor-id="have-no-side-effects">Have No Side Effects</h3>
 <p>A clean function should do exactly what it claims to do. When a function has side effects, such as modifying global variables, altering external states, or changing data outside its scope, it becomes unpredictable and harder to test. If the function’s intent is clear and it uses only its inputs to produce its output, then it has no side effects. This makes the function safer to reuse and easier to reason about.</p>
 <p>Functions should never rely on or alter global state. Instead, they should accept all necessary inputs explicitly and return outputs without leaving behind hidden changes. This discipline ensures that the function behaves consistently, regardless of where or how it’s called.</p>
 <p>There are exceptions where the global state is changed. Writing files (i.e.&nbsp;<code>write.csv()</code>) and showing warning messages. These are intentional, transparent and explicit.</p>
 </section>
 <section id="write-vectorized-code" class="level3">
-<h3 class="anchored" data-anchor-id="write-vectorized-code">Write vectorized code</h3>
+<h3 class="anchored" data-anchor-id="write-vectorized-code">Write Vectorized Code</h3>
 <p>Vectorized code operates on entire vectors, matrices, or arrays in a single operation, rather than processing elements one by one through explicit loops. This approach is significantly faster and more efficient, especially when working with large data sets.</p>
 <p>Built-in functions like <code>sum()</code>, <code>mean()</code>, and operators such as <code>*</code> are inherently vectorized in R. They reduce code complexity, improve readability, and align with R’s design philosophy of concise, expressive syntax. Vectorized code is also easier to maintain and less prone to errors, since it avoids manual iteration and conditional logic scattered across multiple lines.</p>
 <p>Beyond performance, vectorization supports the creation of pure functions—functions that rely only on their inputs and produce predictable outputs. This makes code more reusable and testable, and integrates well with R’s functional programming tools and packages like <code>{dplyr}</code>, <code>{purrr}</code> and <code>{data.table}</code>.</p>
@@ -475,7 +475,7 @@ cupsOverThree &lt;- countOfCups[countOfCups &gt; 3]</code></pre>
 <p>By keeping outputs consistent, we make our functions easier to test, easier to integrate, and easier to reuse. It also allows other developers—or future you—to use the function without needing to inspect its internals or guess what kind of result it might produce. In data workflows, this is especially important when working with pipelines or chaining operations, where each step depends on the structure of the previous one.</p>
 </section>
 <section id="flexible-functions" class="level3">
-<h3 class="anchored" data-anchor-id="flexible-functions">Flexible functions</h3>
+<h3 class="anchored" data-anchor-id="flexible-functions">Flexible Functions</h3>
 <p>Function design should support reuse across different contexts. Consider the two examples below. Is one better than the other?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>multiplyTwoValues <span class="ot">&lt;-</span> </span>
@@ -496,7 +496,7 @@ cupsOverThree &lt;- countOfCups[countOfCups &gt; 3]</code></pre>
 </section>
 <section id="commenting-practices" class="level2">
 <h2 class="anchored" data-anchor-id="commenting-practices">Commenting Practices</h2>
-<p>I’ll just go through these rules briefly.</p>
+<p>I’ll just go through these practices briefly.</p>
 <ul>
 <li><p>Focus on the intent of the comment rather than describing the mechanic on what the code does. Like why did you decide to use this function over another? What was your thinking process when writing the steps?</p></li>
 <li><p>Avoid redundant comments that restate what the code already makes clear.</p></li>

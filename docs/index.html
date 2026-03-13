@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,13 +32,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="./assets/img/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3f6a672b27f8834479c99fadd60a554c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1e4576241070b8e0be9c14511f149202.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,6 +79,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Jacci Ziebert</span>
     </a>
@@ -128,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Jacci Ziebert</h1>
-<p class="subtitle lead">Data Analyst | R Programmer</p>
+<p class="subtitle lead">R/Shiny Developer</p>
 </div>
 <div class="quarto-title-meta">
   </div>
@@ -147,8 +150,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="about-contents"><main class="content" id="quarto-document-content">
 <section id="greetings" class="level2">
 <h2 data-anchor-id="greetings">Greetings!</h2>
-<p>I am a data analyst and R programmer. My passion for R sparked when I felt frustrated of the mundane workflow at my previous job from SAS/Excel and knew there had to be a better way. I took an online programming class and immediately applied what I learned to my job.</p>
-<p>Since then, I’ve built an R package to improve work flow, developed Shiny web apps, and automated long reports. I enjoy translating data into a concise and meaningful visual for a general audience in either a dashboard or a report.</p>
+<p>I am an R/Shiny Developer My passion for R sparked when I felt frustrated of the mundane workflow at a previous job from SAS/Excel and knew there had to be a better way. I took an online programming class and immediately applied what I learned to my job.</p>
+<p>Since then, I’ve built a few R packages, developed Shiny web apps, and automated long reports. I am a contributor to two CRAN packages: {echarts4r} and {USAboundaries}.</p>
 <p>When I’m not coding, I enjoy graphing my coffee roasts, playing strategy board games, and cycling.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -206,13 +209,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

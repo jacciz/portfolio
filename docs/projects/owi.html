@@ -2,20 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacci Ziebert">
 <meta name="dcterms.date" content="2021-11-01">
-<meta name="description" content="Find risk ratios of OWI (operating while intoxicated) offenders from across multiple datasets.">
+<meta name="description" content="This research project involved calculating risk ratios of OWI (operating while intoxicated) offenders from across multiple datasets.">
 
 <title>Analysis of OWI ratios – Jacci Ziebert</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -39,10 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3f6a672b27f8834479c99fadd60a554c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8094bcf09c5c85e74c56bdb1d4b909b8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -146,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Find risk ratios of OWI (operating while intoxicated) offenders from across multiple datasets.
+    This research project involved calculating risk ratios of OWI (operating while intoxicated) offenders from across multiple datasets.
   </div>
 </div>
 
@@ -182,10 +188,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="..\assets/img/png/nhts_by_age.png" class="img-center img-fluid" alt="Tables of OWI ratios."></p>
+<p><img src="../assets/img/png/nhts_by_age.png" class="img-center img-fluid" alt="Tables of OWI ratios."></p>
 <section id="what-i-learned" class="level3">
 <h3 class="anchored" data-anchor-id="what-i-learned">What I learned</h3>
-<p>This project involved the compilation of 5 data sets to calculate OWI (operating while intoxicated) ratios broken down by age group, race and sex. In order to combine these datasets, I had to rename columns and recode variables so datasets can be joined. The entire analysis I wrote functions to allow for any combo of age, sex, and race (the variables the study involved).</p>
+<p>Working with two researchers from the University of Wisconsin, this project involved the compilation of 5 data sets to calculate OWI (operating while intoxicated) ratios broken down by age group, race and sex. In order to combine these datasets, I had to rename columns and recode variables so datasets can be joined. The entire analysis I wrote functions to allow for any combo of age, sex, and race (the variables the study involved).</p>
 </section>
 <section id="highlighted-packages" class="level3">
 <h3 class="anchored" data-anchor-id="highlighted-packages">Highlighted packages</h3>
@@ -246,13 +252,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

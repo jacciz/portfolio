@@ -181,7 +181,7 @@ age_counts = df |>
 ```{r }
 #| label: tbl-age_habit
 #| tbl-cap: Participant Age and Daily Coffee Drinking Habits
-left_join(age_counts, age_cups_per_day, by = join_by(what_is_your_age)) |> gt() |> gt_plt_bar_stack(list_data, labels = cup_groups, fmt_fn = scales::label_percent(accuracy = 1), width = 100) |> gt_theme_538() |> gt_plt_bar_pct(column = perc, scaled = TRUE, fill = "blue", labels = TRUE, decimals = 0, width = 100, font_size = "12px") |> gt::cols_label("what_is_your_age" = "Age Group", "perc" = "Age Group Prop") |>  gt::tab_footnote("100 participants were removed due to null response values.")
+left_join(age_counts, age_cups_per_day, by = join_by(what_is_your_age)) |> gt() |> gtExtras::gt_plt_bar_stack(list_data, labels = cup_groups, fmt_fn = scales::label_percent(accuracy = 1), width = 100) |> gt_theme_538() |> gt_plt_bar_pct(column = perc, scaled = TRUE, fill = "blue", labels = TRUE, decimals = 0, width = 100, font_size = "12px") |> gt::cols_label("what_is_your_age" = "Age Group", "perc" = "Age Group Prop") |>  gt::tab_footnote("100 participants were removed due to null response values.")
 ```
 
 ## Coffee Expertise

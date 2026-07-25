@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,16 @@
 
 <title>An Analysis of James Hoffman’s ‘The Great American Coffee Taste Test Live Stream’ – Jacci Ziebert</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -39,10 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3f6a672b27f8834479c99fadd60a554c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8094bcf09c5c85e74c56bdb1d4b909b8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,11 +76,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 
-<script src="../site_libs/plotly-binding-4.11.0/plotly.js"></script>
+<script src="../site_libs/plotly-binding-4.12.0/plotly.js"></script>
 
 <script src="../site_libs/typedarray-0.1/typedarray.min.js"></script>
 
@@ -84,9 +90,9 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
 
-<link href="../site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<link href="../site_libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
 
-<script src="../site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<script src="../site_libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
 
 
 
@@ -220,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 
 <hr>
 <p>The “Great America Taste Test” is what coffee expert and British YouTuber <strong>James Hoffman</strong> called the <a href="https://www.youtube.com/watch?v=U489K2t_Tgc&amp;t">live stream coffee tasting event</a> held in October 2023. 5,000 Americans participated in this simultaneous coffee sipping event where each participant tasted the same four coffees. They were then asked to fill out a survey of around 100 questions ranging from coffee drinking habits to describing the coffee flavors of the tested coffees. Of the 5,000 participants, 4,042 surveys were completed.</p>
-<p><img src="..\assets/img/maxresdefault.jpg" class="centerimg img-fluid" width="250"></p>
+<p><img src="../assets/img/maxresdefault.jpg" class="centerimg img-fluid" width="250"></p>
 <p>Being a coffee nerd and a data analyst, I decided to analyze the results! James did do a <a href="https://www.youtube.com/watch?v=bMOOQfeloH0&amp;t">follow-up video</a> on his own analysis on the survey so I don’t want to overlap too much on his findings.</p>
 <p>I’ll go through the participant demographics, spending habits, coffee preferences, and coffee tasting. I looked at how <em>bitterness</em> and <em>acidity</em> was rated in each coffee then I went deeper to find if there were commonalities in coffee flavor notes via a text analysis.</p>
 <section id="so-what-were-the-four-coffees" class="level2">
@@ -234,27 +240,27 @@ Table&nbsp;1: The Four Coffees Tasted
 </figcaption>
 <div aria-describedby="tbl-fourcoffees-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="olbbofrtcb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="lupcutsnyh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#olbbofrtcb table {
+#lupcutsnyh table {
   font-family: Cairo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#olbbofrtcb thead, #olbbofrtcb tbody, #olbbofrtcb tfoot, #olbbofrtcb tr, #olbbofrtcb td, #olbbofrtcb th {
+#lupcutsnyh thead, #lupcutsnyh tbody, #lupcutsnyh tfoot, #lupcutsnyh tr, #lupcutsnyh td, #lupcutsnyh th {
   border-style: none;
 }
 
-#olbbofrtcb p {
+#lupcutsnyh p {
   margin: 0;
   padding: 0;
 }
 
-#olbbofrtcb .gt_table {
+#lupcutsnyh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -280,12 +286,12 @@ Table&nbsp;1: The Four Coffees Tasted
   border-left-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_caption {
+#lupcutsnyh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#olbbofrtcb .gt_title {
+#lupcutsnyh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -297,7 +303,7 @@ Table&nbsp;1: The Four Coffees Tasted
   border-bottom-width: 0;
 }
 
-#olbbofrtcb .gt_subtitle {
+#lupcutsnyh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -309,7 +315,7 @@ Table&nbsp;1: The Four Coffees Tasted
   border-top-width: 0;
 }
 
-#olbbofrtcb .gt_heading {
+#lupcutsnyh .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -321,13 +327,13 @@ Table&nbsp;1: The Four Coffees Tasted
   border-right-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_bottom_border {
+#lupcutsnyh .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_col_headings {
+#lupcutsnyh .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -342,7 +348,7 @@ Table&nbsp;1: The Four Coffees Tasted
   border-right-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_col_heading {
+#lupcutsnyh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -362,7 +368,7 @@ Table&nbsp;1: The Four Coffees Tasted
   overflow-x: hidden;
 }
 
-#olbbofrtcb .gt_column_spanner_outer {
+#lupcutsnyh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -374,15 +380,15 @@ Table&nbsp;1: The Four Coffees Tasted
   padding-right: 4px;
 }
 
-#olbbofrtcb .gt_column_spanner_outer:first-child {
+#lupcutsnyh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#olbbofrtcb .gt_column_spanner_outer:last-child {
+#lupcutsnyh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#olbbofrtcb .gt_column_spanner {
+#lupcutsnyh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -394,11 +400,11 @@ Table&nbsp;1: The Four Coffees Tasted
   width: 100%;
 }
 
-#olbbofrtcb .gt_spanner_row {
+#lupcutsnyh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#olbbofrtcb .gt_group_heading {
+#lupcutsnyh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -424,7 +430,7 @@ Table&nbsp;1: The Four Coffees Tasted
   text-align: left;
 }
 
-#olbbofrtcb .gt_empty_group_heading {
+#lupcutsnyh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -439,15 +445,15 @@ Table&nbsp;1: The Four Coffees Tasted
   vertical-align: middle;
 }
 
-#olbbofrtcb .gt_from_md > :first-child {
+#lupcutsnyh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#olbbofrtcb .gt_from_md > :last-child {
+#lupcutsnyh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#olbbofrtcb .gt_row {
+#lupcutsnyh .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -466,7 +472,7 @@ Table&nbsp;1: The Four Coffees Tasted
   overflow-x: hidden;
 }
 
-#olbbofrtcb .gt_stub {
+#lupcutsnyh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -479,7 +485,7 @@ Table&nbsp;1: The Four Coffees Tasted
   padding-right: 5px;
 }
 
-#olbbofrtcb .gt_stub_row_group {
+#lupcutsnyh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -493,15 +499,15 @@ Table&nbsp;1: The Four Coffees Tasted
   vertical-align: top;
 }
 
-#olbbofrtcb .gt_row_group_first td {
+#lupcutsnyh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#olbbofrtcb .gt_row_group_first th {
+#lupcutsnyh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#olbbofrtcb .gt_summary_row {
+#lupcutsnyh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -511,16 +517,16 @@ Table&nbsp;1: The Four Coffees Tasted
   padding-right: 5px;
 }
 
-#olbbofrtcb .gt_first_summary_row {
+#lupcutsnyh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_first_summary_row.thick {
+#lupcutsnyh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#olbbofrtcb .gt_last_summary_row {
+#lupcutsnyh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -530,7 +536,7 @@ Table&nbsp;1: The Four Coffees Tasted
   border-bottom-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_grand_summary_row {
+#lupcutsnyh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -540,7 +546,7 @@ Table&nbsp;1: The Four Coffees Tasted
   padding-right: 5px;
 }
 
-#olbbofrtcb .gt_first_grand_summary_row {
+#lupcutsnyh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -550,7 +556,7 @@ Table&nbsp;1: The Four Coffees Tasted
   border-top-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_last_grand_summary_row_top {
+#lupcutsnyh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -560,11 +566,11 @@ Table&nbsp;1: The Four Coffees Tasted
   border-bottom-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_striped {
+#lupcutsnyh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#olbbofrtcb .gt_table_body {
+#lupcutsnyh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -573,7 +579,7 @@ Table&nbsp;1: The Four Coffees Tasted
   border-bottom-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_footnotes {
+#lupcutsnyh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -587,7 +593,7 @@ Table&nbsp;1: The Four Coffees Tasted
   border-right-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_footnote {
+#lupcutsnyh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -596,7 +602,7 @@ Table&nbsp;1: The Four Coffees Tasted
   padding-right: 5px;
 }
 
-#olbbofrtcb .gt_sourcenotes {
+#lupcutsnyh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -610,7 +616,7 @@ Table&nbsp;1: The Four Coffees Tasted
   border-right-color: #D3D3D3;
 }
 
-#olbbofrtcb .gt_sourcenote {
+#lupcutsnyh .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -618,81 +624,81 @@ Table&nbsp;1: The Four Coffees Tasted
   padding-right: 5px;
 }
 
-#olbbofrtcb .gt_left {
+#lupcutsnyh .gt_left {
   text-align: left;
 }
 
-#olbbofrtcb .gt_center {
+#lupcutsnyh .gt_center {
   text-align: center;
 }
 
-#olbbofrtcb .gt_right {
+#lupcutsnyh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#olbbofrtcb .gt_font_normal {
+#lupcutsnyh .gt_font_normal {
   font-weight: normal;
 }
 
-#olbbofrtcb .gt_font_bold {
+#lupcutsnyh .gt_font_bold {
   font-weight: bold;
 }
 
-#olbbofrtcb .gt_font_italic {
+#lupcutsnyh .gt_font_italic {
   font-style: italic;
 }
 
-#olbbofrtcb .gt_super {
+#lupcutsnyh .gt_super {
   font-size: 65%;
 }
 
-#olbbofrtcb .gt_footnote_marks {
+#lupcutsnyh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#olbbofrtcb .gt_asterisk {
+#lupcutsnyh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#olbbofrtcb .gt_indent_1 {
+#lupcutsnyh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#olbbofrtcb .gt_indent_2 {
+#lupcutsnyh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#olbbofrtcb .gt_indent_3 {
+#lupcutsnyh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#olbbofrtcb .gt_indent_4 {
+#lupcutsnyh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#olbbofrtcb .gt_indent_5 {
+#lupcutsnyh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#olbbofrtcb .katex-display {
+#lupcutsnyh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#olbbofrtcb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#lupcutsnyh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
-#olbbofrtcb tbody tr:last-child {
+#lupcutsnyh tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -780,27 +786,27 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
 </figcaption>
 <div aria-describedby="tbl-age_habit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="pndhzjrtql" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="acmjkwywkj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cairo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#pndhzjrtql table {
+#acmjkwywkj table {
   font-family: Cairo, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pndhzjrtql thead, #pndhzjrtql tbody, #pndhzjrtql tfoot, #pndhzjrtql tr, #pndhzjrtql td, #pndhzjrtql th {
+#acmjkwywkj thead, #acmjkwywkj tbody, #acmjkwywkj tfoot, #acmjkwywkj tr, #acmjkwywkj td, #acmjkwywkj th {
   border-style: none;
 }
 
-#pndhzjrtql p {
+#acmjkwywkj p {
   margin: 0;
   padding: 0;
 }
 
-#pndhzjrtql .gt_table {
+#acmjkwywkj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -826,12 +832,12 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-left-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_caption {
+#acmjkwywkj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pndhzjrtql .gt_title {
+#acmjkwywkj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -843,7 +849,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-bottom-width: 0;
 }
 
-#pndhzjrtql .gt_subtitle {
+#acmjkwywkj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -855,7 +861,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-top-width: 0;
 }
 
-#pndhzjrtql .gt_heading {
+#acmjkwywkj .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -867,13 +873,13 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-right-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_bottom_border {
+#acmjkwywkj .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_col_headings {
+#acmjkwywkj .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -888,7 +894,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-right-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_col_heading {
+#acmjkwywkj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -908,7 +914,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   overflow-x: hidden;
 }
 
-#pndhzjrtql .gt_column_spanner_outer {
+#acmjkwywkj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -920,15 +926,15 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   padding-right: 4px;
 }
 
-#pndhzjrtql .gt_column_spanner_outer:first-child {
+#acmjkwywkj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pndhzjrtql .gt_column_spanner_outer:last-child {
+#acmjkwywkj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pndhzjrtql .gt_column_spanner {
+#acmjkwywkj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #000000;
@@ -940,11 +946,11 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   width: 100%;
 }
 
-#pndhzjrtql .gt_spanner_row {
+#acmjkwywkj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pndhzjrtql .gt_group_heading {
+#acmjkwywkj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -970,7 +976,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   text-align: left;
 }
 
-#pndhzjrtql .gt_empty_group_heading {
+#acmjkwywkj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -985,15 +991,15 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   vertical-align: middle;
 }
 
-#pndhzjrtql .gt_from_md > :first-child {
+#acmjkwywkj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pndhzjrtql .gt_from_md > :last-child {
+#acmjkwywkj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pndhzjrtql .gt_row {
+#acmjkwywkj .gt_row {
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 5px;
@@ -1012,7 +1018,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   overflow-x: hidden;
 }
 
-#pndhzjrtql .gt_stub {
+#acmjkwywkj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1025,7 +1031,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   padding-right: 5px;
 }
 
-#pndhzjrtql .gt_stub_row_group {
+#acmjkwywkj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1039,15 +1045,15 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   vertical-align: top;
 }
 
-#pndhzjrtql .gt_row_group_first td {
+#acmjkwywkj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pndhzjrtql .gt_row_group_first th {
+#acmjkwywkj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pndhzjrtql .gt_summary_row {
+#acmjkwywkj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1057,16 +1063,16 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   padding-right: 5px;
 }
 
-#pndhzjrtql .gt_first_summary_row {
+#acmjkwywkj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_first_summary_row.thick {
+#acmjkwywkj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pndhzjrtql .gt_last_summary_row {
+#acmjkwywkj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1076,7 +1082,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-bottom-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_grand_summary_row {
+#acmjkwywkj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1086,7 +1092,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   padding-right: 5px;
 }
 
-#pndhzjrtql .gt_first_grand_summary_row {
+#acmjkwywkj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1096,7 +1102,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-top-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_last_grand_summary_row_top {
+#acmjkwywkj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1106,11 +1112,11 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-bottom-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_striped {
+#acmjkwywkj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pndhzjrtql .gt_table_body {
+#acmjkwywkj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1119,7 +1125,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-bottom-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_footnotes {
+#acmjkwywkj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1133,7 +1139,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-right-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_footnote {
+#acmjkwywkj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1142,7 +1148,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   padding-right: 5px;
 }
 
-#pndhzjrtql .gt_sourcenotes {
+#acmjkwywkj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1156,7 +1162,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   border-right-color: #D3D3D3;
 }
 
-#pndhzjrtql .gt_sourcenote {
+#acmjkwywkj .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1164,81 +1170,81 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
   padding-right: 5px;
 }
 
-#pndhzjrtql .gt_left {
+#acmjkwywkj .gt_left {
   text-align: left;
 }
 
-#pndhzjrtql .gt_center {
+#acmjkwywkj .gt_center {
   text-align: center;
 }
 
-#pndhzjrtql .gt_right {
+#acmjkwywkj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pndhzjrtql .gt_font_normal {
+#acmjkwywkj .gt_font_normal {
   font-weight: normal;
 }
 
-#pndhzjrtql .gt_font_bold {
+#acmjkwywkj .gt_font_bold {
   font-weight: bold;
 }
 
-#pndhzjrtql .gt_font_italic {
+#acmjkwywkj .gt_font_italic {
   font-style: italic;
 }
 
-#pndhzjrtql .gt_super {
+#acmjkwywkj .gt_super {
   font-size: 65%;
 }
 
-#pndhzjrtql .gt_footnote_marks {
+#acmjkwywkj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pndhzjrtql .gt_asterisk {
+#acmjkwywkj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pndhzjrtql .gt_indent_1 {
+#acmjkwywkj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pndhzjrtql .gt_indent_2 {
+#acmjkwywkj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pndhzjrtql .gt_indent_3 {
+#acmjkwywkj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pndhzjrtql .gt_indent_4 {
+#acmjkwywkj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pndhzjrtql .gt_indent_5 {
+#acmjkwywkj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pndhzjrtql .katex-display {
+#acmjkwywkj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pndhzjrtql div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#acmjkwywkj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 
-#pndhzjrtql tbody tr:last-child {
+#acmjkwywkj tbody tr:last-child {
   border-bottom: 2px solid #ffffff00;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="what_is_your_age" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="border-top-width: 0px; border-top-style: solid; border-top-color: black; font-family: Chivo; font-size: 14px; vertical-align: bottom; font-weight: 200; text-transform: uppercase" scope="col">Age Group</th>
@@ -1259,9 +1265,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
 </div>
 </div></td>
 <td class="gt_row gt_center" headers="list_data"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="283.46pt" height="14.17pt" viewbox="0 0 283.46 14.17">
-<g class="svglite"><defs>
-<style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style>
-</defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="164.11" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="164.11" y="0.0000000000000018" width="119.35" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="283.46" y="0.0000000000000018" width="0.00" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="82.06" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">58%</text><text x="223.79" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">42%</text><text x="283.46" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">0%</text></g></g>
+<g class="svglite"><defs> <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="164.11" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="164.11" y="0.0000000000000018" width="119.35" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="283.46" y="0.0000000000000018" width="0.00" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="82.06" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">58%</text><text x="223.79" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">42%</text><text x="283.46" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">0%</text></g></g>
 </svg></td>
 </tr>
 <tr class="even">
@@ -1273,9 +1277,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
 </div>
 </div></td>
 <td class="gt_row gt_center" headers="list_data"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="283.46pt" height="14.17pt" viewbox="0 0 283.46 14.17">
-<g class="svglite"><defs>
-<style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style>
-</defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="149.66" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="149.66" y="0.0000000000000018" width="122.39" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="272.05" y="0.0000000000000018" width="11.41" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="74.83" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">53%</text><text x="210.85" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">43%</text><text x="277.76" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">4%</text></g></g>
+<g class="svglite"><defs> <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="149.66" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="149.66" y="0.0000000000000018" width="122.39" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="272.05" y="0.0000000000000018" width="11.41" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="74.83" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">53%</text><text x="210.85" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">43%</text><text x="277.76" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">4%</text></g></g>
 </svg></td>
 </tr>
 <tr class="odd">
@@ -1287,9 +1289,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
 </div>
 </div></td>
 <td class="gt_row gt_center" headers="list_data"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="283.46pt" height="14.17pt" viewbox="0 0 283.46 14.17">
-<g class="svglite"><defs>
-<style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style>
-</defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="125.36" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="125.36" y="0.0000000000000018" width="149.85" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="275.20" y="0.0000000000000018" width="8.26" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="62.68" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">44%</text><text x="200.28" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">53%</text><text x="279.33" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">3%</text></g></g>
+<g class="svglite"><defs> <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="125.36" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="125.36" y="0.0000000000000018" width="149.85" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="275.20" y="0.0000000000000018" width="8.26" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="62.68" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">44%</text><text x="200.28" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">53%</text><text x="279.33" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">3%</text></g></g>
 </svg></td>
 </tr>
 <tr class="even">
@@ -1301,9 +1301,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
 </div>
 </div></td>
 <td class="gt_row gt_center" headers="list_data"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="283.46pt" height="14.17pt" viewbox="0 0 283.46 14.17">
-<g class="svglite"><defs>
-<style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style>
-</defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="101.37" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="101.37" y="0.0000000000000018" width="167.15" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="268.51" y="0.0000000000000018" width="14.95" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="50.68" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">36%</text><text x="184.94" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">59%</text><text x="275.99" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">5%</text></g></g>
+<g class="svglite"><defs> <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="101.37" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="101.37" y="0.0000000000000018" width="167.15" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="268.51" y="0.0000000000000018" width="14.95" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="50.68" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">36%</text><text x="184.94" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">59%</text><text x="275.99" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">5%</text></g></g>
 </svg></td>
 </tr>
 <tr class="odd">
@@ -1315,9 +1313,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
 </div>
 </div></td>
 <td class="gt_row gt_center" headers="list_data"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="283.46pt" height="14.17pt" viewbox="0 0 283.46 14.17">
-<g class="svglite"><defs>
-<style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style>
-</defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="96.72" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="96.72" y="0.0000000000000018" width="160.89" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="257.61" y="0.0000000000000018" width="25.86" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="48.36" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">34%</text><text x="177.17" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">57%</text><text x="270.54" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">9%</text></g></g>
+<g class="svglite"><defs> <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="96.72" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="96.72" y="0.0000000000000018" width="160.89" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="257.61" y="0.0000000000000018" width="25.86" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="48.36" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">34%</text><text x="177.17" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">57%</text><text x="270.54" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="12.33px" lengthadjust="spacingAndGlyphs">9%</text></g></g>
 </svg></td>
 </tr>
 <tr class="even">
@@ -1329,9 +1325,7 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
 </div>
 </div></td>
 <td class="gt_row gt_center" headers="list_data"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="283.46pt" height="14.17pt" viewbox="0 0 283.46 14.17">
-<g class="svglite"><defs>
-<style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style>
-</defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="70.09" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="70.09" y="0.0000000000000018" width="180.67" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="250.76" y="0.0000000000000018" width="32.71" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="35.04" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">25%</text><text x="160.42" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">64%</text><text x="267.11" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">12%</text></g></g>
+<g class="svglite"><defs> <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="70.09" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="70.09" y="0.0000000000000018" width="180.67" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="250.76" y="0.0000000000000018" width="32.71" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="35.04" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">25%</text><text x="160.42" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">64%</text><text x="267.11" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">12%</text></g></g>
 </svg></td>
 </tr>
 <tr class="odd">
@@ -1343,13 +1337,11 @@ Table&nbsp;2: Participant Age and Daily Coffee Drinking Habits
 </div>
 </div></td>
 <td class="gt_row gt_center" headers="list_data"><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="283.46pt" height="14.17pt" viewbox="0 0 283.46 14.17">
-<g class="svglite"><defs>
-<style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style>
-</defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="78.41" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="78.41" y="0.0000000000000018" width="162.84" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="241.25" y="0.0000000000000018" width="42.22" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="39.20" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">28%</text><text x="159.83" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">57%</text><text x="262.36" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">15%</text></g></g>
+<g class="svglite"><defs> <style type="text/css">    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {      fill: none;      stroke: #000000;      stroke-linecap: round;      stroke-linejoin: round;      stroke-miterlimit: 10.00;    }    .svglite text {      white-space: pre;    }    .svglite g.glyphgroup path {      fill: inherit;      stroke: none;    }  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs> <clippath id="cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw=="> <rect x="0.00" y="0.00" width="283.46" height="14.17"></rect> </clippath></defs><g clip-path="url(#cpMC4wMHwyODMuNDZ8MC4wMHwxNC4xNw==)"><rect x="0.00" y="0.0000000000000018" width="283.46" height="14.17" style="stroke-width: 0.00; stroke: none;"></rect><rect x="0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" y="0.0000000000000018" width="78.41" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #FF4343;"></rect><rect x="78.41" y="0.0000000000000018" width="162.84" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #BFBFBF;"></rect><rect x="241.25" y="0.0000000000000018" width="42.22" height="14.17" style="stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt; stroke-linejoin: miter; fill: #0A1C2B;"></rect><text x="39.20" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">28%</text><text x="159.83" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">57%</text><text x="262.36" y="10.14" text-anchor="middle" style="font-size: 8.54px;fill: #FFFFFF; font-family: &quot;Arial&quot;;" textlength="17.08px" lengthadjust="spacingAndGlyphs">15%</text></g></g>
 </svg></td>
 </tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
 <td colspan="4" class="gt_footnote">100 participants were removed due to null response values.</td>
 </tr>
 </tfoot>
@@ -1490,7 +1482,7 @@ Figure&nbsp;8: Money Spent Over the Past 5 Years on Coffee Equipment by Coffee E
 <section id="what-is-coffee-cupping" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-coffee-cupping">What is Coffee Cupping?</h3>
 <p>Most of us have probably seen tasting notes when purchasing coffee (i.e.&nbsp;grapefruit, chocolate) and the roast level but are these descriptors actually helpful? Would someone describe similar notes of the same coffee?</p>
-<p><img src="..\assets/img/james_slurp.png" class="centerimg img-fluid" width="250" alt="James Slurping One Coffee"> Participants tasted the coffee via coffee cupping, a coffee tasting technique where a taster takes and spoonful of coffee and slurps it as to asses aspects such as cleanness, sweetness, acidity, mouthfeel and aftertaste as in the above picture. But why the slurp? Slurping aerates the coffee as it makes contact with taste buds which intensifies the tasting sensation.</p>
+<p><img src="../assets/img/james_slurp.png" class="centerimg img-fluid" width="250" alt="James Slurping One Coffee"> Participants tasted the coffee via coffee cupping, a coffee tasting technique where a taster takes and spoonful of coffee and slurps it as to asses aspects such as cleanness, sweetness, acidity, mouthfeel and aftertaste as in the above picture. But why the slurp? Slurping aerates the coffee as it makes contact with taste buds which intensifies the tasting sensation.</p>
 <p>To answer these questions, I looked at how participants ranked the level of bitterness and acidity of each coffee. Then they were asked to write down tasting notes so I will explore this via a text analysis to identify the <strong>top flavor notes</strong> used to describe each coffee.</p>
 </section>
 <section id="bitterness-and-acidity" class="level3">
@@ -1512,10 +1504,10 @@ Table&nbsp;3: Bitterness Statistics of Each Coffee
 </figcaption>
 <div aria-describedby="tbl-bitterstats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tamtmezgdz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ewjnjjhsmc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false" data-bgcolor="#FFFFFF">
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false" data-bgcolor="#FFFFFF">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -1591,10 +1583,10 @@ Table&nbsp;4: Acidity Statistics of Each Coffee
 </figcaption>
 <div aria-describedby="tbl-acidstats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="ialkglhqro" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="lqavjongpj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
   
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false" data-bgcolor="#FFFFFF">
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false" data-bgcolor="#FFFFFF">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -1670,8 +1662,8 @@ Table&nbsp;4: Acidity Statistics of Each Coffee
 <div id="fig-wheeloverlap" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-wheeloverlap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-6438cc76b2ce70b42569" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-6438cc76b2ce70b42569">{"x":{"visdat":{"361c4a841561":["function () ","plotlyVisDat"]},"cur_data":"361c4a841561","attrs":{"361c4a841561":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"marker":{"colors":{}},"type":"sunburst","ids":{},"labels":{},"parents":{},"text":{},"textinfo":"label","hovertemplate":"%{text}<extra><\/extra>","domain":{"column":1},"maxdepth":3,"insidetextorientation":"radial","inherit":true}},"layout":{"margin":{"b":0,"l":0,"t":0,"r":0},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"marker":{"color":"rgba(31,119,180,1)","colors":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"line":{"color":"rgba(255,255,255,1)"}},"type":"sunburst","ids":["Fruity","Sour/Acid","Alcohol/Fermented","Green/Vegetative","Stale/Papery","Earthy","Chemical","Roasted","Cereal","Spices","Nutty","Cocoa","Sweet","Floral","Fruity-Berry","Berry-Strawberry","Berry-Raspberry","Berry-Blueberry","Berry-Blackberry","Fruity-Dried Fruit","Dried Fruit-Raisin","Dried Fruit-Prune","Fruity-Other Fruit","Other Fruit-Apple","Other Fruit-Pear","Other Fruit-Peach","Other Fruit-Grape","Other Fruit-Cherry","Other Fruit-Pomegranate","Other Fruit-Coconut","Other Fruit-Pineapple","Fruity-Citrus Fruit","Citrus Fruit-Lemon","Citrus Fruit-Grapefruit","Citrus Fruit-Orange","Citrus Fruit-Lime","Sour/Acid-Sour Aromatics","Sour/Acid-Acetic acid","Sour/Acid-Butyric acid","Sour/Acid-Isovaleric acid","Sour/Acid-Citric acid","Sour/Acid-Malic acid","Alcohol/Fermented-Alcohol","Alcohol/Fermented-Whiskey","Alcohol/Fermented-Winey","Alcohol/Fermented-Fermented","Alcohol/Fermented-Overripe/Near fermented","Green/Vegetative-Olive Oil","Green/Vegetative-Raw","Vegetative-Under–ripe","Vegetative-Peapod","Vegetative-Green","Vegetative-Fresh","Vegetative-Dark Green","Green/Vegetative-Vegetative","Vegetative-Hay-like","Vegetative-Herb-like","Green/Vegetative-Beany","Stale/Papery-Stale","Stale/Papery-Papery","Stale/Papery-Cardboard","Earthy-Musty/earthy","Earthy-Musty/dusty","Earthy-Moldy/damp","Earthy-Phenolic","Earthy-Animalic","Earthy-Meaty/brothy","Earthy-Woody","Chemical-Bitter","Chemical-Salty","Chemical-Medicinal","Chemical-Rubber","Chemical-Petroleum","Chemical-Skunky","Roasted-Tobacco","Roasted-Pipe tobacco","Burnt-Acrid","Burnt-Ashy","Roasted-Burnt","Burnt-Smoky","Burnt-Brown, Roast","Cereal-Grain","Cereal-Malt","Spices-Pungent","Spices-Pepper","Brown Spice-Anise","Brown Spice-Nutmeg","Spices-Brown Spice","Brown Spice-Cinnamon","Brown Spice-Clove","Nutty-Almond","Nutty-Hazelnut","Nutty-Peanuts","Cocoa-Chocolate","Cocoa-Dark Chocolate","Sweet-Sweet","Brown Sugar-Molasses","Brown Sugar-Maple Syrup","Sweet-Brown Sugar","Brown Sugar-Caramelized","Brown Sugar-Honey","Sweet-Vanilla","Sweet-Vanillin","Sweet-Sweet Aromatics","Sweet-Overall Sweet","Floral-Floral","Floral-Rose","Floral-Jasmine","Floral-Chamomile","Floral-Black Tea"],"labels":["Fruity","Sour/Acid","Alcohol/Fermented","Green/Vegetative","Stale/Papery","Earthy","Chemical","Roasted","Cereal","Spices","Nutty","Cocoa","Sweet","Floral","Berry","Strawberry","Raspberry","Blueberry","Blackberry","Dried Fruit","Raisin","Prune","Other Fruit","Apple","Pear","Peach","Grape","Cherry","Pomegranate","Coconut","Pineapple","Citrus Fruit","Lemon","Grapefruit","Orange","Lime","Sour Aromatics","Acetic acid","Butyric acid","Isovaleric acid","Citric acid","Malic acid","Alcohol","Whiskey","Winey","Fermented","Overripe/Near fermented","Olive Oil","Raw","Under–ripe","Peapod","Green","Fresh","Dark Green","Vegetative","Hay-like","Herb-like","Beany","Stale","Papery","Cardboard","Musty/earthy","Musty/dusty","Moldy/damp","Phenolic","Animalic","Meaty/brothy","Woody","Bitter","Salty","Medicinal","Rubber","Petroleum","Skunky","Tobacco","Pipe tobacco","Acrid","Ashy","Burnt","Smoky","Brown, Roast","Grain","Malt","Pungent","Pepper","Anise","Nutmeg","Brown Spice","Cinnamon","Clove","Almond","Hazelnut","Peanuts","Chocolate","Dark Chocolate","Sweet","Molasses","Maple Syrup","Brown Sugar","Caramelized","Honey","Vanilla","Vanillin","Sweet Aromatics","Overall Sweet","Floral","Rose","Jasmine","Chamomile","Black Tea"],"parents":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,"Fruity","Fruity-Berry","Fruity-Berry","Fruity-Berry","Fruity-Berry","Fruity","Fruity-Dried Fruit","Fruity-Dried Fruit","Fruity","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Green/Vegetative","Green/Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative","Stale/Papery","Stale/Papery","Stale/Papery","Earthy","Earthy","Earthy","Earthy","Earthy","Earthy","Earthy","Chemical","Chemical","Chemical","Chemical","Chemical","Chemical","Roasted","Roasted","Roasted-Burnt","Roasted-Burnt","Roasted","Roasted-Burnt","Roasted-Burnt","Cereal","Cereal","Spices","Spices","Spices-Brown Spice","Spices-Brown Spice","Spices","Spices-Brown Spice","Spices-Brown Spice","Nutty","Nutty","Nutty","Cocoa","Cocoa","Sweet","Sweet-Brown Sugar","Sweet-Brown Sugar","Sweet","Sweet-Brown Sugar","Sweet-Brown Sugar","Sweet","Sweet","Sweet","Sweet","Floral","Floral","Floral-Floral","Floral-Floral","Floral-Floral"],"text":["<b>Fruity: <\/b>A sweet, floral, aromatic<br />blend of a variety of ripe<br />fruits.","<b>Sour/Acid: <\/b>The fundamental taste factor<br />associated with a citric acid<br />solution.","<b>Alcohol/Fermented: <\/b>","<b>Green/Vegetative: <\/b>","<b>Stale/Papery: <\/b>","<b>Earthy: <\/b>","<b>Chemical: <\/b>","<b>Roasted: <\/b>Dark brown impression<br />characteristic of products<br />cooked to a high temperature<br />by dry heat. Does not include<br />bitter or burnt notes.","<b>Cereal: <\/b>","<b>Spices: <\/b>","<b>Nutty: <\/b>A slightly sweet, brown,<br />woody, oily, musty,<br />astringent, and bitter<br />aromatic commonly associated<br />with nuts, seeds, beans, and<br />grains.","<b>Cocoa: <\/b>A brown, sweet, dusty,<br />musty, often bitter aromatic<br />associated with cocoa bean,<br />powdered cocoa and chocolate<br />bars.","<b>Sweet: <\/b>","<b>Floral: <\/b>","<b>Berry: <\/b>The sweet, sour, floral,<br />sometimes heavy aromatic<br />associated with a variety of<br />berries such as blackberries,<br />raspberries, blueberries, or<br />strawberries.","<b>Strawberry: <\/b>The somewhat sweet, slightly<br />sour, floral, fruity,<br />frequently winey aromatic<br />associated with strawberry.","<b>Raspberry: <\/b>The lightly sweet, fruity,<br />floral, slightly sour and<br />musty aromatic associated with<br />raspberries.","<b>Blueberry: <\/b>The slightly dark, fruity,<br />sweet, slightly sour, musty,<br />dusty, floral aromatic<br />associated with blueberry.","<b>Blackberry: <\/b>The sweet, dark, fruity,<br />floral, slightly sour,<br />somewhat woody aromatic<br />associated with blackberries.","<b>Dried Fruit: <\/b>An aromatic impression of<br />dark fruit that is sweet<br />and slightly brown and is<br />associated with dried plums<br />and raisins.","<b>Raisin: <\/b>The concentrated, sweet,<br />somewhat sour, brown, fruity,<br />floral aromatic characteristic<br />of dried grapes.","<b>Prune: <\/b>The sweet, slightly brown,<br />floral, musty and overripe<br />aromatic impression of dark<br />fruit associated with dried<br />plums.","<b>Other Fruit: <\/b>A sweet, light, fruity,<br />somewhat floral, sour, or<br />green aromatic that may<br />include apples, grapes,<br />peaches, pears, or cherries.","<b>Apple: <\/b>A sweet, light, fruity,<br />somewhat floral aromatic<br />commonly associated with fresh<br />or processed apples.","<b>Pear: <\/b>The sweet, slightly floral,<br />musty, woody, fruity aromatic<br />associated with pears.","<b>Peach: <\/b>The floral, perfuming, fruity,<br />sweet, slightly sour aromatic<br />associated with peaches.","<b>Grape: <\/b>The sweet, fruity, floral,<br />slightly sour, musty aromatic<br />commonly associated with<br />grapes.","<b>Cherry: <\/b>The sour, fruity, slightly<br />bitter, floral aromatic<br />associated with cherries.","<b>Pomegranate: <\/b>A sour, sweet fruity aromatic<br />that may be somewhat dark,<br />musty and earthy, reminiscent<br />of dark fruits and root<br />vegetables such as beets and<br />carrots; may also have an<br />astringent mouthfeel.","<b>Coconut: <\/b>The slightly sweet, nutty,<br />somewhat woody aromatic<br />associated with coconut.","<b>Pineapple: <\/b>The sweet, slightly sharp,<br />fruity aromatic associated<br />with pineapple.","<b>Citrus Fruit: <\/b>A citric, sour, astringent,<br />slightly sweet, peely, and<br />somewhat floral aromatic that<br />may include lemons, limes,<br />grapefruits, or oranges.","<b>Lemon: <\/b>The citric, sour, astringent,<br />slightly sweet, peely and<br />somewhat floral aromatic<br />associated with lemon.","<b>Grapefruit: <\/b>The citric, sour, bitter,<br />astringent, peely, sharp,<br />slightly sweet aromatic<br />associated with grapefruit.","<b>Orange: <\/b>The citric, sweet, floral,<br />slightly sour aromatic<br />associated with oranges, which<br />may include bitter, peely, and<br />astringent notes.","<b>Lime: <\/b>The citric, sour, astringent,<br />bitter, green, peely, sharp<br />and somewhat floral aromatic<br />associated with limes.","<b>Sour Aromatics: <\/b>An aromatic associated with<br />the impression of a sour<br />product.","<b>Acetic acid: <\/b>A sour, astringent, slightly<br />pungent aromatic associated<br />with vinegar.","<b>Butyric acid: <\/b>A sour, fermented-dairy<br />aromatic associated with<br />certain aged cheeses such as<br />Parmesan.","<b>Isovaleric acid: <\/b>A pungent, sour aromatic<br />associated with sweaty,<br />perspiration-generated foot<br />odor and certain aged cheeses<br />such as Romano.","<b>Citric acid: <\/b>A mild, clean, sour aromatic<br />with slight citrus notes<br />accompanied by astringency.","<b>Malic acid: <\/b>A sour, sharp, somewhat<br />fruity aromatic accompanied by<br />astringency.","<b>Alcohol: <\/b>A colorless, pungent,<br />chemical-like aromatic<br />associated with distilled<br />spirits or grain products.","<b>Whiskey: <\/b>The aromatic associated<br />with distilled products from<br />fermented grain mash.","<b>Winey: <\/b>The sharp, pungent, somewhat<br />fruity, alcohol-like aromatic<br />associated with wine.","<b>Fermented: <\/b>The pungent, sweet,<br />slightly sour, sometimes<br />yeasty, alcohol-like<br />aromatic characteristic of<br />fermented fruits or sugar or<br />over-proofed dough.","<b>Overripe/Near fermented: <\/b>The sweet, slightly sour,<br />damp, musty/earthy aromatic<br />characteristic of fruit or<br />vegetable past their optimum<br />ripeness.","<b>Olive Oil: <\/b>A light, oily aromatic which<br />may have buttery, green,<br />peppery, bitter, and sweet<br />notes.","<b>Raw: <\/b>An aromatic associated with<br />uncooked products.","<b>Under–ripe: <\/b>An aromatic found in<br />green/under-ripe fruit.","<b>Peapod: <\/b>Green aromatic that is<br />sweet, beany, fresh, raw, and<br />musty/earthy.","<b>Green: <\/b>An aromatic characteristic of<br />fresh, plant-based material.<br />Attributes may include leafy,<br />viney, unripe, grassy, and<br />peapod.","<b>Fresh: <\/b>A green aromatic associated<br />with newly cut grass and leafy<br />plants, characterized by a<br />sweet and pungent character.","<b>Dark Green: <\/b>The aromatic commonly<br />associated with cooked green<br />vegetables such as spinach,<br />kale, or green beans that may<br />include bitter, sweet, dusty,<br />musty, or earthy elements,<br />and may have a dark, heavy<br />impression.","<b>Vegetative: <\/b>Sharp, slightly pungent<br />aromatic associated with green<br />plant or vegetable matter<br />such as parsley, spinach, or<br />peapod.","<b>Hay-like: <\/b>The lightly sweet, dry, dusty<br />aromatic with slight green<br />character associated with dry<br />grasses.","<b>Herb-like: <\/b>The aromatic commonly<br />associated with green herbs<br />that may be characterized as<br />sweet, slightly pungent, and<br />slightly bitter. May or may<br />not include green or brown<br />notes.","<b>Beany: <\/b>An aromatic characteristic<br />of beans and bean products<br />that contains musty/earthy,<br />musty/dusty, sour aromatic,<br />bitter aromatic, starchy, and<br />green/peapod, nutty or brown<br />elements.","<b>Stale: <\/b>The aromatic characterized by<br />a lack of freshness.","<b>Papery: <\/b>The aromatic associated with<br />white paper cups.","<b>Cardboard: <\/b>The aromatic associated with<br />cardboard or paper packaging.","<b>Musty/earthy: <\/b>The somewhat sweet, heavy<br />aromatic associated with<br />decaying vegetation and damp,<br />black soil.","<b>Musty/dusty: <\/b>The aromatic associated with<br />dry, closed-air spaces such<br />as attics and closets. May<br />have elements of dry, musty,<br />papery, dry soil, or grain.","<b>Moldy/damp: <\/b>The aromatic associated<br />with damp, closed spaces<br />or basements. May be musty,<br />sharp, and slightly green.","<b>Phenolic: <\/b>The aromatic described as<br />damp, musty, and like animal<br />hide. Reminiscent of a tack<br />room.","<b>Animalic: <\/b>A combination of the aromatics<br />associated with farm animals<br />and live-animal habitation.","<b>Meaty/brothy: <\/b>The aromatic associated with<br />boiled meat, soup, or stock,<br />with weak meaty notes.","<b>Woody: <\/b>The sweet, brown, musty, dark<br />aromatic associated with a<br />bark of a tree.","<b>Bitter: <\/b>The fundamental taste factor<br />associated with a caffeine<br />solution.","<b>Salty: <\/b>A fundamental taste factor<br />of which sodium chloride is<br />typical.","<b>Medicinal: <\/b>A clean, sterile aromatic<br />characteristic of<br />antiseptic-like products such<br />as Band-Aids, alcohol, and<br />iodine.","<b>Rubber: <\/b>A dark, heavy, slightly<br />sharp, and pungent aromatic<br />associated with rubber.","<b>Petroleum: <\/b>A specific chemical aromatic<br />associated with crude oil<br />and its refined products,<br />which have heavy oil<br />characteristics.","<b>Skunky: <\/b>A combination of aromatics<br />associated with skunks.","<b>Tobacco: <\/b>The brown, slightly sweet,<br />slightly pungent aromatic<br />associated with cured tobacco.","<b>Pipe tobacco: <\/b>The brown, sweet, slightly<br />pungent, fruity, floral, spicy<br />aromatic associated with cured<br />tobacco.","<b>Acrid: <\/b>The sharp, pungent, bitter,<br />acidic aromatic associated<br />with products that are<br />excessively roasted or<br />browned.","<b>Ashy: <\/b>The dry, dusty, dirty, smoky<br />aromatic associated with the<br />residual of burnt products.","<b>Burnt: <\/b>The dark brown impression of<br />an over-cooked or over-roasted<br />product that can be sharp,<br />bitter, and sour.","<b>Smoky: <\/b>An acute, pungent aromatic<br />that is a product of the<br />combustion of wood, leaves, or<br />a non-natural product.","<b>Brown, Roast: <\/b>A rich, full, round<br />aromatic impression always<br />characterized as some degree<br />of darkness, generally<br />associated with attributes<br />such as toasted, nutty,<br />roasted, and sweet.","<b>Grain: <\/b>The light brown, dusty, musty,<br />sweet aromatic associated with<br />grains.","<b>Malt: <\/b>The light brown, dusty, musty,<br />sweet, sour and or slightly<br />fermented aromatic associated<br />with grains.","<b>Pungent: <\/b>A sharp, physically<br />penetrating sensation in the<br />nasal cavity.","<b>Pepper: <\/b>The spicy, pungent, musty, and<br />woody aromatic characteristic<br />of ground black pepper.","<b>Anise: <\/b>A pungent, sweet, brown,<br />caramelized aromatic that may<br />contain petroleum, medicinal,<br />and floral notes.","<b>Nutmeg: <\/b>A wet, brown, woody, pungent,<br />petroleum-like, heavy aromatic<br />with a slightly lemony<br />impression.","<b>Brown Spice: <\/b>The sweet, brown aromatic<br />associated with spices such as<br />cinnamon, clove, nutmeg, and<br />allspice.","<b>Cinnamon: <\/b>A sweet, brown, slightly<br />woody, slightly pungent, spicy<br />aromatic.","<b>Clove: <\/b>A sweet, brown, spicy,<br />pungent, floral, citrus,<br />medicinal, and slightly minty<br />aromatic.","<b>Almond: <\/b>A sweet, light brown, woody,<br />and buttery aromatic with<br />floral and fruity notes that<br />may include rose, cherry, and<br />apricot. It is also astringent<br />and may be slightly smoky.","<b>Hazelnut: <\/b>A woody, brown, sweet,<br />musty/earthy, slightly cedar<br />aromatic. May include floral,<br />beany, oily, astringent, and<br />bitter flavor notes.","<b>Peanuts: <\/b>A sweet, light brown, oily,<br />somewhat musty/dusty, beany<br />aromatic that may be slightly<br />astringent.","<b>Chocolate: <\/b>A blend of cocoa, including<br />cocoa butter and dark<br />roast aromatics at varying<br />intensities.","<b>Dark Chocolate: <\/b>A high-intensity blend of<br />cocoa and cocoa butter that<br />may include dark roast, spicy,<br />burnt, and musty notes with<br />increased astringency and<br />bitterness.","<b>Sweet: <\/b>A fundamental taste factor of<br />which sucrose is typical.","<b>Molasses: <\/b>Dark, caramelized top notes<br />that may include slightly<br />sharp, acrid, and sulfur notes<br />characteristic of molasses.","<b>Maple Syrup: <\/b>A woody, sweet, caramelized,<br />brown, slightly green aromatic<br />associated with maple syrup.","<b>Brown Sugar: <\/b>A rich, full, round,<br />sweet aromatic impression<br />characterized by some degree<br />of darkness.","<b>Caramelized: <\/b>A round, full-bodied,<br />medium brown, sweet aromatic<br />associated with cooked sugars<br />and other carbohydrates. Does<br />not include burnt or scorched<br />notes.","<b>Honey: <\/b>Sweet, light brown, slightly<br />spicy aromatic associated with<br />honey.","<b>Vanilla: <\/b>A woody, slightly chemical<br />aromatic associated with<br />vanilla bean, which may<br />include brown, beany, floral,<br />and spicy notes.","<b>Vanillin: <\/b>An extremely sweet,<br />non-natural aromatic<br />associated with vanilla,<br />cotton candy, and<br />marshmallows.","<b>Sweet Aromatics: <\/b>An aromatic associated with<br />the impression of a sweet<br />substance.","<b>Overall Sweet: <\/b>The perception of a<br />combination of sweet taste and<br />aromatics.","<b>Floral: <\/b>A sweet, light, slightly<br />fragrant aromatic associated<br />with fresh flowers.","<b>Rose: <\/b>A sweet, soft, slightly<br />musty/dusty floral fragrance<br />associated with fresh or dried<br />roses.","<b>Jasmine: <\/b>An intense, slightly pungent,<br />sweet, floral aromatic with<br />underlying green, musty/dusty<br />notes.","<b>Chamomile: <\/b>The sweet, slightly<br />floral/fruity, somewhat<br />woody green associated with<br />chamomile.","<b>Black Tea: <\/b>A somewhat brown, musty,<br />dried plant and dried bark<br />aromatic associated with the<br />oxidization of tea leaves."],"textinfo":"label","hovertemplate":["%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>"],"domain":{"column":1},"maxdepth":3,"insidetextorientation":"radial","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-fdd4b3eca85ef1d0191b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-fdd4b3eca85ef1d0191b">{"x":{"visdat":{"1959873254fc4":["function () ","plotlyVisDat"]},"cur_data":"1959873254fc4","attrs":{"1959873254fc4":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"marker":{"colors":{}},"type":"sunburst","ids":{},"labels":{},"parents":{},"text":{},"textinfo":"label","hovertemplate":"%{text}<extra><\/extra>","domain":{"column":1},"maxdepth":3,"insidetextorientation":"radial","inherit":true}},"layout":{"margin":{"b":0,"l":0,"t":0,"r":0},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"marker":{"color":"rgba(31,119,180,1)","colors":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"line":{"color":"rgba(255,255,255,1)"}},"type":"sunburst","ids":["Fruity","Sour/Acid","Alcohol/Fermented","Green/Vegetative","Stale/Papery","Earthy","Chemical","Roasted","Cereal","Spices","Nutty","Cocoa","Sweet","Floral","Fruity-Berry","Berry-Strawberry","Berry-Raspberry","Berry-Blueberry","Berry-Blackberry","Fruity-Dried Fruit","Dried Fruit-Raisin","Dried Fruit-Prune","Fruity-Other Fruit","Other Fruit-Apple","Other Fruit-Pear","Other Fruit-Peach","Other Fruit-Grape","Other Fruit-Cherry","Other Fruit-Pomegranate","Other Fruit-Coconut","Other Fruit-Pineapple","Fruity-Citrus Fruit","Citrus Fruit-Lemon","Citrus Fruit-Grapefruit","Citrus Fruit-Orange","Citrus Fruit-Lime","Sour/Acid-Sour Aromatics","Sour/Acid-Acetic acid","Sour/Acid-Butyric acid","Sour/Acid-Isovaleric acid","Sour/Acid-Citric acid","Sour/Acid-Malic acid","Alcohol/Fermented-Alcohol","Alcohol/Fermented-Whiskey","Alcohol/Fermented-Winey","Alcohol/Fermented-Fermented","Alcohol/Fermented-Overripe/Near fermented","Green/Vegetative-Olive Oil","Green/Vegetative-Raw","Vegetative-Under–ripe","Vegetative-Peapod","Vegetative-Green","Vegetative-Fresh","Vegetative-Dark Green","Green/Vegetative-Vegetative","Vegetative-Hay-like","Vegetative-Herb-like","Green/Vegetative-Beany","Stale/Papery-Stale","Stale/Papery-Papery","Stale/Papery-Cardboard","Earthy-Musty/earthy","Earthy-Musty/dusty","Earthy-Moldy/damp","Earthy-Phenolic","Earthy-Animalic","Earthy-Meaty/brothy","Earthy-Woody","Chemical-Bitter","Chemical-Salty","Chemical-Medicinal","Chemical-Rubber","Chemical-Petroleum","Chemical-Skunky","Roasted-Tobacco","Roasted-Pipe tobacco","Burnt-Acrid","Burnt-Ashy","Roasted-Burnt","Burnt-Smoky","Burnt-Brown, Roast","Cereal-Grain","Cereal-Malt","Spices-Pungent","Spices-Pepper","Brown Spice-Anise","Brown Spice-Nutmeg","Spices-Brown Spice","Brown Spice-Cinnamon","Brown Spice-Clove","Nutty-Almond","Nutty-Hazelnut","Nutty-Peanuts","Cocoa-Chocolate","Cocoa-Dark Chocolate","Sweet-Sweet","Brown Sugar-Molasses","Brown Sugar-Maple Syrup","Sweet-Brown Sugar","Brown Sugar-Caramelized","Brown Sugar-Honey","Sweet-Vanilla","Sweet-Vanillin","Sweet-Sweet Aromatics","Sweet-Overall Sweet","Floral-Floral","Floral-Rose","Floral-Jasmine","Floral-Chamomile","Floral-Black Tea"],"labels":["Fruity","Sour/Acid","Alcohol/Fermented","Green/Vegetative","Stale/Papery","Earthy","Chemical","Roasted","Cereal","Spices","Nutty","Cocoa","Sweet","Floral","Berry","Strawberry","Raspberry","Blueberry","Blackberry","Dried Fruit","Raisin","Prune","Other Fruit","Apple","Pear","Peach","Grape","Cherry","Pomegranate","Coconut","Pineapple","Citrus Fruit","Lemon","Grapefruit","Orange","Lime","Sour Aromatics","Acetic acid","Butyric acid","Isovaleric acid","Citric acid","Malic acid","Alcohol","Whiskey","Winey","Fermented","Overripe/Near fermented","Olive Oil","Raw","Under–ripe","Peapod","Green","Fresh","Dark Green","Vegetative","Hay-like","Herb-like","Beany","Stale","Papery","Cardboard","Musty/earthy","Musty/dusty","Moldy/damp","Phenolic","Animalic","Meaty/brothy","Woody","Bitter","Salty","Medicinal","Rubber","Petroleum","Skunky","Tobacco","Pipe tobacco","Acrid","Ashy","Burnt","Smoky","Brown, Roast","Grain","Malt","Pungent","Pepper","Anise","Nutmeg","Brown Spice","Cinnamon","Clove","Almond","Hazelnut","Peanuts","Chocolate","Dark Chocolate","Sweet","Molasses","Maple Syrup","Brown Sugar","Caramelized","Honey","Vanilla","Vanillin","Sweet Aromatics","Overall Sweet","Floral","Rose","Jasmine","Chamomile","Black Tea"],"parents":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,"Fruity","Fruity-Berry","Fruity-Berry","Fruity-Berry","Fruity-Berry","Fruity","Fruity-Dried Fruit","Fruity-Dried Fruit","Fruity","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Green/Vegetative","Green/Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative","Stale/Papery","Stale/Papery","Stale/Papery","Earthy","Earthy","Earthy","Earthy","Earthy","Earthy","Earthy","Chemical","Chemical","Chemical","Chemical","Chemical","Chemical","Roasted","Roasted","Roasted-Burnt","Roasted-Burnt","Roasted","Roasted-Burnt","Roasted-Burnt","Cereal","Cereal","Spices","Spices","Spices-Brown Spice","Spices-Brown Spice","Spices","Spices-Brown Spice","Spices-Brown Spice","Nutty","Nutty","Nutty","Cocoa","Cocoa","Sweet","Sweet-Brown Sugar","Sweet-Brown Sugar","Sweet","Sweet-Brown Sugar","Sweet-Brown Sugar","Sweet","Sweet","Sweet","Sweet","Floral","Floral","Floral-Floral","Floral-Floral","Floral-Floral"],"text":["<b>Fruity: <\/b>A sweet, floral, aromatic<br />blend of a variety of ripe<br />fruits.","<b>Sour/Acid: <\/b>The fundamental taste factor<br />associated with a citric acid<br />solution.","<b>Alcohol/Fermented: <\/b>","<b>Green/Vegetative: <\/b>","<b>Stale/Papery: <\/b>","<b>Earthy: <\/b>","<b>Chemical: <\/b>","<b>Roasted: <\/b>Dark brown impression<br />characteristic of products<br />cooked to a high temperature<br />by dry heat. Does not include<br />bitter or burnt notes.","<b>Cereal: <\/b>","<b>Spices: <\/b>","<b>Nutty: <\/b>A slightly sweet, brown,<br />woody, oily, musty,<br />astringent, and bitter<br />aromatic commonly associated<br />with nuts, seeds, beans, and<br />grains.","<b>Cocoa: <\/b>A brown, sweet, dusty,<br />musty, often bitter aromatic<br />associated with cocoa bean,<br />powdered cocoa and chocolate<br />bars.","<b>Sweet: <\/b>","<b>Floral: <\/b>","<b>Berry: <\/b>The sweet, sour, floral,<br />sometimes heavy aromatic<br />associated with a variety of<br />berries such as blackberries,<br />raspberries, blueberries, or<br />strawberries.","<b>Strawberry: <\/b>The somewhat sweet, slightly<br />sour, floral, fruity,<br />frequently winey aromatic<br />associated with strawberry.","<b>Raspberry: <\/b>The lightly sweet, fruity,<br />floral, slightly sour and<br />musty aromatic associated with<br />raspberries.","<b>Blueberry: <\/b>The slightly dark, fruity,<br />sweet, slightly sour, musty,<br />dusty, floral aromatic<br />associated with blueberry.","<b>Blackberry: <\/b>The sweet, dark, fruity,<br />floral, slightly sour,<br />somewhat woody aromatic<br />associated with blackberries.","<b>Dried Fruit: <\/b>An aromatic impression of<br />dark fruit that is sweet<br />and slightly brown and is<br />associated with dried plums<br />and raisins.","<b>Raisin: <\/b>The concentrated, sweet,<br />somewhat sour, brown, fruity,<br />floral aromatic characteristic<br />of dried grapes.","<b>Prune: <\/b>The sweet, slightly brown,<br />floral, musty and overripe<br />aromatic impression of dark<br />fruit associated with dried<br />plums.","<b>Other Fruit: <\/b>A sweet, light, fruity,<br />somewhat floral, sour, or<br />green aromatic that may<br />include apples, grapes,<br />peaches, pears, or cherries.","<b>Apple: <\/b>A sweet, light, fruity,<br />somewhat floral aromatic<br />commonly associated with fresh<br />or processed apples.","<b>Pear: <\/b>The sweet, slightly floral,<br />musty, woody, fruity aromatic<br />associated with pears.","<b>Peach: <\/b>The floral, perfuming, fruity,<br />sweet, slightly sour aromatic<br />associated with peaches.","<b>Grape: <\/b>The sweet, fruity, floral,<br />slightly sour, musty aromatic<br />commonly associated with<br />grapes.","<b>Cherry: <\/b>The sour, fruity, slightly<br />bitter, floral aromatic<br />associated with cherries.","<b>Pomegranate: <\/b>A sour, sweet fruity aromatic<br />that may be somewhat dark,<br />musty and earthy, reminiscent<br />of dark fruits and root<br />vegetables such as beets and<br />carrots; may also have an<br />astringent mouthfeel.","<b>Coconut: <\/b>The slightly sweet, nutty,<br />somewhat woody aromatic<br />associated with coconut.","<b>Pineapple: <\/b>The sweet, slightly sharp,<br />fruity aromatic associated<br />with pineapple.","<b>Citrus Fruit: <\/b>A citric, sour, astringent,<br />slightly sweet, peely, and<br />somewhat floral aromatic that<br />may include lemons, limes,<br />grapefruits, or oranges.","<b>Lemon: <\/b>The citric, sour, astringent,<br />slightly sweet, peely and<br />somewhat floral aromatic<br />associated with lemon.","<b>Grapefruit: <\/b>The citric, sour, bitter,<br />astringent, peely, sharp,<br />slightly sweet aromatic<br />associated with grapefruit.","<b>Orange: <\/b>The citric, sweet, floral,<br />slightly sour aromatic<br />associated with oranges, which<br />may include bitter, peely, and<br />astringent notes.","<b>Lime: <\/b>The citric, sour, astringent,<br />bitter, green, peely, sharp<br />and somewhat floral aromatic<br />associated with limes.","<b>Sour Aromatics: <\/b>An aromatic associated with<br />the impression of a sour<br />product.","<b>Acetic acid: <\/b>A sour, astringent, slightly<br />pungent aromatic associated<br />with vinegar.","<b>Butyric acid: <\/b>A sour, fermented-dairy<br />aromatic associated with<br />certain aged cheeses such as<br />Parmesan.","<b>Isovaleric acid: <\/b>A pungent, sour aromatic<br />associated with sweaty,<br />perspiration-generated foot<br />odor and certain aged cheeses<br />such as Romano.","<b>Citric acid: <\/b>A mild, clean, sour aromatic<br />with slight citrus notes<br />accompanied by astringency.","<b>Malic acid: <\/b>A sour, sharp, somewhat<br />fruity aromatic accompanied by<br />astringency.","<b>Alcohol: <\/b>A colorless, pungent,<br />chemical-like aromatic<br />associated with distilled<br />spirits or grain products.","<b>Whiskey: <\/b>The aromatic associated<br />with distilled products from<br />fermented grain mash.","<b>Winey: <\/b>The sharp, pungent, somewhat<br />fruity, alcohol-like aromatic<br />associated with wine.","<b>Fermented: <\/b>The pungent, sweet,<br />slightly sour, sometimes<br />yeasty, alcohol-like<br />aromatic characteristic of<br />fermented fruits or sugar or<br />over-proofed dough.","<b>Overripe/Near fermented: <\/b>The sweet, slightly sour,<br />damp, musty/earthy aromatic<br />characteristic of fruit or<br />vegetable past their optimum<br />ripeness.","<b>Olive Oil: <\/b>A light, oily aromatic which<br />may have buttery, green,<br />peppery, bitter, and sweet<br />notes.","<b>Raw: <\/b>An aromatic associated with<br />uncooked products.","<b>Under–ripe: <\/b>An aromatic found in<br />green/under-ripe fruit.","<b>Peapod: <\/b>Green aromatic that is<br />sweet, beany, fresh, raw, and<br />musty/earthy.","<b>Green: <\/b>An aromatic characteristic of<br />fresh, plant-based material.<br />Attributes may include leafy,<br />viney, unripe, grassy, and<br />peapod.","<b>Fresh: <\/b>A green aromatic associated<br />with newly cut grass and leafy<br />plants, characterized by a<br />sweet and pungent character.","<b>Dark Green: <\/b>The aromatic commonly<br />associated with cooked green<br />vegetables such as spinach,<br />kale, or green beans that may<br />include bitter, sweet, dusty,<br />musty, or earthy elements,<br />and may have a dark, heavy<br />impression.","<b>Vegetative: <\/b>Sharp, slightly pungent<br />aromatic associated with green<br />plant or vegetable matter<br />such as parsley, spinach, or<br />peapod.","<b>Hay-like: <\/b>The lightly sweet, dry, dusty<br />aromatic with slight green<br />character associated with dry<br />grasses.","<b>Herb-like: <\/b>The aromatic commonly<br />associated with green herbs<br />that may be characterized as<br />sweet, slightly pungent, and<br />slightly bitter. May or may<br />not include green or brown<br />notes.","<b>Beany: <\/b>An aromatic characteristic<br />of beans and bean products<br />that contains musty/earthy,<br />musty/dusty, sour aromatic,<br />bitter aromatic, starchy, and<br />green/peapod, nutty or brown<br />elements.","<b>Stale: <\/b>The aromatic characterized by<br />a lack of freshness.","<b>Papery: <\/b>The aromatic associated with<br />white paper cups.","<b>Cardboard: <\/b>The aromatic associated with<br />cardboard or paper packaging.","<b>Musty/earthy: <\/b>The somewhat sweet, heavy<br />aromatic associated with<br />decaying vegetation and damp,<br />black soil.","<b>Musty/dusty: <\/b>The aromatic associated with<br />dry, closed-air spaces such<br />as attics and closets. May<br />have elements of dry, musty,<br />papery, dry soil, or grain.","<b>Moldy/damp: <\/b>The aromatic associated<br />with damp, closed spaces<br />or basements. May be musty,<br />sharp, and slightly green.","<b>Phenolic: <\/b>The aromatic described as<br />damp, musty, and like animal<br />hide. Reminiscent of a tack<br />room.","<b>Animalic: <\/b>A combination of the aromatics<br />associated with farm animals<br />and live-animal habitation.","<b>Meaty/brothy: <\/b>The aromatic associated with<br />boiled meat, soup, or stock,<br />with weak meaty notes.","<b>Woody: <\/b>The sweet, brown, musty, dark<br />aromatic associated with a<br />bark of a tree.","<b>Bitter: <\/b>The fundamental taste factor<br />associated with a caffeine<br />solution.","<b>Salty: <\/b>A fundamental taste factor<br />of which sodium chloride is<br />typical.","<b>Medicinal: <\/b>A clean, sterile aromatic<br />characteristic of<br />antiseptic-like products such<br />as Band-Aids, alcohol, and<br />iodine.","<b>Rubber: <\/b>A dark, heavy, slightly<br />sharp, and pungent aromatic<br />associated with rubber.","<b>Petroleum: <\/b>A specific chemical aromatic<br />associated with crude oil<br />and its refined products,<br />which have heavy oil<br />characteristics.","<b>Skunky: <\/b>A combination of aromatics<br />associated with skunks.","<b>Tobacco: <\/b>The brown, slightly sweet,<br />slightly pungent aromatic<br />associated with cured tobacco.","<b>Pipe tobacco: <\/b>The brown, sweet, slightly<br />pungent, fruity, floral, spicy<br />aromatic associated with cured<br />tobacco.","<b>Acrid: <\/b>The sharp, pungent, bitter,<br />acidic aromatic associated<br />with products that are<br />excessively roasted or<br />browned.","<b>Ashy: <\/b>The dry, dusty, dirty, smoky<br />aromatic associated with the<br />residual of burnt products.","<b>Burnt: <\/b>The dark brown impression of<br />an over-cooked or over-roasted<br />product that can be sharp,<br />bitter, and sour.","<b>Smoky: <\/b>An acute, pungent aromatic<br />that is a product of the<br />combustion of wood, leaves, or<br />a non-natural product.","<b>Brown, Roast: <\/b>A rich, full, round<br />aromatic impression always<br />characterized as some degree<br />of darkness, generally<br />associated with attributes<br />such as toasted, nutty,<br />roasted, and sweet.","<b>Grain: <\/b>The light brown, dusty, musty,<br />sweet aromatic associated with<br />grains.","<b>Malt: <\/b>The light brown, dusty, musty,<br />sweet, sour and or slightly<br />fermented aromatic associated<br />with grains.","<b>Pungent: <\/b>A sharp, physically<br />penetrating sensation in the<br />nasal cavity.","<b>Pepper: <\/b>The spicy, pungent, musty, and<br />woody aromatic characteristic<br />of ground black pepper.","<b>Anise: <\/b>A pungent, sweet, brown,<br />caramelized aromatic that may<br />contain petroleum, medicinal,<br />and floral notes.","<b>Nutmeg: <\/b>A wet, brown, woody, pungent,<br />petroleum-like, heavy aromatic<br />with a slightly lemony<br />impression.","<b>Brown Spice: <\/b>The sweet, brown aromatic<br />associated with spices such as<br />cinnamon, clove, nutmeg, and<br />allspice.","<b>Cinnamon: <\/b>A sweet, brown, slightly<br />woody, slightly pungent, spicy<br />aromatic.","<b>Clove: <\/b>A sweet, brown, spicy,<br />pungent, floral, citrus,<br />medicinal, and slightly minty<br />aromatic.","<b>Almond: <\/b>A sweet, light brown, woody,<br />and buttery aromatic with<br />floral and fruity notes that<br />may include rose, cherry, and<br />apricot. It is also astringent<br />and may be slightly smoky.","<b>Hazelnut: <\/b>A woody, brown, sweet,<br />musty/earthy, slightly cedar<br />aromatic. May include floral,<br />beany, oily, astringent, and<br />bitter flavor notes.","<b>Peanuts: <\/b>A sweet, light brown, oily,<br />somewhat musty/dusty, beany<br />aromatic that may be slightly<br />astringent.","<b>Chocolate: <\/b>A blend of cocoa, including<br />cocoa butter and dark<br />roast aromatics at varying<br />intensities.","<b>Dark Chocolate: <\/b>A high-intensity blend of<br />cocoa and cocoa butter that<br />may include dark roast, spicy,<br />burnt, and musty notes with<br />increased astringency and<br />bitterness.","<b>Sweet: <\/b>A fundamental taste factor of<br />which sucrose is typical.","<b>Molasses: <\/b>Dark, caramelized top notes<br />that may include slightly<br />sharp, acrid, and sulfur notes<br />characteristic of molasses.","<b>Maple Syrup: <\/b>A woody, sweet, caramelized,<br />brown, slightly green aromatic<br />associated with maple syrup.","<b>Brown Sugar: <\/b>A rich, full, round,<br />sweet aromatic impression<br />characterized by some degree<br />of darkness.","<b>Caramelized: <\/b>A round, full-bodied,<br />medium brown, sweet aromatic<br />associated with cooked sugars<br />and other carbohydrates. Does<br />not include burnt or scorched<br />notes.","<b>Honey: <\/b>Sweet, light brown, slightly<br />spicy aromatic associated with<br />honey.","<b>Vanilla: <\/b>A woody, slightly chemical<br />aromatic associated with<br />vanilla bean, which may<br />include brown, beany, floral,<br />and spicy notes.","<b>Vanillin: <\/b>An extremely sweet,<br />non-natural aromatic<br />associated with vanilla,<br />cotton candy, and<br />marshmallows.","<b>Sweet Aromatics: <\/b>An aromatic associated with<br />the impression of a sweet<br />substance.","<b>Overall Sweet: <\/b>The perception of a<br />combination of sweet taste and<br />aromatics.","<b>Floral: <\/b>A sweet, light, slightly<br />fragrant aromatic associated<br />with fresh flowers.","<b>Rose: <\/b>A sweet, soft, slightly<br />musty/dusty floral fragrance<br />associated with fresh or dried<br />roses.","<b>Jasmine: <\/b>An intense, slightly pungent,<br />sweet, floral aromatic with<br />underlying green, musty/dusty<br />notes.","<b>Chamomile: <\/b>The sweet, slightly<br />floral/fruity, somewhat<br />woody green associated with<br />chamomile.","<b>Black Tea: <\/b>A somewhat brown, musty,<br />dried plant and dried bark<br />aromatic associated with the<br />oxidization of tea leaves."],"textinfo":"label","hovertemplate":["%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>"],"domain":{"column":1},"maxdepth":3,"insidetextorientation":"radial","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wheeloverlap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9: Coffee Flavor Wheel - hover to read descriptions
@@ -1718,8 +1710,8 @@ Figure&nbsp;9: Coffee Flavor Wheel - hover to read descriptions
 <div id="fig-tastenotes" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tastenotes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-4f142043eef4cba32ed2" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-4f142043eef4cba32ed2">{"x":{"visdat":{"361c5fb5bda":["function () ","plotlyVisDat"]},"cur_data":"361c5fb5bda","attrs":{"361c5fb5bda":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"marker":{"colors":{}},"type":"sunburst","ids":{},"labels":{},"parents":{},"text":{},"textinfo":"label","hovertemplate":"%{text}<extra><\/extra>","domain":{"column":1},"maxdepth":3,"insidetextorientation":"radial","inherit":true}},"layout":{"margin":{"b":0,"l":0,"t":0,"r":0},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"marker":{"color":"rgba(31,119,180,1)","colors":["#808080","#808080","#e5e5e5","#e5e5e5","#e5e5e5","#A65628","#e5e5e5","#A65628","#e5e5e5","#e5e5e5","#FF7F00","#377EB8","#808080","#FFB716","#9ecae1","#984EA3","#984EA3","#984EA3","#984EA3","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#FFB716","#e5e5e5","#e5e5e5","#e5e5e5","#FFB716","#FFB716","#e5e5e5","#E41A1C","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#984EA3","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#A65628","#808080","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#A65628","#A65628","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#808080","#A65628","#808080","#e5e5e5","#e5e5e5","#e5e5e5","#FF7F00","#E41A1C","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#FFB716","#e5e5e5","#e5e5e5","#e5e5e5","#E41A1C"],"line":{"color":"rgba(255,255,255,1)"}},"type":"sunburst","ids":["Fruity","Sour/Acid","Alcohol/Fermented","Green/Vegetative","Stale/Papery","Earthy","Chemical","Roasted","Cereal","Spices","Nutty","Cocoa","Sweet","Floral","Fruity-Berry","Berry-Strawberry","Berry-Raspberry","Berry-Blueberry","Berry-Blackberry","Fruity-Dried Fruit","Dried Fruit-Raisin","Dried Fruit-Prune","Fruity-Other Fruit","Other Fruit-Apple","Other Fruit-Pear","Other Fruit-Peach","Other Fruit-Grape","Other Fruit-Cherry","Other Fruit-Pomegranate","Other Fruit-Coconut","Other Fruit-Pineapple","Fruity-Citrus Fruit","Citrus Fruit-Lemon","Citrus Fruit-Grapefruit","Citrus Fruit-Orange","Citrus Fruit-Lime","Sour/Acid-Sour Aromatics","Sour/Acid-Acetic acid","Sour/Acid-Butyric acid","Sour/Acid-Isovaleric acid","Sour/Acid-Citric acid","Sour/Acid-Malic acid","Alcohol/Fermented-Alcohol","Alcohol/Fermented-Whiskey","Alcohol/Fermented-Winey","Alcohol/Fermented-Fermented","Alcohol/Fermented-Overripe/Near fermented","Green/Vegetative-Olive Oil","Green/Vegetative-Raw","Vegetative-Under–ripe","Vegetative-Peapod","Vegetative-Green","Vegetative-Fresh","Vegetative-Dark Green","Green/Vegetative-Vegetative","Vegetative-Hay-like","Vegetative-Herb-like","Green/Vegetative-Beany","Stale/Papery-Stale","Stale/Papery-Papery","Stale/Papery-Cardboard","Earthy-Musty/earthy","Earthy-Musty/dusty","Earthy-Moldy/damp","Earthy-Phenolic","Earthy-Animalic","Earthy-Meaty/brothy","Earthy-Woody","Chemical-Bitter","Chemical-Salty","Chemical-Medicinal","Chemical-Rubber","Chemical-Petroleum","Chemical-Skunky","Roasted-Tobacco","Roasted-Pipe tobacco","Burnt-Acrid","Burnt-Ashy","Roasted-Burnt","Burnt-Smoky","Burnt-Brown, Roast","Cereal-Grain","Cereal-Malt","Spices-Pungent","Spices-Pepper","Brown Spice-Anise","Brown Spice-Nutmeg","Spices-Brown Spice","Brown Spice-Cinnamon","Brown Spice-Clove","Nutty-Almond","Nutty-Hazelnut","Nutty-Peanuts","Cocoa-Chocolate","Cocoa-Dark Chocolate","Sweet-Sweet","Brown Sugar-Molasses","Brown Sugar-Maple Syrup","Sweet-Brown Sugar","Brown Sugar-Caramelized","Brown Sugar-Honey","Sweet-Vanilla","Sweet-Vanillin","Sweet-Sweet Aromatics","Sweet-Overall Sweet","Floral-Floral","Floral-Rose","Floral-Jasmine","Floral-Chamomile","Floral-Black Tea"],"labels":["Fruity","Sour/Acid","Alcohol/Fermented","Green/Vegetative","Stale/Papery","Earthy","Chemical","Roasted","Cereal","Spices","Nutty","Cocoa","Sweet","Floral","Berry","Strawberry","Raspberry","Blueberry","Blackberry","Dried Fruit","Raisin","Prune","Other Fruit","Apple","Pear","Peach","Grape","Cherry","Pomegranate","Coconut","Pineapple","Citrus Fruit","Lemon","Grapefruit","Orange","Lime","Sour Aromatics","Acetic acid","Butyric acid","Isovaleric acid","Citric acid","Malic acid","Alcohol","Whiskey","Winey","Fermented","Overripe/Near fermented","Olive Oil","Raw","Under–ripe","Peapod","Green","Fresh","Dark Green","Vegetative","Hay-like","Herb-like","Beany","Stale","Papery","Cardboard","Musty/earthy","Musty/dusty","Moldy/damp","Phenolic","Animalic","Meaty/brothy","Woody","Bitter","Salty","Medicinal","Rubber","Petroleum","Skunky","Tobacco","Pipe tobacco","Acrid","Ashy","Burnt","Smoky","Brown, Roast","Grain","Malt","Pungent","Pepper","Anise","Nutmeg","Brown Spice","Cinnamon","Clove","Almond","Hazelnut","Peanuts","Chocolate","Dark Chocolate","Sweet","Molasses","Maple Syrup","Brown Sugar","Caramelized","Honey","Vanilla","Vanillin","Sweet Aromatics","Overall Sweet","Floral","Rose","Jasmine","Chamomile","Black Tea"],"parents":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,"Fruity","Fruity-Berry","Fruity-Berry","Fruity-Berry","Fruity-Berry","Fruity","Fruity-Dried Fruit","Fruity-Dried Fruit","Fruity","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Green/Vegetative","Green/Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative","Stale/Papery","Stale/Papery","Stale/Papery","Earthy","Earthy","Earthy","Earthy","Earthy","Earthy","Earthy","Chemical","Chemical","Chemical","Chemical","Chemical","Chemical","Roasted","Roasted","Roasted-Burnt","Roasted-Burnt","Roasted","Roasted-Burnt","Roasted-Burnt","Cereal","Cereal","Spices","Spices","Spices-Brown Spice","Spices-Brown Spice","Spices","Spices-Brown Spice","Spices-Brown Spice","Nutty","Nutty","Nutty","Cocoa","Cocoa","Sweet","Sweet-Brown Sugar","Sweet-Brown Sugar","Sweet","Sweet-Brown Sugar","Sweet-Brown Sugar","Sweet","Sweet","Sweet","Sweet","Floral","Floral","Floral-Floral","Floral-Floral","Floral-Floral"],"text":["ABCD","ABCD",null,null,null," BC ",null," BC ",null,null,"ABC "," B  ","ABCD","A  D","A CD","   D","   D","   D","   D",null,null,null,null,null,null,null,null,"A  D",null,null,null,"A  D","A  D",null,"A   ",null,null,null,null,null,null,null,null,null,null,"   D",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null," BC ","ABCD",null,null,null,null,null,null,null,null,null," BC "," BC ",null,null,null,null,null,null,null,null,null,null,null,null,null,"ABCD"," BC ","ABCD",null,null,null,"ABC ","A   ",null,null,null,null,"A  D",null,null,null,"A   "],"textinfo":"label","hovertemplate":["%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>"],"domain":{"column":1},"maxdepth":3,"insidetextorientation":"radial","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-da48f408a20b36f9b7e2" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-da48f408a20b36f9b7e2">{"x":{"visdat":{"19598382e77a3":["function () ","plotlyVisDat"]},"cur_data":"19598382e77a3","attrs":{"19598382e77a3":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"marker":{"colors":{}},"type":"sunburst","ids":{},"labels":{},"parents":{},"text":{},"textinfo":"label","hovertemplate":"%{text}<extra><\/extra>","domain":{"column":1},"maxdepth":3,"insidetextorientation":"radial","inherit":true}},"layout":{"margin":{"b":0,"l":0,"t":0,"r":0},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"marker":{"color":"rgba(31,119,180,1)","colors":["#808080","#808080","#e5e5e5","#e5e5e5","#e5e5e5","#A65628","#e5e5e5","#A65628","#e5e5e5","#e5e5e5","#FF7F00","#377EB8","#808080","#FFB716","#9ecae1","#984EA3","#984EA3","#984EA3","#984EA3","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#FFB716","#e5e5e5","#e5e5e5","#e5e5e5","#FFB716","#FFB716","#e5e5e5","#E41A1C","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#984EA3","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#A65628","#808080","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#A65628","#A65628","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#808080","#A65628","#808080","#e5e5e5","#e5e5e5","#e5e5e5","#FF7F00","#E41A1C","#e5e5e5","#e5e5e5","#e5e5e5","#e5e5e5","#FFB716","#e5e5e5","#e5e5e5","#e5e5e5","#E41A1C"],"line":{"color":"rgba(255,255,255,1)"}},"type":"sunburst","ids":["Fruity","Sour/Acid","Alcohol/Fermented","Green/Vegetative","Stale/Papery","Earthy","Chemical","Roasted","Cereal","Spices","Nutty","Cocoa","Sweet","Floral","Fruity-Berry","Berry-Strawberry","Berry-Raspberry","Berry-Blueberry","Berry-Blackberry","Fruity-Dried Fruit","Dried Fruit-Raisin","Dried Fruit-Prune","Fruity-Other Fruit","Other Fruit-Apple","Other Fruit-Pear","Other Fruit-Peach","Other Fruit-Grape","Other Fruit-Cherry","Other Fruit-Pomegranate","Other Fruit-Coconut","Other Fruit-Pineapple","Fruity-Citrus Fruit","Citrus Fruit-Lemon","Citrus Fruit-Grapefruit","Citrus Fruit-Orange","Citrus Fruit-Lime","Sour/Acid-Sour Aromatics","Sour/Acid-Acetic acid","Sour/Acid-Butyric acid","Sour/Acid-Isovaleric acid","Sour/Acid-Citric acid","Sour/Acid-Malic acid","Alcohol/Fermented-Alcohol","Alcohol/Fermented-Whiskey","Alcohol/Fermented-Winey","Alcohol/Fermented-Fermented","Alcohol/Fermented-Overripe/Near fermented","Green/Vegetative-Olive Oil","Green/Vegetative-Raw","Vegetative-Under–ripe","Vegetative-Peapod","Vegetative-Green","Vegetative-Fresh","Vegetative-Dark Green","Green/Vegetative-Vegetative","Vegetative-Hay-like","Vegetative-Herb-like","Green/Vegetative-Beany","Stale/Papery-Stale","Stale/Papery-Papery","Stale/Papery-Cardboard","Earthy-Musty/earthy","Earthy-Musty/dusty","Earthy-Moldy/damp","Earthy-Phenolic","Earthy-Animalic","Earthy-Meaty/brothy","Earthy-Woody","Chemical-Bitter","Chemical-Salty","Chemical-Medicinal","Chemical-Rubber","Chemical-Petroleum","Chemical-Skunky","Roasted-Tobacco","Roasted-Pipe tobacco","Burnt-Acrid","Burnt-Ashy","Roasted-Burnt","Burnt-Smoky","Burnt-Brown, Roast","Cereal-Grain","Cereal-Malt","Spices-Pungent","Spices-Pepper","Brown Spice-Anise","Brown Spice-Nutmeg","Spices-Brown Spice","Brown Spice-Cinnamon","Brown Spice-Clove","Nutty-Almond","Nutty-Hazelnut","Nutty-Peanuts","Cocoa-Chocolate","Cocoa-Dark Chocolate","Sweet-Sweet","Brown Sugar-Molasses","Brown Sugar-Maple Syrup","Sweet-Brown Sugar","Brown Sugar-Caramelized","Brown Sugar-Honey","Sweet-Vanilla","Sweet-Vanillin","Sweet-Sweet Aromatics","Sweet-Overall Sweet","Floral-Floral","Floral-Rose","Floral-Jasmine","Floral-Chamomile","Floral-Black Tea"],"labels":["Fruity","Sour/Acid","Alcohol/Fermented","Green/Vegetative","Stale/Papery","Earthy","Chemical","Roasted","Cereal","Spices","Nutty","Cocoa","Sweet","Floral","Berry","Strawberry","Raspberry","Blueberry","Blackberry","Dried Fruit","Raisin","Prune","Other Fruit","Apple","Pear","Peach","Grape","Cherry","Pomegranate","Coconut","Pineapple","Citrus Fruit","Lemon","Grapefruit","Orange","Lime","Sour Aromatics","Acetic acid","Butyric acid","Isovaleric acid","Citric acid","Malic acid","Alcohol","Whiskey","Winey","Fermented","Overripe/Near fermented","Olive Oil","Raw","Under–ripe","Peapod","Green","Fresh","Dark Green","Vegetative","Hay-like","Herb-like","Beany","Stale","Papery","Cardboard","Musty/earthy","Musty/dusty","Moldy/damp","Phenolic","Animalic","Meaty/brothy","Woody","Bitter","Salty","Medicinal","Rubber","Petroleum","Skunky","Tobacco","Pipe tobacco","Acrid","Ashy","Burnt","Smoky","Brown, Roast","Grain","Malt","Pungent","Pepper","Anise","Nutmeg","Brown Spice","Cinnamon","Clove","Almond","Hazelnut","Peanuts","Chocolate","Dark Chocolate","Sweet","Molasses","Maple Syrup","Brown Sugar","Caramelized","Honey","Vanilla","Vanillin","Sweet Aromatics","Overall Sweet","Floral","Rose","Jasmine","Chamomile","Black Tea"],"parents":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,"Fruity","Fruity-Berry","Fruity-Berry","Fruity-Berry","Fruity-Berry","Fruity","Fruity-Dried Fruit","Fruity-Dried Fruit","Fruity","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity-Other Fruit","Fruity","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Fruity-Citrus Fruit","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Sour/Acid","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Alcohol/Fermented","Green/Vegetative","Green/Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative","Green/Vegetative-Vegetative","Green/Vegetative-Vegetative","Green/Vegetative","Stale/Papery","Stale/Papery","Stale/Papery","Earthy","Earthy","Earthy","Earthy","Earthy","Earthy","Earthy","Chemical","Chemical","Chemical","Chemical","Chemical","Chemical","Roasted","Roasted","Roasted-Burnt","Roasted-Burnt","Roasted","Roasted-Burnt","Roasted-Burnt","Cereal","Cereal","Spices","Spices","Spices-Brown Spice","Spices-Brown Spice","Spices","Spices-Brown Spice","Spices-Brown Spice","Nutty","Nutty","Nutty","Cocoa","Cocoa","Sweet","Sweet-Brown Sugar","Sweet-Brown Sugar","Sweet","Sweet-Brown Sugar","Sweet-Brown Sugar","Sweet","Sweet","Sweet","Sweet","Floral","Floral","Floral-Floral","Floral-Floral","Floral-Floral"],"text":["ABCD","ABCD",null,null,null," BC ",null," BC ",null,null,"ABC "," B  ","ABCD","A  D","A CD","   D","   D","   D","   D",null,null,null,null,null,null,null,null,"A  D",null,null,null,"A  D","A  D",null,"A   ",null,null,null,null,null,null,null,null,null,null,"   D",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null," BC ","ABCD",null,null,null,null,null,null,null,null,null," BC "," BC ",null,null,null,null,null,null,null,null,null,null,null,null,null,"ABCD"," BC ","ABCD",null,null,null,"ABC ","A   ",null,null,null,null,"A  D",null,null,null,"A   "],"textinfo":"label","hovertemplate":["%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>","%{text}<extra><\/extra>"],"domain":{"column":1},"maxdepth":3,"insidetextorientation":"radial","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tastenotes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;10: The Colors Represent Which Taste Notes Overlap Which Coffee (Hover to see the overlap)
@@ -1755,23 +1747,23 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
 </figcaption>
 <div aria-describedby="tbl-heatmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="eymwsoqufj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#eymwsoqufj table {
+<div id="utmirqziui" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#utmirqziui table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eymwsoqufj thead, #eymwsoqufj tbody, #eymwsoqufj tfoot, #eymwsoqufj tr, #eymwsoqufj td, #eymwsoqufj th {
+#utmirqziui thead, #utmirqziui tbody, #utmirqziui tfoot, #utmirqziui tr, #utmirqziui td, #utmirqziui th {
   border-style: none;
 }
 
-#eymwsoqufj p {
+#utmirqziui p {
   margin: 0;
   padding: 0;
 }
 
-#eymwsoqufj .gt_table {
+#utmirqziui .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1797,12 +1789,12 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-left-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_caption {
+#utmirqziui .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eymwsoqufj .gt_title {
+#utmirqziui .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1814,7 +1806,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-bottom-width: 0;
 }
 
-#eymwsoqufj .gt_subtitle {
+#utmirqziui .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1826,7 +1818,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-top-width: 0;
 }
 
-#eymwsoqufj .gt_heading {
+#utmirqziui .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1838,13 +1830,13 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-right-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_bottom_border {
+#utmirqziui .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_col_headings {
+#utmirqziui .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1859,7 +1851,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-right-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_col_heading {
+#utmirqziui .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1879,7 +1871,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   overflow-x: hidden;
 }
 
-#eymwsoqufj .gt_column_spanner_outer {
+#utmirqziui .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1891,15 +1883,15 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   padding-right: 4px;
 }
 
-#eymwsoqufj .gt_column_spanner_outer:first-child {
+#utmirqziui .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eymwsoqufj .gt_column_spanner_outer:last-child {
+#utmirqziui .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eymwsoqufj .gt_column_spanner {
+#utmirqziui .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1911,11 +1903,11 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   width: 100%;
 }
 
-#eymwsoqufj .gt_spanner_row {
+#utmirqziui .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eymwsoqufj .gt_group_heading {
+#utmirqziui .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1941,7 +1933,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   text-align: left;
 }
 
-#eymwsoqufj .gt_empty_group_heading {
+#utmirqziui .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1956,15 +1948,15 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   vertical-align: middle;
 }
 
-#eymwsoqufj .gt_from_md > :first-child {
+#utmirqziui .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eymwsoqufj .gt_from_md > :last-child {
+#utmirqziui .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eymwsoqufj .gt_row {
+#utmirqziui .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1983,7 +1975,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   overflow-x: hidden;
 }
 
-#eymwsoqufj .gt_stub {
+#utmirqziui .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1996,7 +1988,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   padding-right: 5px;
 }
 
-#eymwsoqufj .gt_stub_row_group {
+#utmirqziui .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2010,15 +2002,15 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   vertical-align: top;
 }
 
-#eymwsoqufj .gt_row_group_first td {
+#utmirqziui .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eymwsoqufj .gt_row_group_first th {
+#utmirqziui .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eymwsoqufj .gt_summary_row {
+#utmirqziui .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2028,16 +2020,16 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   padding-right: 5px;
 }
 
-#eymwsoqufj .gt_first_summary_row {
+#utmirqziui .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_first_summary_row.thick {
+#utmirqziui .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eymwsoqufj .gt_last_summary_row {
+#utmirqziui .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2047,7 +2039,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-bottom-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_grand_summary_row {
+#utmirqziui .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2057,7 +2049,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   padding-right: 5px;
 }
 
-#eymwsoqufj .gt_first_grand_summary_row {
+#utmirqziui .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2067,7 +2059,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-top-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_last_grand_summary_row_top {
+#utmirqziui .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2077,11 +2069,11 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-bottom-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_striped {
+#utmirqziui .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eymwsoqufj .gt_table_body {
+#utmirqziui .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2090,7 +2082,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-bottom-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_footnotes {
+#utmirqziui .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2104,7 +2096,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-right-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_footnote {
+#utmirqziui .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2113,7 +2105,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   padding-right: 5px;
 }
 
-#eymwsoqufj .gt_sourcenotes {
+#utmirqziui .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2127,7 +2119,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   border-right-color: #D3D3D3;
 }
 
-#eymwsoqufj .gt_sourcenote {
+#utmirqziui .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2135,77 +2127,77 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
   padding-right: 5px;
 }
 
-#eymwsoqufj .gt_left {
+#utmirqziui .gt_left {
   text-align: left;
 }
 
-#eymwsoqufj .gt_center {
+#utmirqziui .gt_center {
   text-align: center;
 }
 
-#eymwsoqufj .gt_right {
+#utmirqziui .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eymwsoqufj .gt_font_normal {
+#utmirqziui .gt_font_normal {
   font-weight: normal;
 }
 
-#eymwsoqufj .gt_font_bold {
+#utmirqziui .gt_font_bold {
   font-weight: bold;
 }
 
-#eymwsoqufj .gt_font_italic {
+#utmirqziui .gt_font_italic {
   font-style: italic;
 }
 
-#eymwsoqufj .gt_super {
+#utmirqziui .gt_super {
   font-size: 65%;
 }
 
-#eymwsoqufj .gt_footnote_marks {
+#utmirqziui .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eymwsoqufj .gt_asterisk {
+#utmirqziui .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eymwsoqufj .gt_indent_1 {
+#utmirqziui .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eymwsoqufj .gt_indent_2 {
+#utmirqziui .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eymwsoqufj .gt_indent_3 {
+#utmirqziui .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eymwsoqufj .gt_indent_4 {
+#utmirqziui .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eymwsoqufj .gt_indent_5 {
+#utmirqziui .gt_indent_5 {
   text-indent: 25px;
 }
 
-#eymwsoqufj .katex-display {
+#utmirqziui .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#eymwsoqufj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#utmirqziui div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
 <th id="Flavor" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Flavor</th>
@@ -2312,7 +2304,7 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>This cupping live stream demonstrates there’s actually some commonalities between tasting by the cupping participants. <span class="coffeea">Coffee A</span> and <span class="coffeed">Coffee D</span> were both fruity, while <span class="coffeed">Coffee D</span> was described as ‘fermented’. <span class="coffeeb">Coffee B</span> and <span class="coffeec">Coffee C</span> also had similar flavor notes, but <span class="coffeec">Coffee C</span> was statistically described as being more bitter, on average. This analysis also demonstrates there’s not much flavor differences in medium and dark roasts as compared to light roasts given that similar words were used to describe <span class="coffeeb">Coffee B</span> and <span class="coffeec">Coffee C</span>.</p>
 <p>Now time to make a pour over!</p>
-<p><img src="..\assets/img/pexels-photo-4350071.jpeg" class="centerimg img-fluid" width="250"></p>
+<p><img src="../assets/img/pexels-photo-4350071.jpeg" class="centerimg img-fluid" width="250"></p>
 
 
 </section>
@@ -2377,13 +2369,14 @@ Table&nbsp;5: Heatmap of Coffee Preferences Before Tasting by Expertise Group
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

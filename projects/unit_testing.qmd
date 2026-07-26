@@ -161,7 +161,8 @@ Next I'll provide an example of unit tests that cover many scenarios to test `ca
 #' @param ci_level numeric value between 0.5 and 1 that is the confidence level,
 #' @param overdispersion Boolean, should be TRUE if creating a p' chart
 #'
-#' @returns data with 2 columns added: LCL and UCL representing the upper and lower control limits
+#' @returns data with 2 columns added: LCL and UCL representing the upper and 
+#'  lower control limits
 #' @export
 #' 
 #' @examples
@@ -453,9 +454,7 @@ Writing code for these types of tests should also help in making your functions 
 
 I also have tips that I've learned along the way.
 
-I recommend having at least 1 test data set in your project. One that contains no sensitive data and can be reused. Then you don't have to keep writing dummy data sets.
-
-Next, write tests as you write the code. Not only will the code be fresh on your mind, the code you use to test the function can also be used inside unit tests. It's also okay if you spend more time writing unit tests than the actual function!
+Write tests as you write the code. Not only will the code be fresh on your mind, the code you use to test the function can also be used inside unit tests. It's also okay if you spend more time writing unit tests than the actual function!
 
 Sometimes bugs happen when we don't think about unexpected inputs - it's part of coding. But when a bug is found - immediately write a unit test. Yes, this test will fail but then you know when you fixed it (and if it didn't break other things)!
 

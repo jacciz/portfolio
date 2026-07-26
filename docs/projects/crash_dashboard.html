@@ -189,7 +189,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="../assets/img/png/crash_dashboard.png" class="img-center img-fluid" alt="Screenshot of WisDOT Crash Dashboard."></p>
 <section id="what-i-learned" class="level3">
 <h3 class="anchored" data-anchor-id="what-i-learned">What I learned</h3>
 <p>Through performance testing via <code>shinyloadtest</code>, I found an enormous bottleneck through simply loading the data. As a solution, I created a SQLite database as the database is saved locally inside the package. While this dramitically improved performance, data was still being mapped on-the-fly. Ideally the data should be stored in a spatial database. This app also uses modules so server and ui are much cleaner while the code is easier to debug.</p>

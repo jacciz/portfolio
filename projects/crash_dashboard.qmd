@@ -5,8 +5,8 @@ author:
   - name: Jacci Ziebert
     affiliation: WisDOT
 date: "2021-01-04"
-#image: /assets/img/png/crash_dashboard.png
-#image-alt: "Screenshot of WisDOT Crash Dashboard."
+image: /assets/img/png/crash_dashboard.png
+image-alt: "Screenshot of WisDOT Crash Dashboard."
 categories:
   - Shiny
   - Data Viz
@@ -14,8 +14,6 @@ execute:
   freeze: true
   echo: false
 ---
-
-![](/assets/img/png/crash_dashboard.png){.img-center fig-alt="Screenshot of WisDOT Crash Dashboard."}
 
 ```{r}
  # [Community Maps](https://transportal.cee.wisc.edu/partners/community-maps/crash/)

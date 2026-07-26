@@ -169,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#unit-testing" id="toc-unit-testing" class="nav-link active" data-scroll-target="#unit-testing">Unit Testing</a></li>
+  <li><a href="#what-is-unit-testing" id="toc-what-is-unit-testing" class="nav-link active" data-scroll-target="#what-is-unit-testing">What is Unit Testing?</a></li>
   <li><a href="#when-to-write-a-unit-test" id="toc-when-to-write-a-unit-test" class="nav-link" data-scroll-target="#when-to-write-a-unit-test">When to Write a Unit Test?</a></li>
   <li><a href="#okay-but-when-not-to-write-a-unit-test" id="toc-okay-but-when-not-to-write-a-unit-test" class="nav-link" data-scroll-target="#okay-but-when-not-to-write-a-unit-test">Okay But When Not to Write a Unit Test?</a></li>
   <li><a href="#tutorial" id="toc-tutorial" class="nav-link" data-scroll-target="#tutorial">Tutorial</a></li>
@@ -229,18 +229,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="unit-testing" class="level2">
-<h2 class="anchored" data-anchor-id="unit-testing">Unit Testing</h2>
+<section id="what-is-unit-testing" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-unit-testing">What is Unit Testing?</h2>
 <p>A unit test is a simple statement to verify that the output of a function is as expected given its inputs. Simple as that.</p>
-<p>Okay - but why spend the time to write them? Well, units tests build confidence over time on your code. Many things change - people at your company, your knowledge, R, R packages - so unit tests helps to ensure that the code continuously behaves as expected. Furthermore, here’s benefits I’ve found:</p>
+<p>Okay - but why spend the time to write them? Well, units tests build confidence over time on your code. Many things change - people at your company, your knowledge, R, R packages - so unit tests helps to ensure that the code continuously behaves as expected.</p>
+<p>Here’s benefits I’ve found:</p>
 <ul>
 <li>Helps others to understand what the function does and if it behaves as expected without actually reading the function code - definitely useful during code review!</li>
 <li>To test edge cases and determine how you want the function to handle these</li>
 <li>To ensure bugs do not continue to exist (if one is found, write a failing unit test first)</li>
-<li>To ensure new code does not break existing functionality, but it if does break something you know exactly what else needs to change</li>
+<li>To ensure any changes in code does not break existing functionality, but it if does break something you know exactly what else has changed</li>
 <li>To have a better understanding of what your code is doing and the intended behavior; useful for writing messages or assertions for the user</li>
-<li>Helps in writing {roxgygen} documentation as you can use code in your unit test as an example</li>
 <li>When re-factoring code or adding an argument, you can find what and if the change impacts other code. Sometimes you forget how functions are linked!</li>
+<li>Helps in writing {roxgygen} documentation as you can use code in your unit test as an example</li>
 </ul>
 <p>I’ll be focusing on unit tests as they apply to R functions - there are many types of testing that can be done!</p>
 <p>So the purpose of this 101 is to show you the type of tests one can write; not necessarily to follow best practices in writing R code. Later, I’ll share some tips and best practices once you have a general understanding of writing unit tests.</p>
@@ -305,7 +306,7 @@ Reason: empty test</code></pre>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(result, <span class="dv">5</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed with 1 success 🌈.</code></pre>
+<pre><code>Test passed with 1 success 🎊.</code></pre>
 </div>
 </div>
 <p>Let’s see what happens when a test fails :</p>
@@ -344,7 +345,7 @@ Reason: empty test</code></pre>
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_lt</span>(<span class="fu">math_ops</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="st">"subtract"</span>), <span class="dv">0</span>)</span>
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed with 8 successes 🎉.</code></pre>
+<pre><code>Test passed with 8 successes 🥳.</code></pre>
 </div>
 </div>
 <ol start="7" type="1">

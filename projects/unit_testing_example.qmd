@@ -1,0 +1,465 @@
+---
+title: "Unit Testing 101"
+description: "This is a tutorial on writing unit tests for an example function."
+author: 
+  - name: Jacci Ziebert
+    affiliation: None
+date: "2026-07-26"
+#image: /assets/img/png/testthat_logo.png
+#image-alt: "Logo of testthat R package"
+categories:
+  - Author
+  - Tutorial
+execute: 
+  freeze: true
+  echo: true
+---
+
+## Unit Testing
+
+A unit test is a simple statement to verify that the output of a function is as expected given its inputs. Simple as that.
+
+Okay - but why spend the time to write them? Well, units tests build confidence over time on your code. Many things change - people at your company, your knowledge, R, R packages - so unit tests helps to ensure that the code continuously behaves as expected. Furthermore, here's benefits I've found:
+
+- Helps others to understand what the function does and if it behaves as expected without actually reading the function code - definitely useful during code review!
+- To test edge cases and determine how you want the function to handle these
+- To ensure bugs do not continue to exist (if one is found, write a failing unit test first)
+- To ensure new code does not break existing functionality, but it if does break something you know exactly what else needs to change
+- To have a better understanding of what your code is doing and the intended behavior; useful for writing messages or assertions for the user
+- Helps in writing {roxgygen} documentation as you can use code in your unit test as an example
+- When re-factoring code or adding an argument, you can find what and if the change impacts other code. Sometimes you forget how functions are linked!
+
+I'll be focusing on unit tests as they apply to R functions - there are many types of testing that can be done! 
+
+So the purpose of this 101 is to show you the type of tests one can write; not necessarily to follow best practices in writing R code. Later, I'll share some tips and best practices once you have a general understanding of writing unit tests.
+
+Read [this chapter](https://r-pkgs.org/testing-basics.html) if you'd like a further explanation on unit testing basics.
+
+## When to Write a Unit Test?
+
+The most common situations to write unit tests are:
+
+- When you initially write the function. Chances are that you are testing your code already when developing your code - let's make it more formal!
+
+- When a bug is found. Be sure to write a failing unit test first to ensure bug is fixed and doesn't happen again.
+
+- Before re-factoring code to ensure behavior remains consistent.
+
+- Even before a function is written, write tests to ensure function behavior is written as intended.
+
+## Okay But When Not to Write a Unit Test?
+
+Generally speaking, unit tests are not necessary when the function is very small, perhaps just one line, or just a small wrapper for another function (where there should already be unit tests). Code that will only run a couple times most likely don't need unit tests as these are just one-off projects. I think helper functions would still benefit from having unit tests though.
+
+## Tutorial
+
+Let's start! Below, we have a function called `math_ops()` that performs a variety of math operations. Let's write some unit tests as to make sure it performs as intended.
+
+```{r}
+math_ops <- function(x, y, op = "add") {
+  switch(op,
+         add = x + y,
+         subtract = x - y,
+         multiply = x * y,
+         divide = if (y != 0) x / y else stop("Division by zero"),
+         stop("Unknown operation"))
+}
+```
+
+What exactly could we test for? Let's look at the inputs:
+
+- If op == "multiply", we actually get a multiplication
+
+- If we divide, test that it cannot divide by 0
+
+- If op is something else, we get "Unknown operation."
+
+1)  To start, create an R Project. Then put math_ops into an R script and call it "math_ops.R".
+
+2)  Next, start a test file and call it "test-math_ops.R". It's generally best practice to call the test file the same as the function file and add "test-" in front of it. A test file can have multiple tests for multiple functions.
+
+3)  In this test file - this is the structure of a unit test, so add:
+
+```{r}
+library(testthat)
+
+test_that("math_ops performs as expected", {
+# UNIT TESTS GO HERE
+})
+
+```
+
+4)  A unit test is an `expect` statement and generally has 2 arguments: the first being what the object returns and the second being the expected result to compare to. Below, this says given these inputs of `2,3, "add"` we expect the output to be 5. Run tests by clicking 'Run Tests' in the upper-right in RStudio or by `test_file("test-math_ops.R")`. If you run this, the test passes!
+
+One can also run each individual line of code inside the `test_that()` wrapper. Try running each individual expect statement in the console- click the line of code and press ctrl-enter. This is useful to do when writing tests.
+
+```{r}
+test_that("math_ops performs addition correctly", {
+  result <- math_ops(x = 2, y = 3, op = "add")
+  expect_equal(result, 5)
+})
+
+```
+
+Let's see what happens when a test fails :
+
+```{r, eval=FALSE}
+test_that("math_ops performs addition correctly", {
+  result <- math_ops(x = 2, y = 3, op = "add")
+  expect_equal(result, 4)
+})
+```
+
+We get a failed message! Note: This tutorial was written in a notebook which doesn't allow for failed code chunks. So the above code chunk is not evaluated.
+
+5)  {testthat} offers many `expect` statements. Type `testthat::expect_` in the console to view all the options.
+
+6)  Now let's add a few more using a variety of expect statements!
+
+```{r}
+test_that("math_ops performs correctly", {
+  expect_equal(math_ops(5, 2, "subtract"), 3)
+  
+  expect_equal(math_ops(4, 3, "multiply"), 12)
+  
+  expect_equal(math_ops(10, 2, "divide"), 5)
+  
+  # Expect an error with this message!
+  expect_error(math_ops(10, 0, "divide"), "Division by zero")
+  
+  expect_error(math_ops(1, 1, "modulo"), "Unknown operation")
+
+  # Expect a type
+  result <- math_ops(1, 1, "add")
+  expect_type(result, "double")
+  
+  # gt is greater than
+  expect_gt(math_ops(3, 4, "add"), 6)
+  
+  # lt is less than
+  expect_lt(math_ops(3, 4, "subtract"), 0)
+})
+```
+
+7)  Other commonly used ones are: `expect_true()` and `expect_null()` : these two statements only require 1 argument, the object to test. Try adding a failed test and running it!
+
+Now that you have a little understanding of writing tests, I'll share an example of a function.
+
+## Example: Unit Tests With Good Coverage
+
+Next I'll provide an example of unit tests that cover many scenarios to test `calcPChartLimits()`. The output of `calcPChartLimits()` is a data frame with additional columns for "UCL" and "LCL". Here is the function:
+
+```{r}
+#' Calculate p chart limits in a data-frame
+#'
+#' @param data data-frame
+#' @param value_col string; column in data of numeric values
+#' @param nvar_col string; column in data of integer values
+#' @param adjusted_mean_col string; column in data of numeric values
+#' @param ci_level numeric value between 0.5 and 1 that is the confidence level,
+#' @param overdispersion Boolean, should be TRUE if creating a p' chart
+#'
+#' @returns data with 2 columns added: LCL and UCL representing the upper and lower control limits
+#' @export
+#' 
+#' @examples
+#'    df <- data.frame(
+#'     adjusted_mean = c(.10, .20, .30, .40),
+#'     n_value = c(1, 2, 3, 4), 
+#'     percent = c(.1, .2, .3, .4)
+#'   )
+#'   calcPChartLimits(
+#'     data = df,
+#'     value_col = "percent",
+#'     nvar_col = "n_value",
+#'     adjusted_mean_col = "adjusted_mean"
+#'   )
+calcPChartLimits <- function(
+  data,
+  value_col,
+  nvar_col,
+  adjusted_mean_col,
+  ci_level = 1 - 2 * stats::pnorm(-3),
+  overdispersion = FALSE
+) {
+  
+  if (any(data[[nvar_col]] == 0)) {
+    warning(
+      "At least one row has 0 observations (nvar_col == 0): Control limits will be NaN"
+    )
+  }
+
+  if (any(data[[adjusted_mean_col]] > 1)) {
+    stop("At least one row has a mean > 1: Control limits will be NaN")
+  }
+  # CI level must be between 0.5 and 1
+  if ((ci_level >= .5 & ci_level <= 1) == FALSE) {
+    stop("Conf. Int. must be between 0.5 and 1")
+  }
+
+  # But if ci_level is under 0.9, just a warning
+  if (ci_level < 0.9) {
+    warning("Conf. Int. is under 0.9 which is not recommended")
+  }
+  # if creating a p' chart, set sigma_z equal to the result of
+  # calcOverdisperseZ
+  if (overdispersion == TRUE) {
+    sigma_z = calcOverdisperseZ(
+      data = data,
+      value_col = value_col,
+      nvar_col = nvar_col,
+      adjusted_mean_col = adjusted_mean_col
+    )
+  } else {
+    sigma_z = 1
+  }
+
+  Z = stats::qnorm(1 - (1 - ci_level) / 2) * sigma_z
+
+  moe = Z *
+    sqrt(
+      (data[[adjusted_mean_col]]) *
+        (1 - (data[[adjusted_mean_col]])) /
+        data[[nvar_col]]
+    )
+
+  data$UCL = sapply(
+    data[[adjusted_mean_col]] + moe,
+    FUN = function(x) min(x, 1)
+  )
+
+  data$LCL = sapply(
+    data[[adjusted_mean_col]] - moe,
+    FUN = function(x) max(x, 0)
+  )
+
+  return(data)
+}
+```
+
+And here are the unit tests:
+
+```{r}
+#| eval: false
+test_that("calcPChartLimits function works correctly", {
+  
+  # Create sample data frame
+  df <- data.frame(
+    adjusted_mean = c(.10, 4.0),
+    n_value = c(1, 2)
+  )
+
+  # Test case 1: Large mean
+  expect_error(calcPChartLimits(
+    data = df,
+    adjusted_mean_col = "adjusted_mean",
+    nvar_col = "n_value",
+    ci_level = 0.95,
+    overdispersion = FALSE
+  ))
+
+  # Create sample data frame
+  df <- data.frame(
+    adjusted_mean = c(.10, .20, .30, .40),
+    n_value = c(1, 2, 3, 4), 
+    percent = c(.1, .2, .3, .4)
+  )
+
+  # Test case 2: Basic calculation without over dispersion
+  result <- calcPChartLimits(
+    data = df,
+    adjusted_mean_col = "adjusted_mean",
+    nvar_col = "n_value",
+    ci_level = 0.95,
+    overdispersion = FALSE
+  )
+  
+  expect_s3_class(result, "data.frame")
+
+  # Check that the output contains ucl and lcl
+  expect_true("UCL" %in% names(result))
+  expect_true("LCL" %in% names(result))
+
+  # Check that the length of the output matches the input
+  expect_equal(nrow(result), nrow(df))
+
+  # Test case 2: Check the correctness of ucl and lcl for known inputs
+  expected_moe = stats::qnorm(1 - (1 - .95) / 2) *
+    sqrt((df$adjusted_mean) * (1 - (df$adjusted_mean)) / df$n_value)
+  expected_ucl <- pmax(0, pmin(df$adjusted_mean + expected_moe, 1))
+  expected_lcl <- pmax(0, pmin(df$adjusted_mean - expected_moe, 1))
+
+  expect_equal(result$UCL, expected_ucl)
+  expect_equal(result$LCL, expected_lcl)
+})
+
+test_that("Error and warning messages pop up!", {
+  
+  # Create sample data frame
+  df <- data.frame(
+    adjusted_mean = c(.10, .20, .30, .40),
+    n_value = c(1, 2, 3, 4), 
+    percent = c(.1, .2, .3, .4)
+  )
+  
+  # Test case 1: when CI level is not between 0.5 and 1
+  expect_error(
+    calcPChartLimits(
+      data = df,
+      value_col = "percent",
+      nvar_col = "n_value",
+      adjusted_mean_col = "adjusted_mean",
+      ci_level = 0.4
+    ),
+    "Conf. Int. must be between 0.5 and 1"
+  )
+  
+  # Test case 2: when CI level is 0.9 or above (no error expected)
+  expect_silent(calcPChartLimits(
+    data = df,
+    value_col = "percent",
+    nvar_col = "n_value",
+    adjusted_mean_col = "adjusted_mean",
+    ci_level = 0.95
+  ))
+  
+  # Test case 3: when CI level is under 0.9 or above (warning expected)
+  expect_warning(
+    calcPChartLimits(
+      data = df,
+      value_col = "percent",
+      nvar_col = "n_value",
+      adjusted_mean_col = "adjusted_mean",
+      ci_level = 0.85
+    ),
+    "Conf. Int. is under 0.9 which is not recommended"
+  )
+})
+
+test_that("overdispersion works as expected", {
+  
+  # Create sample data frame
+  df <- data.frame(
+    adjusted_mean = c(.10, .20, .30, .40),
+    n_value = c(1, 2, 3, 4), 
+    percent = c(.1, .2, .3, .4)
+  )
+
+  # Test case 7: Check the correctness of ucl and lcl for known inputs with
+  # over dispersion
+  result_od <- calcPChartLimits(
+    data = df,
+    value_col = "percent",
+    adjusted_mean_col = "adjusted_mean",
+    nvar_col = "n_value",
+    ci_level = 0.95,
+    overdispersion = TRUE
+  )
+
+  # NOTE: This is an internal function
+  sigma_z = calcOverdisperseZ(
+    data = df,
+    value_col = "percent",
+    nvar_col = "n_value",
+    adjusted_mean_col = "adjusted_mean"
+  )
+  
+  expected_moe = stats::qnorm(1 - (1 - .95) / 2) *
+    sigma_z *
+    sqrt((df$adjusted_mean) * (1 - (df$adjusted_mean)) / df$n_value)
+
+  expected_ucl <- pmax(0, pmin(df$adjusted_mean + expected_moe, 1))
+  expected_lcl <- pmax(0, pmin(df$adjusted_mean - expected_moe, 1))
+
+  expect_equal(result_od$UCL, expected_ucl)
+  expect_equal(result_od$LCL, expected_lcl)
+})
+
+test_that("calcPChartLimits works in edge cases", {
+  # Test case 1: Edge case with zero counts
+  df_zero <- data.frame(
+    adjusted_mean = c(0, 0, 0),
+    n_value = c(0, 0, 0)
+  )
+
+  expect_warning(calcPChartLimits(
+    data = df_zero,
+    adjusted_mean_col = "adjusted_mean",
+    nvar_col = "n_value",
+    ci_level = 0.95
+  ), "At least one row has 0 observations (nvar_col == 0): Control limits will be NaN")
+  
+  df_empty <- data.frame(
+    adjusted_mean = as.integer(),
+    n_value = as.integer()
+  )
+    
+  result_empty <- calcPChartLimits(
+    data = df_empty,
+    adjusted_mean_col = "adjusted_mean",
+    nvar_col = "n_value",
+    ci_level = 0.95
+)
+  expect_equal(nrow(result_empty), 0)
+
+})
+```
+
+As you can see, these unit tests cover many scenarios including edge cases. Each argument is being tested under different scenarios, such as when `overdispersion` is both TRUE and FALSE. We calculated UCL and LCL and compared our values to the expected values. A data frame with values of 0 was also tested with an expected output of a warning message. We also tested that the error and warning messages we wrote did appear as expected.
+
+As you can see, the sample data frame is repeated in every test - that is okay because we want every test to be isolated.
+
+Altogether, having these unit tests helps to ensure our code continuously behaves as expected and gives us much more confidence in our code. Next I'll share best practices and tips to start writing your own unit tests!
+
+## Best Practices
+
+First, it's helpful to break your parent function into smaller, single-purpose functions. Each of these child functions should perform one clearly defined task. This approach offers several advantages:
+
+- Improved Testability: Smaller functions are easier to test individually. You can verify that each function produces the expected output for a given input, which simplifies debugging and validation.
+
+- Better Abstraction: By isolating each step, you create a modular structure that abstracts away complexity. This makes your code easier to understand, maintain, and reuse.
+
+- Clearer Logic Flow: When each function has a specific role, the overall logic of your parent function becomes more transparent and easier to follow.
+
+In reality, there probably isn't a perfect hierarchy of functions - I'm using parent and child just to describe the direct relationship and the benefits of having modular functions. To add, having smaller functions helps to avoid having multiple copies of the same code as these functions are easier to adapt as the code base evolves. You can learn more on these [Clean Code principles](https://jacciz.github.io/portfolio/clean_code) in another tutorial I wrote.
+
+Next, each unit test should be completely isolated from another unit test - meaning everything inside `test_that()` should run independently with its own data and local storage apart from all other `test_that()` unit tests. This includes duplicated inputs, such as the same *mock* data frame or same values for inputs. This duplication will make debugging easier when a test does fail so you know exactly which test failed.
+
+Tests should also cover every input, including edge cases and invalid inputs. For example:
+
+- Empty inputs
+
+- Unexpected data types
+
+- Values outside what is expected
+
+- NA or NULL values
+
+Each unit test should also be broken down to test a variety of scenarios - each of these should have a clear, descriptive name to describe the purpose of the test.
+
+Writing unit tests doesn’t just validate your code—it also helps you to improve it. As you write tests for edge cases and unexpected inputs, you’ll probablly naturally start to think about how your function should behave in these scenarios. This often leads to:
+
+- Clearer Error Messages: You’ll be more intentional about communicating what went wrong and why.
+
+- Better Input Validation: You’ll start adding checks for data types, missing values, and out-of-range inputs.
+
+- More Thoughtful Logic: Testing forces you to consider how your function should respond to unusual or invalid inputs, which leads to more resilient code. In short, the process of writing tests helps you design functions that are not only correct but also user-friendly and fault-tolerant.
+
+Writing code for these types of tests should also help in making your functions more robust in writing error messages and in determining how to handle these edge cases.
+
+## Tips
+
+I also have tips that I've learned along the way.
+
+I recommend having at least 1 test data set in your project. One that contains no sensitive data and can be reused. Then you don't have to keep writing dummy data sets.
+
+Next, write tests as you write the code. Not only will the code be fresh on your mind, the code you use to test the function can also be used inside unit tests. It's also okay if you spend more time writing unit tests than the actual function!
+
+Sometimes bugs happen when we don't think about unexpected inputs - it's part of coding. But when a bug is found - immediately write a unit test. Yes, this test will fail but then you know when you fixed it (and if it didn't break other things)!
+
+Especially starting out, I recommend using a large language model (LLM), such as Copilot, ChatGPT or Claude, to help generate unit tests. I would probably choose an LLM that is better for coding as I found certain LLMs use deprecated {testthat} functions. Simply prompt the LLM with something like, *write a unit test using testthat for the following function,* and then paste your function. Then in R run `usethis::use_test()` and this will automatically set-up a test script for you using the `test-{script}.R` and placing it in `testthat/test`! Paste the output of the LLM into that script. Then go line-by-line to learn what exactly the test is testing.
+
+Using an LLM can help you learn best practices for structuring tests, choosing meaningful test cases, and using {testthat}. Then you can refine to suit your specific use case or edge cases. In my experience, these initial tests may usually fail but are still a great starting point (just blame the LLM :))!
+
+I've also used [{ensure}](https://github.com/simonpcouch/ensure) by Simon Couch which also uses {ellmer}. {ensure} creates an Add-In in RStudio so you can highlight and the Add-In to write unit tests right inside RStudio!
+

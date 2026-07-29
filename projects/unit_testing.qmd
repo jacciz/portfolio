@@ -155,11 +155,11 @@ Next I'll provide an example of unit tests that cover many scenarios to test `ca
 #' Calculate p chart limits in a data-frame
 #'
 #' @param data data-frame
-#' @param value_col string; column in data of numeric values
-#' @param nvar_col string; column in data of integer values
-#' @param adjusted_mean_col string; column in data of numeric values
+#' @param value_col string; column in data with numeric values
+#' @param nvar_col string; column in data with integer values
+#' @param adjusted_mean_col string; column in data with numeric values
 #' @param ci_level numeric value between 0.5 and 1 that is the confidence level,
-#' @param overdispersion Boolean, should be TRUE if creating a p' chart
+#' @param overdispersion Boolean, default is FALSE. Should be TRUE if creating a p' chart
 #'
 #' @returns data with 2 columns added: LCL and UCL representing the upper and 
 #'  lower control limits
@@ -286,7 +286,7 @@ test_that("calcPChartLimits function works correctly", {
   # Check that the length of the output matches the input
   expect_equal(nrow(result), nrow(df))
 
-  # Test case 2: Check the correctness of ucl and lcl for known inputs
+  # Test case 3: Check the correctness of ucl and lcl for known inputs
   expected_moe = stats::qnorm(1 - (1 - .95) / 2) *
     sqrt((df$adjusted_mean) * (1 - (df$adjusted_mean)) / df$n_value)
   expected_ucl <- pmax(0, pmin(df$adjusted_mean + expected_moe, 1))
@@ -348,7 +348,7 @@ test_that("overdispersion works as expected", {
     percent = c(.1, .2, .3, .4)
   )
 
-  # Test case 7: Check the correctness of ucl and lcl for known inputs with
+  # Test case 1: Check the correctness of ucl and lcl for known inputs with
   # over dispersion
   result_od <- calcPChartLimits(
     data = df,
@@ -360,12 +360,7 @@ test_that("overdispersion works as expected", {
   )
 
   # NOTE: This is an internal function
-  sigma_z = calcOverdisperseZ(
-    data = df,
-    value_col = "percent",
-    nvar_col = "n_value",
-    adjusted_mean_col = "adjusted_mean"
-  )
+  sigma_z = 0.8
   
   expected_moe = stats::qnorm(1 - (1 - .95) / 2) *
     sigma_z *
@@ -379,6 +374,7 @@ test_that("overdispersion works as expected", {
 })
 
 test_that("calcPChartLimits works in edge cases", {
+  
   # Test case 1: Edge case with zero counts
   df_zero <- data.frame(
     adjusted_mean = c(0, 0, 0),
@@ -424,7 +420,7 @@ First, it's helpful to break your parent function into smaller, single-purpose f
 
 - Clearer Logic Flow: When each function has a specific role, the overall logic of your parent function becomes more transparent and easier to follow.
 
-In reality, there probably isn't a perfect hierarchy of functions - I'm using parent and child just to describe the direct relationship and the benefits of having modular functions. To add, having smaller functions helps to avoid having multiple copies of the same code as these functions are easier to adapt as the code base evolves. You can learn more on these [Clean Code principles](https://jacciz.github.io/portfolio/clean_code) in another tutorial I wrote.
+In reality, there probably isn't a perfect hierarchy of functions - I'm using parent and child just to describe the direct relationship and the benefits of having modular functions. To add, having smaller functions helps to avoid having multiple copies of the same code as these functions are easier to adapt as the code base evolves. You can learn more on these [Clean Code principles](https://jacciz.github.io/portfolio/clean_code) in another article I wrote.
 
 Next, each unit test should be completely isolated from another unit test - meaning everything inside `test_that()` should run independently with its own data and local storage apart from all other `test_that()` unit tests. This includes duplicated inputs, such as the same *mock* data frame or same values for inputs. This duplication will make debugging easier when a test does fail so you know exactly which test failed.
 
@@ -462,5 +458,5 @@ Especially starting out, I recommend using a large language model (LLM), such as
 
 Using an LLM can help you learn best practices for structuring tests, choosing meaningful test cases, and using {testthat}. Then you can refine to suit your specific use case or edge cases. In my experience, these initial tests may usually fail but are still a great starting point (just blame the LLM :))!
 
-I've also used [{ensure}](https://github.com/simonpcouch/ensure) by Simon Couch which also uses {ellmer}. {ensure} creates an Add-In in RStudio so you can highlight and the Add-In to write unit tests right inside RStudio!
+I've also used [{ensure}](https://github.com/simonpcouch/ensure) by Simon Couch which uses {ellmer}. {ensure} creates an Add-In in RStudio so you can highlight a function and run the Add-In to write unit tests right inside RStudio!
 

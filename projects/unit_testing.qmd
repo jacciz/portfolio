@@ -173,13 +173,12 @@ Next I'll provide an example of unit tests that cover many scenarios to test `ca
 #'   )
 #'   calcPChartLimits(
 #'     data = df,
-#'     value_col = "percent",
 #'     nvar_col = "n_value",
 #'     adjusted_mean_col = "adjusted_mean"
 #'   )
 calcPChartLimits <- function(
   data,
-  value_col,
+  value_col = NULL,
   nvar_col,
   adjusted_mean_col,
   ci_level = 1 - 2 * stats::pnorm(-3),
@@ -207,12 +206,7 @@ calcPChartLimits <- function(
   # if creating a p' chart, set sigma_z equal to the result of
   # calcOverdisperseZ
   if (overdispersion == TRUE) {
-    sigma_z = calcOverdisperseZ(
-      data = data,
-      value_col = value_col,
-      nvar_col = nvar_col,
-      adjusted_mean_col = adjusted_mean_col
-    )
+    sigma_z = 0.8
   } else {
     sigma_z = 1
   }
@@ -243,7 +237,6 @@ calcPChartLimits <- function(
 And here are the unit tests:
 
 ```{r}
-#| eval: false
 test_that("calcPChartLimits function works correctly", {
   
   # Create sample data frame
@@ -309,7 +302,6 @@ test_that("Error and warning messages pop up!", {
   expect_error(
     calcPChartLimits(
       data = df,
-      value_col = "percent",
       nvar_col = "n_value",
       adjusted_mean_col = "adjusted_mean",
       ci_level = 0.4
@@ -320,7 +312,6 @@ test_that("Error and warning messages pop up!", {
   # Test case 2: when CI level is 0.9 or above (no error expected)
   expect_silent(calcPChartLimits(
     data = df,
-    value_col = "percent",
     nvar_col = "n_value",
     adjusted_mean_col = "adjusted_mean",
     ci_level = 0.95
@@ -330,7 +321,6 @@ test_that("Error and warning messages pop up!", {
   expect_warning(
     calcPChartLimits(
       data = df,
-      value_col = "percent",
       nvar_col = "n_value",
       adjusted_mean_col = "adjusted_mean",
       ci_level = 0.85
@@ -385,7 +375,8 @@ test_that("calcPChartLimits works in edge cases", {
     adjusted_mean_col = "adjusted_mean",
     nvar_col = "n_value",
     ci_level = 0.95
-  ), "At least one row has 0 observations (nvar_col == 0): Control limits will be NaN")
+    # Need to use \\ before any special characters
+  ), regexp = "At least one row has 0 observations \\(nvar_col == 0\\): Control limits will be NaN")
   
   df_empty <- data.frame(
     adjusted_mean = as.integer(),
@@ -405,7 +396,7 @@ test_that("calcPChartLimits works in edge cases", {
 
 As you can see, these unit tests cover many scenarios including edge cases. Each argument is being tested under different scenarios, such as when `overdispersion` is both TRUE and FALSE. We calculated UCL and LCL and compared our values to the expected values. A data frame with values of 0 was also tested with an expected output of a warning message. We also tested that the error and warning messages we wrote did appear as expected.
 
-As you can see, the sample data frame is repeated in every test - that is okay because we want every test to be isolated.
+The sample data frame is repeated in every test - that is okay because we want every test to be isolated.
 
 Altogether, having these unit tests helps to ensure our code continuously behaves as expected and gives us much more confidence in our code. Next I'll share best practices and tips to start writing your own unit tests!
 

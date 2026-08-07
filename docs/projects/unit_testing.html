@@ -306,7 +306,7 @@ Reason: empty test</code></pre>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(result, <span class="dv">5</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed with 1 success 😸.</code></pre>
+<pre><code>Test passed with 1 success 🎊.</code></pre>
 </div>
 </div>
 <p>Let’s see what happens when a test fails :</p>
@@ -378,71 +378,65 @@ Reason: empty test</code></pre>
 <span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#'   )</span></span>
 <span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#'   calcPChartLimits(</span></span>
 <span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">#'     data = df,</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#'     value_col = "percent",</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#'     nvar_col = "n_value",</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#'     adjusted_mean_col = "adjusted_mean"</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co">#'   )</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>calcPChartLimits <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  data,</span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  value_col,</span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  nvar_col,</span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  adjusted_mean_col,</span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_level =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> stats<span class="sc">::</span><span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">3</span>),</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">overdispersion =</span> <span class="cn">FALSE</span></span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>) {</span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">any</span>(data[[nvar_col]] <span class="sc">==</span> <span class="dv">0</span>)) {</span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">warning</span>(</span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">"At least one row has 0 observations (nvar_col == 0): Control limits will be NaN"</span></span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">any</span>(data[[adjusted_mean_col]] <span class="sc">&gt;</span> <span class="dv">1</span>)) {</span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"At least one row has a mean &gt; 1: Control limits will be NaN"</span>)</span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="co"># CI level must be between 0.5 and 1</span></span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ((ci_level <span class="sc">&gt;=</span> .<span class="dv">5</span> <span class="sc">&amp;</span> ci_level <span class="sc">&lt;=</span> <span class="dv">1</span>) <span class="sc">==</span> <span class="cn">FALSE</span>) {</span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Conf. Int. must be between 0.5 and 1"</span>)</span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># But if ci_level is under 0.9, just a warning</span></span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (ci_level <span class="sc">&lt;</span> <span class="fl">0.9</span>) {</span>
-<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">warning</span>(<span class="st">"Conf. Int. is under 0.9 which is not recommended"</span>)</span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if creating a p' chart, set sigma_z equal to the result of</span></span>
-<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calcOverdisperseZ</span></span>
-<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (overdispersion <span class="sc">==</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    sigma_z <span class="ot">=</span> <span class="fu">calcOverdisperseZ</span>(</span>
-<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> data,</span>
-<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">value_col =</span> value_col,</span>
-<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>      <span class="at">nvar_col =</span> nvar_col,</span>
-<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">adjusted_mean_col =</span> adjusted_mean_col</span>
-<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>    sigma_z <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>  Z <span class="ot">=</span> stats<span class="sc">::</span><span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> ci_level) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">*</span> sigma_z</span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>  moe <span class="ot">=</span> Z <span class="sc">*</span></span>
-<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sqrt</span>(</span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>      (data[[adjusted_mean_col]]) <span class="sc">*</span></span>
-<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>        (<span class="dv">1</span> <span class="sc">-</span> (data[[adjusted_mean_col]])) <span class="sc">/</span></span>
-<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>        data[[nvar_col]]</span>
-<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>UCL <span class="ot">=</span> <span class="fu">sapply</span>(</span>
-<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>    data[[adjusted_mean_col]] <span class="sc">+</span> moe,</span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">min</span>(x, <span class="dv">1</span>)</span>
-<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>LCL <span class="ot">=</span> <span class="fu">sapply</span>(</span>
-<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>    data[[adjusted_mean_col]] <span class="sc">-</span> moe,</span>
-<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">max</span>(x, <span class="dv">0</span>)</span>
-<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
-<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#'     nvar_col = "n_value",</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#'     adjusted_mean_col = "adjusted_mean"</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#'   )</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>calcPChartLimits <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  data,</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">value_col =</span> <span class="cn">NULL</span>,</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  nvar_col,</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  adjusted_mean_col,</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_level =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> stats<span class="sc">::</span><span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">3</span>),</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">overdispersion =</span> <span class="cn">FALSE</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">any</span>(data[[nvar_col]] <span class="sc">==</span> <span class="dv">0</span>)) {</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">warning</span>(</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>      <span class="st">"At least one row has 0 observations (nvar_col == 0): Control limits will be NaN"</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">any</span>(data[[adjusted_mean_col]] <span class="sc">&gt;</span> <span class="dv">1</span>)) {</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"At least one row has a mean &gt; 1: Control limits will be NaN"</span>)</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># CI level must be between 0.5 and 1</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> ((ci_level <span class="sc">&gt;=</span> .<span class="dv">5</span> <span class="sc">&amp;</span> ci_level <span class="sc">&lt;=</span> <span class="dv">1</span>) <span class="sc">==</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Conf. Int. must be between 0.5 and 1"</span>)</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># But if ci_level is under 0.9, just a warning</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (ci_level <span class="sc">&lt;</span> <span class="fl">0.9</span>) {</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">warning</span>(<span class="st">"Conf. Int. is under 0.9 which is not recommended"</span>)</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if creating a p' chart, set sigma_z equal to the result of</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calcOverdisperseZ</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (overdispersion <span class="sc">==</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>    sigma_z <span class="ot">=</span> <span class="fl">0.8</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>    sigma_z <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>  Z <span class="ot">=</span> stats<span class="sc">::</span><span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> ci_level) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">*</span> sigma_z</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>  moe <span class="ot">=</span> Z <span class="sc">*</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sqrt</span>(</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>      (data[[adjusted_mean_col]]) <span class="sc">*</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>        (<span class="dv">1</span> <span class="sc">-</span> (data[[adjusted_mean_col]])) <span class="sc">/</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>        data[[nvar_col]]</span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>UCL <span class="ot">=</span> <span class="fu">sapply</span>(</span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>    data[[adjusted_mean_col]] <span class="sc">+</span> moe,</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">min</span>(x, <span class="dv">1</span>)</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>LCL <span class="ot">=</span> <span class="fu">sapply</span>(</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>    data[[adjusted_mean_col]] <span class="sc">-</span> moe,</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">FUN =</span> <span class="cf">function</span>(x) <span class="fu">max</span>(x, <span class="dv">0</span>)</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>And here are the unit tests:</p>
 <div class="cell">
@@ -496,114 +490,120 @@ Reason: empty test</code></pre>
 <span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(result<span class="sc">$</span>UCL, expected_ucl)</span>
 <span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(result<span class="sc">$</span>LCL, expected_lcl)</span>
-<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="fu">test_that</span>(<span class="st">"Error and warning messages pop up!"</span>, {</span>
-<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create sample data frame</span></span>
-<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean =</span> <span class="fu">c</span>(.<span class="dv">10</span>, .<span class="dv">20</span>, .<span class="dv">30</span>, .<span class="dv">40</span>),</span>
-<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_value =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), </span>
-<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">3</span>, .<span class="dv">4</span>)</span>
-<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 1: when CI level is not between 0.5 and 1</span></span>
-<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_error</span>(</span>
-<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calcPChartLimits</span>(</span>
-<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> df,</span>
-<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>      <span class="at">value_col =</span> <span class="st">"percent"</span>,</span>
-<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>      <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
-<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>      <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
-<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>      <span class="at">ci_level =</span> <span class="fl">0.4</span></span>
-<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Conf. Int. must be between 0.5 and 1"</span></span>
-<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 2: when CI level is 0.9 or above (no error expected)</span></span>
-<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_silent</span>(<span class="fu">calcPChartLimits</span>(</span>
-<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df,</span>
-<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">value_col =</span> <span class="st">"percent"</span>,</span>
-<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
-<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
-<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_level =</span> <span class="fl">0.95</span></span>
-<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 3: when CI level is under 0.9 or above (warning expected)</span></span>
-<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_warning</span>(</span>
-<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calcPChartLimits</span>(</span>
-<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> df,</span>
-<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a>      <span class="at">value_col =</span> <span class="st">"percent"</span>,</span>
-<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>      <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
-<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>      <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
-<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>      <span class="at">ci_level =</span> <span class="fl">0.85</span></span>
-<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Conf. Int. is under 0.9 which is not recommended"</span></span>
-<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a><span class="fu">test_that</span>(<span class="st">"overdispersion works as expected"</span>, {</span>
-<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create sample data frame</span></span>
-<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean =</span> <span class="fu">c</span>(.<span class="dv">10</span>, .<span class="dv">20</span>, .<span class="dv">30</span>, .<span class="dv">40</span>),</span>
-<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_value =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), </span>
-<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">3</span>, .<span class="dv">4</span>)</span>
-<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 1: Check the correctness of ucl and lcl for known inputs with</span></span>
-<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>  <span class="co"># over dispersion</span></span>
-<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a>  result_od <span class="ot">&lt;-</span> <span class="fu">calcPChartLimits</span>(</span>
-<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df,</span>
-<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a>    <span class="at">value_col =</span> <span class="st">"percent"</span>,</span>
-<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
-<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
-<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_level =</span> <span class="fl">0.95</span>,</span>
-<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a>    <span class="at">overdispersion =</span> <span class="cn">TRUE</span></span>
-<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a>  <span class="co"># </span><span class="al">NOTE</span><span class="co">: This is an internal function</span></span>
-<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a>  sigma_z <span class="ot">=</span> <span class="fl">0.8</span></span>
-<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a>  expected_moe <span class="ot">=</span> stats<span class="sc">::</span><span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> .<span class="dv">95</span>) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">*</span></span>
-<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a>    sigma_z <span class="sc">*</span></span>
-<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sqrt</span>((df<span class="sc">$</span>adjusted_mean) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> (df<span class="sc">$</span>adjusted_mean)) <span class="sc">/</span> df<span class="sc">$</span>n_value)</span>
-<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a>  expected_ucl <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="fu">pmin</span>(df<span class="sc">$</span>adjusted_mean <span class="sc">+</span> expected_moe, <span class="dv">1</span>))</span>
-<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a>  expected_lcl <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="fu">pmin</span>(df<span class="sc">$</span>adjusted_mean <span class="sc">-</span> expected_moe, <span class="dv">1</span>))</span>
-<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(result_od<span class="sc">$</span>UCL, expected_ucl)</span>
-<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(result_od<span class="sc">$</span>LCL, expected_lcl)</span>
-<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a><span class="fu">test_that</span>(<span class="st">"calcPChartLimits works in edge cases"</span>, {</span>
-<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 1: Edge case with zero counts</span></span>
-<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>  df_zero <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
-<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_value =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_warning</span>(<span class="fu">calcPChartLimits</span>(</span>
-<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_zero,</span>
-<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
-<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a>    <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
-<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_level =</span> <span class="fl">0.95</span></span>
-<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a>  ), <span class="st">"At least one row has 0 observations (nvar_col == 0): Control limits will be NaN"</span>)</span>
-<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a>  df_empty <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean =</span> <span class="fu">as.integer</span>(),</span>
-<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_value =</span> <span class="fu">as.integer</span>()</span>
-<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a>  result_empty <span class="ot">&lt;-</span> <span class="fu">calcPChartLimits</span>(</span>
-<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_empty,</span>
-<span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
-<span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a>    <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
-<span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_level =</span> <span class="fl">0.95</span></span>
-<span id="cb10-155"><a href="#cb10-155" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(<span class="fu">nrow</span>(result_empty), <span class="dv">0</span>)</span>
-<span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Test passed with 7 successes 🎊.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">test_that</span>(<span class="st">"Error and warning messages pop up!"</span>, {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create sample data frame</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean =</span> <span class="fu">c</span>(.<span class="dv">10</span>, .<span class="dv">20</span>, .<span class="dv">30</span>, .<span class="dv">40</span>),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_value =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">3</span>, .<span class="dv">4</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 1: when CI level is not between 0.5 and 1</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_error</span>(</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calcPChartLimits</span>(</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> df,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">ci_level =</span> <span class="fl">0.4</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Conf. Int. must be between 0.5 and 1"</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 2: when CI level is 0.9 or above (no error expected)</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_silent</span>(<span class="fu">calcPChartLimits</span>(</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df,</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_level =</span> <span class="fl">0.95</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 3: when CI level is under 0.9 or above (warning expected)</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_warning</span>(</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">calcPChartLimits</span>(</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> df,</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>      <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>      <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>      <span class="at">ci_level =</span> <span class="fl">0.85</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Conf. Int. is under 0.9 which is not recommended"</span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Test passed with 3 successes 🎉.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">test_that</span>(<span class="st">"overdispersion works as expected"</span>, {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create sample data frame</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean =</span> <span class="fu">c</span>(.<span class="dv">10</span>, .<span class="dv">20</span>, .<span class="dv">30</span>, .<span class="dv">40</span>),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_value =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">3</span>, .<span class="dv">4</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 1: Check the correctness of ucl and lcl for known inputs with</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># over dispersion</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  result_od <span class="ot">&lt;-</span> <span class="fu">calcPChartLimits</span>(</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">value_col =</span> <span class="st">"percent"</span>,</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_level =</span> <span class="fl">0.95</span>,</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">overdispersion =</span> <span class="cn">TRUE</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  sigma_z <span class="ot">=</span> <span class="fl">0.8</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  expected_moe <span class="ot">=</span> stats<span class="sc">::</span><span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> (<span class="dv">1</span> <span class="sc">-</span> .<span class="dv">95</span>) <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">*</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    sigma_z <span class="sc">*</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sqrt</span>((df<span class="sc">$</span>adjusted_mean) <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> (df<span class="sc">$</span>adjusted_mean)) <span class="sc">/</span> df<span class="sc">$</span>n_value)</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  expected_ucl <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="fu">pmin</span>(df<span class="sc">$</span>adjusted_mean <span class="sc">+</span> expected_moe, <span class="dv">1</span>))</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  expected_lcl <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="dv">0</span>, <span class="fu">pmin</span>(df<span class="sc">$</span>adjusted_mean <span class="sc">-</span> expected_moe, <span class="dv">1</span>))</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(result_od<span class="sc">$</span>UCL, expected_ucl)</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(result_od<span class="sc">$</span>LCL, expected_lcl)</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Test passed with 2 successes 😸.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">test_that</span>(<span class="st">"calcPChartLimits works in edge cases"</span>, {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Test case 1: Edge case with zero counts</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  df_zero <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_value =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_warning</span>(<span class="fu">calcPChartLimits</span>(</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_zero,</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_level =</span> <span class="fl">0.95</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Need to use \\ before any special characters</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  ), <span class="at">regexp =</span> <span class="st">"At least one row has 0 observations </span><span class="sc">\\</span><span class="st">(nvar_col == 0</span><span class="sc">\\</span><span class="st">): Control limits will be NaN"</span>)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  df_empty <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean =</span> <span class="fu">as.integer</span>(),</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_value =</span> <span class="fu">as.integer</span>()</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  result_empty <span class="ot">&lt;-</span> <span class="fu">calcPChartLimits</span>(</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_empty,</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">adjusted_mean_col =</span> <span class="st">"adjusted_mean"</span>,</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">nvar_col =</span> <span class="st">"n_value"</span>,</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">ci_level =</span> <span class="fl">0.95</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(<span class="fu">nrow</span>(result_empty), <span class="dv">0</span>)</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Test passed with 2 successes 🎉.</code></pre>
+</div>
 </div>
 <p>As you can see, these unit tests cover many scenarios including edge cases. Each argument is being tested under different scenarios, such as when <code>overdispersion</code> is both TRUE and FALSE. We calculated UCL and LCL and compared our values to the expected values. A data frame with values of 0 was also tested with an expected output of a warning message. We also tested that the error and warning messages we wrote did appear as expected.</p>
 <p>As you can see, the sample data frame is repeated in every test - that is okay because we want every test to be isolated.</p>
@@ -613,12 +613,12 @@ Reason: empty test</code></pre>
 <h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
 <p>First, it’s helpful to break your parent function into smaller, single-purpose functions. Each of these child functions should perform one clearly defined task. This approach offers several advantages:</p>
 <ul>
-<li><p>Improved Testability: Smaller functions are easier to test individually. You can verify that each function produces the expected output for a given input, which simplifies debugging and validation.</p></li>
-<li><p>Better Abstraction: By isolating each step, you create a modular structure that abstracts away complexity. This makes your code easier to understand, maintain, and reuse.</p></li>
-<li><p>Clearer Logic Flow: When each function has a specific role, the overall logic of your parent function becomes more transparent and easier to follow.</p></li>
+<li><p>Improved testability: Smaller functions are easier to test individually. You can verify that each function produces the expected output for a given input, which simplifies debugging and validation.</p></li>
+<li><p>Better abstraction: By isolating each step, you create a modular structure that abstracts away complexity. This makes your code easier to understand, maintain, and reuse.</p></li>
+<li><p>Clearer logic flow: When each function has a specific role, the overall logic of your parent function becomes more transparent and easier to follow.</p></li>
 </ul>
 <p>In reality, there probably isn’t a perfect hierarchy of functions - I’m using parent and child just to describe the direct relationship and the benefits of having modular functions. To add, having smaller functions helps to avoid having multiple copies of the same code as these functions are easier to adapt as the code base evolves. You can learn more on these <a href="https://jacciz.github.io/portfolio/clean_code">Clean Code principles</a> in another article I wrote.</p>
-<p>Next, each unit test should be completely isolated from another unit test - meaning everything inside <code>test_that()</code> should run independently with its own data and local storage apart from all other <code>test_that()</code> unit tests. This includes duplicated inputs, such as the same <em>mock</em> data frame or same values for inputs. This duplication will make debugging easier when a test does fail so you know exactly which test failed.</p>
+<p>Next, each unit test should be completely isolated from another unit test - meaning everything inside <code>test_that()</code> should run independently with its own data apart from all other <code>test_that()</code> unit tests. This includes duplicated inputs, such as the same <em>mock</em> data frame or same values for inputs. This duplication will make debugging easier when a test does fail so you know exactly which test failed.</p>
 <p>Tests should also cover every input, including edge cases and invalid inputs. For example:</p>
 <ul>
 <li><p>Empty inputs</p></li>
@@ -627,13 +627,13 @@ Reason: empty test</code></pre>
 <li><p>NA or NULL values</p></li>
 </ul>
 <p>Each unit test should also be broken down to test a variety of scenarios - each of these should have a clear, descriptive name to describe the purpose of the test.</p>
-<p>Writing unit tests doesn’t just validate your code—it also helps you to improve it. As you write tests for edge cases and unexpected inputs, you’ll probablly naturally start to think about how your function should behave in these scenarios. This often leads to:</p>
+<p>Writing unit tests doesn’t just validate your code—it also helps you to improve it. As you write tests for edge cases and unexpected inputs, you’ll probably naturally start to think about how your function should behave in these scenarios. This often leads to:</p>
 <ul>
-<li><p>Clearer Error Messages: You’ll be more intentional about communicating what went wrong and why.</p></li>
-<li><p>Better Input Validation: You’ll start adding checks for data types, missing values, and out-of-range inputs.</p></li>
-<li><p>More Thoughtful Logic: Testing forces you to consider how your function should respond to unusual or invalid inputs, which leads to more resilient code. In short, the process of writing tests helps you design functions that are not only correct but also user-friendly and fault-tolerant.</p></li>
+<li><p>Clearer error messages: You’ll be more intentional about communicating what went wrong and why. {assertthat} makes it easy to write these messages.</p></li>
+<li><p>Better input validation: You’ll start adding checks for data types, missing values, and out-of-range inputs.</p></li>
+<li><p>More thoughtful logic: Testing forces you to consider how your function should respond to unusual or invalid inputs, which leads to more resilient code.</p></li>
 </ul>
-<p>Writing code for these types of tests should also help in making your functions more robust in writing error messages and in determining how to handle these edge cases.</p>
+<p>In short, the process of writing tests helps you design functions that are not only correct but also user-friendly and fault-tolerant. Writing code for these types of tests should also help in making your functions more robust in writing error messages and in determining how to handle these edge cases.</p>
 </section>
 <section id="tips" class="level2">
 <h2 class="anchored" data-anchor-id="tips">Tips</h2>

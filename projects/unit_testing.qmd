@@ -359,7 +359,6 @@ test_that("overdispersion works as expected", {
     overdispersion = TRUE
   )
 
-  # NOTE: This is an internal function
   sigma_z = 0.8
   
   expected_moe = stats::qnorm(1 - (1 - .95) / 2) *
@@ -414,15 +413,15 @@ Altogether, having these unit tests helps to ensure our code continuously behave
 
 First, it's helpful to break your parent function into smaller, single-purpose functions. Each of these child functions should perform one clearly defined task. This approach offers several advantages:
 
-- Improved Testability: Smaller functions are easier to test individually. You can verify that each function produces the expected output for a given input, which simplifies debugging and validation.
+- Improved testability: Smaller functions are easier to test individually. You can verify that each function produces the expected output for a given input, which simplifies debugging and validation.
 
-- Better Abstraction: By isolating each step, you create a modular structure that abstracts away complexity. This makes your code easier to understand, maintain, and reuse.
+- Better abstraction: By isolating each step, you create a modular structure that abstracts away complexity. This makes your code easier to understand, maintain, and reuse.
 
-- Clearer Logic Flow: When each function has a specific role, the overall logic of your parent function becomes more transparent and easier to follow.
+- Clearer logic flow: When each function has a specific role, the overall logic of your parent function becomes more transparent and easier to follow.
 
 In reality, there probably isn't a perfect hierarchy of functions - I'm using parent and child just to describe the direct relationship and the benefits of having modular functions. To add, having smaller functions helps to avoid having multiple copies of the same code as these functions are easier to adapt as the code base evolves. You can learn more on these [Clean Code principles](https://jacciz.github.io/portfolio/clean_code) in another article I wrote.
 
-Next, each unit test should be completely isolated from another unit test - meaning everything inside `test_that()` should run independently with its own data and local storage apart from all other `test_that()` unit tests. This includes duplicated inputs, such as the same *mock* data frame or same values for inputs. This duplication will make debugging easier when a test does fail so you know exactly which test failed.
+Next, each unit test should be completely isolated from another unit test - meaning everything inside `test_that()` should run independently with its own data apart from all other `test_that()` unit tests. This includes duplicated inputs, such as the same *mock* data frame or same values for inputs. This duplication will make debugging easier when a test does fail so you know exactly which test failed.
 
 Tests should also cover every input, including edge cases and invalid inputs. For example:
 
@@ -436,15 +435,15 @@ Tests should also cover every input, including edge cases and invalid inputs. Fo
 
 Each unit test should also be broken down to test a variety of scenarios - each of these should have a clear, descriptive name to describe the purpose of the test.
 
-Writing unit tests doesn’t just validate your code—it also helps you to improve it. As you write tests for edge cases and unexpected inputs, you’ll probablly naturally start to think about how your function should behave in these scenarios. This often leads to:
+Writing unit tests doesn’t just validate your code—it also helps you to improve it. As you write tests for edge cases and unexpected inputs, you’ll probably naturally start to think about how your function should behave in these scenarios. This often leads to:
 
-- Clearer Error Messages: You’ll be more intentional about communicating what went wrong and why.
+- Clearer error messages: You’ll be more intentional about communicating what went wrong and why. {assertthat} makes it easy to write these messages.
 
-- Better Input Validation: You’ll start adding checks for data types, missing values, and out-of-range inputs.
+- Better input validation: You’ll start adding checks for data types, missing values, and out-of-range inputs.
 
-- More Thoughtful Logic: Testing forces you to consider how your function should respond to unusual or invalid inputs, which leads to more resilient code. In short, the process of writing tests helps you design functions that are not only correct but also user-friendly and fault-tolerant.
+- More thoughtful logic: Testing forces you to consider how your function should respond to unusual or invalid inputs, which leads to more resilient code. 
 
-Writing code for these types of tests should also help in making your functions more robust in writing error messages and in determining how to handle these edge cases.
+In short, the process of writing tests helps you design functions that are not only correct but also user-friendly and fault-tolerant. Writing code for these types of tests should also help in making your functions more robust in writing error messages and in determining how to handle these edge cases.
 
 ## Tips
 

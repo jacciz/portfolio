@@ -308,6 +308,6 @@ coffee_words_join <-
            color = "#fee6ce") {
     coffee_join = left_join(coffee_cup_df, coffee_words, by = c("end_name" = "cup_words"))
     
-    coffee_join = coffee_join |> mutate(color = ifelse(is.na(Freq), color, Freq))
+    coffee_join = coffee_join |> dplyr::mutate(color = ifelse(is.na(Freq), color, Freq))
     return(coffee_join)
   }

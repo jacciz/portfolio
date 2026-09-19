@@ -508,11 +508,12 @@ cupsOverThree &lt;- countOfCups[countOfCups &gt; 3]</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As I’m mentioning this topic of making functions more flexible, I really recommend learning more on non-standard evaluation as it allows one to pass unevaluated expression into function arguments. One example is simply passing a string to represent a column name as an argument and using that to create the new column name. Resources are:</p>
+<p>As I’m mentioning this topic of making functions more flexible, I really recommend learning more on non-standard evaluation as it allows one to pass an unevaluated expression (such as <code>col_name = percent_uploaded</code>) into function arguments. Resources are:</p>
 <ul>
 <li><a href="https://rguides.dev/guides/r-non-standard-evaluation/">Non-Standard Evaluation (NSE) in R</a></li>
 <li><a href="https://timmastny.com/blog/nse-tidy-eval-dplyr-leadr/">Standard Non-Standard Evaluation: Tidy Eval</a></li>
 </ul>
+<p>Standard Evaluation is when an argument is evaluated normally. Let’s say the function argument is <code>col_name = "percent_uploaded"</code> so the function would use <code>df[[col_name]]</code>.</p>
 </div>
 </div>
 </section>
@@ -523,7 +524,7 @@ cupsOverThree &lt;- countOfCups[countOfCups &gt; 3]</code></pre>
 <ul>
 <li><p>Focus on the intent of the comment rather than describing the mechanic on what the code does. Like why did you decide to use this function over another? What was your thinking process when writing the steps? Why did you add these particular arguments in the function?</p></li>
 <li><p>Avoid redundant comments that restate what the code already makes clear.</p></li>
-<li><p>Don’t leave unused code hanging around. We use git as a reason if one ever needs old code. Remove this clutter.</p></li>
+<li><p>Don’t leave unused code hanging around. We use git for a reason if one ever needs old code. Remove this clutter.</p></li>
 <li><p>For functions, use comments or <code>{roxygen2}</code> to describe parameters, return values, and purpose. If you decide to turn your functions into a package, you’re already ahead of the game!</p></li>
 <li><p>Use <code># TODO</code> comments when works still needs to be done, but only use them sparingly.</p></li>
 <li><p>Use comments to add a section. In RStudio you can add a section by using ctrl-shift-r.</p></li>

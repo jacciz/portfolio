@@ -286,11 +286,15 @@ The second version is simpler and more versatile. It works with any vectorized i
 This isn’t to say one approach is always better than the other. Instead, it’s a reminder to consider the trade-offs. A flexible function can reduce coupling, improve test-ability, and support a wider range of use cases. When designing functions, think about how and where they’ll be used—and whether their structure invites reuse or restricts it.
 
 :::{.callout-tip}
+
 ### Non-Standard Evaluation
-As I'm mentioning this topic of making functions more flexible, I really recommend learning more on non-standard evaluation as it allows one to pass unevaluated expression into function arguments. One example is simply passing a string to represent a column name as an argument and using that to create the new column name. Resources are:
+
+As I'm mentioning this topic of making functions more flexible, I really recommend learning more on non-standard evaluation as it allows one to pass an unevaluated expression (such as `col_name = percent_uploaded`) into function arguments. Resources are:
 
   - [Non-Standard Evaluation (NSE) in R](https://rguides.dev/guides/r-non-standard-evaluation/)
   - [Standard Non-Standard Evaluation: Tidy Eval](https://timmastny.com/blog/nse-tidy-eval-dplyr-leadr/)
+  
+Standard Evaluation is when an argument is evaluated normally. Let's say the function argument is `col_name = "percent_uploaded"` so the function would use `df[[col_name]]`.
 :::
 
 ## Commenting Practices
@@ -301,7 +305,7 @@ I'll just go through these practices briefly.
 
 -   Avoid redundant comments that restate what the code already makes clear.
 
--   Don't leave unused code hanging around. We use git as a reason if one ever needs old code. Remove this clutter.
+-   Don't leave unused code hanging around. We use git for a reason if one ever needs old code. Remove this clutter.
 
 -   For functions, use comments or `{roxygen2}` to describe parameters, return values, and purpose. If you decide to turn your functions into a package, you're already ahead of the game!
 
